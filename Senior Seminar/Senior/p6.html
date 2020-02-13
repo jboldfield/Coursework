@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>p6</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2019</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Project 6: Tasks G, H, I,  and More</h2>
+
+<h3 id="toc_1">Due: February 28, 2019</h3>
+
+<p><span style="color:red"><strong>THIS IS A MAJOR PROJECT. You&#39;d better start working on it sooner than later.</strong></span></p>
+
+<p>In this project, we will  add several additional features to the Depot app:</p>
+
+<ul>
+<li>Check out (Task G and more)</li>
+<li>Inside a Rails view, embed a sub-component from a React component tree (part of Task H and more)</li>
+<li>Many-to-Many relationship between two Rails models</li>
+<li>Paginate orders</li>
+<li>Email (Although covered in Task I, please follow my instructions in this document)</li>
+</ul>
+
+<h3 id="toc_2">1.   Project Specifications - Part I</h3>
+
+<ul>
+<li><p>Task G: Check Out!</p>
+
+<ul>
+<li><p>Complete Iteration G1. As always, Skip all steps pertaining to testing.</p>
+
+<p>In order to prevent the user from placing an order while there is nothing in his/her cart, update the following line in <code>app/controllers/orders_controller.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+before_action :ensure_cart_isnt_empty, only: [:new, :create]
+...</code></pre></div>
+
+<p>Also, in order to better line up the &quot;Empty cart&quot; and &quot;Checkout&quot; buttons at the bottom of the shoppoing cart, do the following adjustments:</p>
+
+<ul>
+<li><p>Update <code>app/assets/stylesheets/carts.scss</code>:</p>
+
+<div><pre><code class="language-none">.carts {
+    ...
+    ...
+    .actions .button_to {
+        display: inline-block;
+      }
+}</code></pre></div></li>
+<li><p>Update <code>app/views/carts/_cart.html.erb</code>:</p>
+
+<div><pre><code class="language-none">...
+
+    &lt;div class=&quot;actions&quot; align=&quot;right&quot;&gt;
+
+        ...
+
+    &lt;/div&gt;
+...</code></pre></div></li>
+</ul></li>
+<li><p>Skip the entire Iteration G2 all together.</p></li>
+</ul></li>
+<li><p>Add the &quot;Checkout&quot; button at bottom of the shopping cart on the SPA catalog page (the one that we created in Project 5). A click on this button should send you to the <code>/orders/new</code> page where you place the order by filling up a form with your name, address, etc. (Same form as created in Iteration G1 above)</p>
+
+<p>Hints:</p>
+
+<blockquote>
+<p>Remember, we did something very similar to this at the end of Project 4 where we temporarily redirected to a new page (i.e. the Cart page) to deal with &quot;Add to Cart&quot; buttons on the SPA catalog page. </p>
+
+<p>We are doing something very similar.</p>
+</blockquote>
+
+<ul>
+<li><p>On the client side, in the <code>Cart</code> ReactJS component, next to the <code>Empty Cart</code> button, add <code>Checkout</code> and associate its <code>onClick</code> attribute with a callback function say <code>handleCheckout</code>. In <code>handleCheckout</code>, send an ajaxified HTTP GET request to the server at the url <code>/orders/new/</code>. </p>
+
+<p>When the response comes back (it is going to be a JSON), redirect to the new page accordingly. You will find the following statement useful:</p>
+
+<div><pre><code class="language-none">window.location = response.data.redirect_url;</code></pre></div></li>
+<li><p>On the server side, in the <code>new</code> method of <code>OrdersController</code>, add the following to send back a JSON in response to the request from the client in the previous step:</p>
+
+<div><pre><code class="language-none">...
+respond_to do |format|
+  format.html
+  format.json { render json: {&quot;redirect&quot;:true,&quot;redirect_url&quot;: new_order_path }}
+end
+...</code></pre></div></li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_3">2.   Project Specifications - Part II</h3>
+
+<p>In this part, we are going to create a <strong>reusable</strong> react component to dynamically display additional fields based the chosen <code>Pay Type</code> in the <code>Order</code> form (see image below).</p>
+
+<p><img src="pay_types.jpeg" width="400px"/></p>
+
+<p>The basic idea of how to make it work is covered in &quot;Iteration H1: Adding Fields Dynammically to a Form&quot;, however, since we use <code>Webpacker</code> itself for the job whereas the book does not, the directory structure and some of the syntax used in Iteration H1 are quite different from ours. So do the following</p>
+
+<ul>
+<li>Read <span style="color:red"><strong>pages 203 ~ 213 only</strong></span></li>
+<li>Then follow my instructions below</li>
+</ul>
+
+<blockquote>
+<p>BTW, although being part of the order form, sensitive information such as credit number, check routing #, etc. are neither included in the <code>Order</code> model nor saved in the database on the server. They are there simply for the purpose of illustrating React and won&#39;t cause any security concerns whatsoever.</p>
+</blockquote>
+
+<h4 id="toc_4">2.1 React Component Directory Structure</h4>
+
+<p>The <code>PayTypeSelector</code> react component that we are going to create and all the components contained in it will be part of a component family <code>order_form</code>. (We will complete <code>order_form</code> later.)</p>
+
+<p>So create the following directory structure and three files:</p>
+
+<ul>
+<li>app/javascript/
+
+<ul>
+<li>...</li>
+<li>order_form/
+
+<ul>
+<li>components/
+
+<ul>
+<li>PayTypeSelector.jsx</li>
+</ul></li>
+<li>pay_type_selector.js</li>
+</ul></li>
+<li>packs/
+
+<ul>
+<li>...</li>
+<li>pay_type_selector.jsx</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Then put some code in <code>app/javascript/order_form/components/PayTypeSelector.jsx</code>:</p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+
+export default class PayTypeSelector extends React.Component {
+
+  render = () =&gt; {
+
+    return(
+      &lt;div&gt;
+            A boilerplate React component for verification purpose
+      &lt;/div&gt;
+    );
+  };
+
+}</code></pre></div>
+
+<p>In <code>app/javascript/order_form/pay_type_selector.js</code>:</p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+import PayTypeSelector from &quot;./components/PayTypeSelector&quot;;
+
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+    const order_pay_type = document.querySelector(&quot;#order_pay_type&quot;);
+    ReactDOM.render(&lt;PayTypeSelector /&gt;, order_pay_type);
+});</code></pre></div>
+
+<p>And in <code>app/javascript/packs/pay_type_selector.jsx</code>:</p>
+
+<div><pre><code class="language-none">import &quot;order_form/pay_type_selector&quot;;</code></pre></div>
+
+<p>Next, in <code>app/views/orders/_form.html.erb</code>, <span style="color:red"><strong>REPLACE</strong></span> the html div for the pay type field with the following:</p>
+
+<div><pre><code class="language-none">...
+  &lt;%= content_tag :div,
+    id: &quot;order_pay_type&quot;  do %&gt;
+    &lt;%= javascript_pack_tag &#39;pay_type_selector&#39; %&gt;
+  &lt;% end %&gt; 
+...</code></pre></div>
+
+<p>Give it a test in your browser -- add some products in your cart and place the order by clicking the &quot;Checkout&quot; button, the react component that displays &quot;A boilerplate React component for verification purpose&quot; should show in the form.</p>
+
+<blockquote>
+<p><strong>Warning: You can&#39;t proceed without passing the test above.</strong></p>
+</blockquote>
+
+<h4 id="toc_5">2.2 Complete the React Components</h4>
+
+<ul>
+<li><p>Replace the entire contents of <code>app/javascript/order_form/components/PayTypeSelector.jsx</code> with <a href="https://media.pragprog.com/titles/rails51/code/rails51/depot_pc/app/javascript/PayTypeSelector/index.jsx">Itration H1: PayTypeSelector.jsx</a></p></li>
+<li><p>Create a new react component <code>app/javascript/order_form/components/NoPayType.jsx</code> </p>
+
+<p>Then add the code from <a href="https://media.pragprog.com/titles/rails51/code/rails51/depot_pc/app/javascript/PayTypeSelector/NoPayType.jsx">Itration H1: NoPayType.jsx</a></p></li>
+<li><p>Create a new react component <code>app/javascript/order_form/components/CreditCardPayType.jsx</code> </p>
+
+<p>Then add the code from <a href="https://media.pragprog.com/titles/rails51/code/rails51/depot_pc/app/javascript/PayTypeSelector/CreditCardPayType.jsx">Itration H1: CreditCardPayType.jsx</a></p></li>
+<li><p>Create a new react component <code>app/javascript/order_form/components/CheckPayType.jsx</code> </p>
+
+<p>Then add the code from <a href="https://media.pragprog.com/titles/rails51/code/rails51/depot_pc/app/javascript/PayTypeSelector/CheckPayType.jsx">Itration H1: CheckPayType.jsx</a></p></li>
+<li><p>Create a new react component <code>app/javascript/order_form/components/PurchaseOrderPayType.jsx</code> </p>
+
+<p>Then add the code from <a href="https://media.pragprog.com/titles/rails51/code/rails51/depot_pc/app/javascript/PayTypeSelector/PurchaseOrderPayType.jsxx">Itration H1: PurchaseOrderPayType.jsx</a></p></li>
+</ul>
+
+<p>Give it a test in your browser -- add some products in your cart and place the order by clicking the &quot;Checkout&quot; button. Now see how additional fields are displayed dynamically based on the pay type that you choose.</p>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_6">3.   Project Specifications - Part III</h3>
+
+<p>So far, we have been playing with only one type of relationship between two Rails models (equivalently, between two database tables) -- <em>Many-to-One (or so called m-to-1)</em>. For instance, </p>
+
+<ul>
+<li><code>LineItem</code> (many) to <code>Product</code> (one); </li>
+<li><code>LineItem</code> (many) to <code>Order</code> (one); </li>
+<li><code>LineItem</code> (many) to <code>Cart</code> (one)</li>
+</ul>
+
+<p>In this task, we are going to build a <span style="color:blue"><em>Many-to-Many (or so called m-to-n)</em></span> relationship between models, specifically, between <code>Order</code> and <code>Product</code>. As you will see, such a relationship is constructed via another model <code>LineItem</code>.</p>
+
+<blockquote>
+<p>Since <code>LineItem</code> is an exiting model with <code>belongs_to :order</code> and <code>belongs_to :products</code>, we don&#39;t need to make any update to it. Otherwise, such a &quot;bridge&quot; model needs to be separately created.</p>
+
+<p>As you see below, we use <code>has_many :through</code> to specify the <em>m</em> side of the <em>m-to-n</em> relationship. You may also notice in literature the use of <code>has_and_belongs_to_many</code>. </p>
+
+<p>The simplest rule of thumb is that you should set up a <code>has_many :through</code> relationship if you need to work with the relationship/join model (e.g. <code>LineItem</code>) as an independent entity that contains validations, callbacks, or extra attributes (e.g. <code>quantity</code>). If you don’t need to do any of such extra work with the relationship/join model, it may be simpler to set up a <code>has_and_belongs_to_many</code> relationship (though you’ll need to remember to create the joining table in the database). </p>
+</blockquote>
+
+<ul>
+<li><p>Add the line below to <code>app/models/products.rb</code>:</p>
+
+<div><pre><code class="language-none">has_many :orders, through: :line_items </code></pre></div></li>
+<li><p>Add the line below to the <code>show</code> method in <code>ProductsController</code>:</p>
+
+<div><pre><code class="language-none">@orders = @product.orders</code></pre></div></li>
+<li><p>Add the following to the end of <code>app/views/products/show.html.erb</code>:</p>
+
+<div><pre><code class="language-none">&lt;div class=&quot;container&quot;&gt;
+    &lt;h3&gt;Who ordered this book?&lt;/h3&gt;
+    &lt;table class=&quot;table table-striped&quot;&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Address&lt;/th&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Pay type&lt;/th&gt;
+        &lt;th&gt;Nr. Copies&lt;/th&gt;
+      &lt;/tr&gt;
+
+        &lt;% @orders.each do |order| %&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;%= order.name %&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;%= order.address %&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;%= order.email %&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;%= order.pay_type %&gt;&lt;/td&gt;
+            &lt;% order.line_items.each do |line_item| %&gt;
+                &lt;% if (@product.id == line_item.product_id)%&gt;
+                    &lt;td&gt;&lt;%= line_item.quantity %&gt;&lt;/td&gt;
+                &lt;% end %&gt;
+            &lt;% end %&gt;
+          &lt;/tr&gt;
+        &lt;% end %&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre></div></li>
+<li><p>Now, in your browser, you can go to the show page for one of the products (e.g. /products/1) and see if all orders containing such a product are listed.</p></li>
+<li><p>What we did above only completed half of the <em>many-to-many</em> relationship between <code>Product</code> and <code>Order</code> (<code>Product</code> --&gt; <code>Order</code>).  <span style="color:red"><strong>Now do the other half (<code>Order</code> --&gt; <code>Product</code>) by modifying relevant files such that on the show page for a particular order, all products contained in that order are listed.</strong></span></p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_7">4.   Project Specifications - Part IV</h3>
+
+<p>As the orders keep coming in (what a business! :-)), we would like to paginate the orders when we display them in the &quot;orders/&quot; page.</p>
+
+<ul>
+<li><p>Add the following two gems to <code>Gemfile</code> and <code>bundle install</code> them:</p>
+
+<div><pre><code class="language-none">gem &#39;faker&#39;
+gem &#39;kaminari&#39;</code></pre></div></li>
+<li><p>In the <code>lib/</code> folder, add the following file:</p>
+
+<p><code>load_orders.rb:</code></p>
+
+<div><pre><code class="language-none">Order.delete_all
+99.times do |n|
+    name = Faker::Name.name
+    email = Faker::Internet.safe_email(name)
+    address = Faker::Address.street_address
+    pay_type = &quot;Check&quot;
+    Order.create(   name: name, 
+                    email: email,
+                    address: address,
+                    pay_type: pay_type
+                 )
+end</code></pre></div>
+
+<p>Then run the command <code>rails runner lib/load_orders.rb</code> to make 99 faked orders.</p></li>
+<li><p>In the <code>index</code> method of <code>OrdersController</code>, add a new line after the <code>@orders = Order.all</code> line:</p>
+
+<div><pre><code class="language-none">@orders = @orders.order(&#39;created_at desc&#39;).page params[:page]</code></pre></div></li>
+<li><p>At the bottom of <code>app/views/orders/index.html.erb</code>, add the following line:</p>
+
+<div><pre><code class="language-none">&lt;p&gt;&lt;%= paginate @orders %&gt;&lt;/p&gt;</code></pre></div></li>
+<li><p>In the <code>Order</code> model, specify the number of orders per page:</p>
+
+<div><pre><code class="language-none">paginates_per 10</code></pre></div></li>
+<li><p>Add the following to <code>app/assets/stylesheets/orders.scss</code></p>
+
+<div><pre><code class="language-none">.orders .pagination {
+    background: #008000;
+    a {
+        color: #bfb;
+        text-decoration: none;
+    }
+    a:hover {
+        background: none;
+        color: white;
+    }
+}</code></pre></div></li>
+</ul>
+
+<p>Restart the servers, go to the <code>/orders</code> page and see how those 99+ orders are paginated.   </p>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_8">5.   Project Specifications - Part V</h3>
+
+<ul>
+<li><p>Task I: Processing Emails and Payments Efficiently</p>
+
+<ul>
+<li><p>Skip Iteration I1</p>
+
+<ul>
+<li>Instead of following the instructions in the book which use your personal email accounts to send emails, causing security and scalability concerns on Heroku, we are going to use <code>SendGrid</code>, a cloud based email delivery and management provider. <strong>Please sign up a free account at <a href="https://sendgrid.com/">https://sendgrid.com/</a></strong>.</li>
+<li>Find the detailed steps to send emails via SendGrid below.</li>
+</ul></li>
+<li><p>Skip the entire Iteration I2 all together.</p></li>
+</ul></li>
+<li><p>Step 1: Configuring how emails to to be sent</p>
+
+<ul>
+<li><p>Add the following to <code>config/environments/development.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+# config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+host = &#39;localhost&#39;
+config.action_mailer.default_url_options = { host: host }
+ActionMailer::Base.smtp_settings = {
+        :address        =&gt; &#39;smtp.sendgrid.net&#39;,
+        :port           =&gt; &#39;587&#39;,
+        :authentication =&gt; :plain,
+        :user_name      =&gt; ENV[&#39;SENDGRID_USERNAME&#39;],
+        :password       =&gt; ENV[&#39;SENDGRID_PASSWORD&#39;],    
+        :domain         =&gt; &#39;localhost&#39;,
+        :enable_starttls_auto =&gt; true
+}
+...</code></pre></div>
+
+<p>Note, on Cloud 9, since it seems port #587 is blocked, the configuration needs to be a bit different:</p>
+
+<blockquote>
+<p>Replace &quot;your-project-name&quot; with your actual project name for host.</p>
+</blockquote>
+
+<div><pre><code class="language-none">...
+# config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+host = &#39;your-project-name.c9users.io&#39;
+config.action_mailer.default_url_options = {host: &#39;0.0.0.0:8080&#39; }
+ActionMailer::Base.smtp_settings = {
+        :address        =&gt; &#39;smtp.sendgrid.net&#39;,
+        :port           =&gt; &#39;2525&#39;,
+        :authentication =&gt; :plain,
+        :user_name      =&gt; ENV[&#39;SENDGRID_USERNAME&#39;],
+        :password       =&gt; ENV[&#39;SENDGRID_PASSWORD&#39;],    
+        :domain         =&gt; &#39;c9users.io&#39;,
+        :enable_starttls_auto =&gt; true
+ }
+ ...</code></pre></div></li>
+<li><p>Add the following to <code>config/environments/production.rb</code>:</p>
+
+<blockquote>
+<p>Replace &quot;yourfirstname-yourlastname&quot; with your actual first and last names for host.</p>
+</blockquote>
+
+<div><pre><code class="language-none">...
+# config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+host = &#39;project6-yourfirstname-yourlastname.herokuapp.com&#39;
+config.action_mailer.default_url_options = { host: host }
+ActionMailer::Base.smtp_settings = {
+        :address        =&gt; &#39;smtp.sendgrid.net&#39;,
+        :port           =&gt; &#39;587&#39;,
+        :authentication =&gt; :plain,
+        :user_name      =&gt; ENV[&#39;SENDGRID_USERNAME&#39;],
+        :password       =&gt; ENV[&#39;SENDGRID_PASSWORD&#39;],    
+        :domain         =&gt; &#39;heroku.com&#39;,
+        :enable_starttls_auto =&gt; true
+}
+...</code></pre></div></li>
+<li><p>As you see above, no matter it&#39;s during development on your local computer, or on cloud 9, or in production on Heroku, the username and password at SendGrid need to be set up as two environmental variables (safer than saving such sensitive information in any file). Furthermore, there is a gem <code>figaro</code> that we can use to encrypt the environment variables. </p>
+
+<p>Add the this gem to <code>Gemfile</code> and <code>bundle install</code> it:</p>
+
+<div><pre><code class="language-none">gem &#39;figaro&#39;</code></pre></div>
+
+<p>Then run the command below. It will create the <code>config/application.yml</code> file and add it into your <code>.gitignore</code>:</p>
+
+<div><pre><code class="language-none">bundle exec figaro install</code></pre></div>
+
+<p>Then edit <code>config/application.yml</code>:</p>
+
+<div><pre><code class="language-none">SENDGRID_USERNAME: &lt;your_sendgrid_username&gt;
+SENDGRID_PASSWORD: &lt;your_sendgrid_username&gt;</code></pre></div>
+
+<p>Note: First, since <code>config/application.yml</code> is in <code>.gitignore</code>, git won&#39;t keep track of it for you between different git pushes, branches, and repos.,  therefore, when testing your project, if you ever run into the problem of sending emails, you may have to re-create this file; second, on Heroku, you need to run one extra command to make figaro to work:  <code>figaro heroku:set -e production</code>. See Part VI of this instruction document later.</p></li>
+<li><p>Restart the servers</p></li>
+</ul></li>
+<li><p>Step 2: Determining when to send emails</p>
+
+<ul>
+<li><p>Run the command</p>
+
+<div><pre><code class="language-none">rails g mailer OrderNotifier received shipped</code></pre></div></li>
+<li><p>Modify <code>app/mailers/order_notifier_mailer.rb</code>:</p>
+
+<div><pre><code class="language-none">class OrderNotifierMailer &lt; ApplicationMailer
+
+  default from: &quot;admin@depot.com&quot;
+
+  def received(order)
+    @order = order
+    mail to: order.email, subject: &#39;Pragmatic Store Order Confirmation&#39; do |format| 
+      format.html    
+    end
+  end
+
+  def shipped(order)
+    @order = order
+    mail to: order.email, subject: &#39;Pragmatic Store Order Shipped&#39; do |format|
+     format.html
+    end
+  end
+
+end</code></pre></div></li>
+<li><p>In the <code>create</code> method of <code>OrdersController</code>, right after the line <code>session[:cart_id] = nil</code>, add the following </p>
+
+<div><pre><code class="language-none">OrderNotifierMailer.received(@order).deliver</code></pre></div></li>
+</ul></li>
+<li><p>Step 3: Specifying the template of emails</p>
+
+<ul>
+<li><p>Replace the contents of <code>app/views/order_notifier_mailer/received.html.erb</code> with</p>
+
+<div><pre><code class="language-none">&lt;h3&gt;Pragmatic Order Reveived&lt;/h3&gt;
+&lt;p&gt;
+  This is just to let you know that we&#39;ve received your recent order:
+&lt;/p&gt;
+
+&lt;%= render @order %&gt;</code></pre></div></li>
+<li><p>Create a partial <code>_order.html.erb</code> in the <code>app/views/orders</code> folder:</p>
+
+<div><pre><code class="language-none">&lt;h2&gt;Your Order&lt;/h2&gt;
+&lt;table&gt;
+    &lt;%= render(order.line_items) %&gt;
+
+    &lt;tr class=&quot;total_line&quot;&gt;
+    &lt;td colspan=&quot;2&quot;&gt;Total&lt;/td&gt;
+    &lt;td class=&quot;total_cell&quot;&gt;&lt;%= number_to_currency(order.total_price) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div></li>
+<li><p>In the partial file <code>app/views/line_items/_line_items.html.erb</code>, enclose the &#39;-&#39; button inside an if statement such that it does not show in the email.</p>
+
+<div><pre><code class="language-none">...
+&lt;% if (@order == nil) || (@order.total_price == 0) %&gt;
+    &lt;td&gt; &lt;%= button_to &#39;-&#39;, decrement_line_item_path(line_item), method: :patch, remote: true %&gt;&lt;/td&gt;
+&lt;%end%&gt;
+...</code></pre></div></li>
+<li><p>Finally, add the <code>total_price</code> method (if you don&#39;t have one yet) in <code>app/models/order.rb</code>. You may simply copy this method from <code>app/models/cart.rb</code>. </p></li>
+</ul>
+
+<p>Restart the servers and place an order. Make sure the email address you use when placing the order is legitimate. Then check if you&#39;ve received an &quot;Order Confirmation&quot; email. If not, chances are it may be in your spam/junk mail folder.</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_9">6. Project Specifications - Part VI</h3>
+
+<p>First, remove the alias <code>heroku</code> that you made in project 5.</p>
+
+<div><pre><code class="language-none">git remote rm heroku</code></pre></div>
+
+<p>Then login to Heroku and create a project.</p>
+
+<div><pre><code class="language-none">heroku login
+heroku create project6-yourfirstname-yourlastname</code></pre></div>
+
+<p>Update the two &quot;action_cable&quot; lines in <code>config/environments/production.rb</code> to accommodate project6. Git stage and commit the codebase.</p>
+
+<p>Then do the configurations and deployment as summarize below:</p>
+
+<div><pre><code class="language-none">...
+heroku config:set S3_ACCESS_KEY=&lt;access key&gt;.   =&gt; These four are for storing images on AWS S3 (project 2)
+heroku config:set S3_SECRET_KEY=&lt;secret key&gt;
+heroku config:set AWS_REGION =&lt;aws region&gt;
+heroku config:set S3_BUCKET=&lt;bucket name&gt;
+
+figaro heroku:set -e production                 =&gt; This is for sending emails via SendGrid (project 6)
+
+git push heroku master:master                   =&gt; Heroku deployment (project 6)
+
+heroku addons:add redistogo                     =&gt; Redis (project 5)
+
+heroku pg:reset DATABASE                        =&gt; These three are for the database (projects 2~6)
+heroku run rails db:migrate
+heroku run rails db:seed
+
+heroku run rails runner lib/load_orders.rb      =&gt; This is for testing pagination (project 6)
+...</code></pre></div>
+
+<h3 id="toc_10">7.   What to Turn in?</h3>
+
+<ul>
+<li><p>Final version of the project source code pushed onto Github</p>
+
+<p><span style="color:red">Alert: <strong>Don&#39;t push your P6 to the master branch onto your Github repository  until I explicitly tell you so on BlazeVIEW</strong>. I need to pull your Project 5 down for grading purposes first before you overwrite it with the code for this Project 6.</span></p></li>
+<li><p>Final version of the project deployed on Heroku. You must name your application on Heroku:</p>
+
+<div><pre><code class="language-none">http://project6-yourfirstname-yourlastname.herokuapp.com</code></pre></div></li>
+<li><p>The Git log file reflecting the full history of your project submitted on BlazeVIEW</p></li>
+</ul>
+
+<p>figaro heroku:set</p>
+
+
+
+
+</body>
+
+</html>

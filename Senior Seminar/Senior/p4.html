@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>p4</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2019</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Project 4: Task E and Converting the Depot Catalog Page to an SPA with ReactJS</h2>
+
+<h3 id="toc_1">Due: February 14, 2019</h3>
+
+<h3 id="toc_2">1.   Project Specifications - Part I</h3>
+
+<ul>
+<li><p>Complete the Task E: A Smarter Cart. <strong>Skip steps pertaining to testing</strong>.</p>
+
+<p>Note: In order to avoid the <em>You&#39;ve been on this page xx times without purchasing anything ... Come on!</em> flash message that we implemented in the previous project from bothering you, you may set the threshold for displaying that message to some high value, say 100. </p>
+
+<p>Also, since we already have a quick link on the side bar to go to the catalog page, the <em>Back to Catalog</em> link that we added at the bottom of the shopping cart can now be removed.</p></li>
+<li><p>In Iteration E2, we patched a couple of security holes:</p>
+
+<ul>
+<li>A flash message &quot;Invalid cart&quot; displays when the user tries to go to a cart page such as <code>http://localhost:3000/carts/wibble</code></li>
+<li>When the user navigates to the line items page <code>http://localhost:3000/line_items</code> and then tries to update attributes of any line item, if <code>cart_id</code> is one of such attributes, it gets silently filtered out. (Rational: you can&#39;t move a line item from one cart to another cart.)</li>
+</ul>
+
+<p>However, there are still some security issues that you need to address.</p>
+
+<ul>
+<li>Launch two DIFFERENT browsers as two distinct buyers and add some books in their respective shopping carts.</li>
+<li>In one browser, go to the <code>http://localhost:3000/carts</code> page, you are still allowed to see, edit, even destroy a cart that does not even belong to you. <span style="color:red"><strong>Too dangerous!</strong></span></li>
+<li>Similarly, in one browser, go to the <code>http://localhost:3000/line_items</code> page, you are still allowed to see, edit, even destroy a line item that is not even in your shopping cart. <span style="color:red"><strong>Too dangerous!</strong></span></li>
+</ul>
+
+<p>So, we need to block one user from messing up any other user&#39;s shopping cart by checking if the id of the cart he/she tries to access matches the id of his/her own cart (the one stored in the <code>session</code> hash table`. </p>
+
+<ul>
+<li><p>Update <code>CartsController</code>:</p>
+
+<div><pre><code class="language-none">...
+...
+
+  def set_cart
+    @cart = Cart.find(params[:id])
+
+    if @cart.id != session[:cart_id]
+      invalid_cart
+    end
+  end
+...
+...</code></pre></div></li>
+<li><p>Update <code>LineItemController</code> in the similar way.</p></li>
+</ul></li>
+<li><p>Play with the app in your browser and make sure everything is working. </p>
+
+<blockquote>
+<p>Note: a preferrable way of handling the security issues above would be through user authorization. We will see how to work things out that way after learning how to create and authenticate users in one of the subsequent projects.</p>
+</blockquote></li>
+<li><p>Git alert</p></li>
+</ul>
+
+<h3 id="toc_3">2.   Project Specifications - Part II</h3>
+
+<p>In Section 3.5 of Project 3, a click on the &quot;Home (SPA)&quot; quick link will send us to an SPA page built with ReactJS. As of now, it displays nothing but the number of books on the catalog. </p>
+
+<p>Now, let&#39;s componentize and display the books. </p>
+
+<h4 id="toc_4">2.1 Add Bootstrap and Font Awesome</h4>
+
+<p>First, since we want to take advantage of Bootstrap 4 to show the books, let&#39;s add it. Also, because <a href="https://fontawesome.com"><code>Font Awesome</code></a> does not ship with Bootstrap 4 by default any more, we need to add it too.</p>
+
+<ul>
+<li><p>Add the following to the <code>Gemfile</code>:</p>
+
+<div><pre><code class="language-none">gem &quot;jquery-rails&quot;
+gem &quot;bootstrap&quot;, &quot;~&gt; 4.2.1&quot;
+gem &quot;font-awesome-rails&quot;</code></pre></div></li>
+<li><p>Run <code>bundle update</code></p></li>
+<li><p>Restart the servers</p></li>
+<li><p>Add the following at the top of <code>app/assets/stylesheets/store.scss</code>:</p>
+
+<div><pre><code class="language-none">@import &quot;bootstrap&quot;;
+@import &quot;font-awesome&quot;;</code></pre></div></li>
+<li><p>In <code>app/assets/javascripts/application.js</code>, right above the <code>//=require_tree .</code> line , add the following lines:</p>
+
+<div><pre><code class="language-none">//= require jquery3
+//= require popper
+//= require bootstrap-sprockets</code></pre></div></li>
+</ul>
+
+<h4 id="toc_5">2.2 Listing Books with ReactJS</h4>
+
+<blockquote>
+<p>The steps below are very similar to what we did in Project 1 <code>Demo</code> where we listed files under the root folder of the app. <span style="color:red"><strong>So it is going to be super if you could figure them out by yourself.</strong></span></p>
+</blockquote>
+
+<ul>
+<li><p>Update the <code>Catalog</code> component:</p>
+
+<div><pre><code class="language-none">...
+import BookList from &#39;./BookList&#39;;
+...
+...
+    return (
+      &lt;div className=&quot;container&quot;&gt;
+        &lt;div className=&quot;row&quot;&gt;
+              &lt;BookList books={this.state.books}/&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+    ); 
+...</code></pre></div></li>
+<li><p>Add the <code>BookList</code> component:</p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+import Book from &#39;./Book&#39;;
+
+export default class BookList extends React.Component {
+  render = () =&gt; {
+    var books = [];
+
+    this.props.books.forEach(function(book) {
+      books.push(&lt;Book book={book}
+                         key={&#39;book&#39; + book.id}/&gt;);
+      }
+    );
+
+    return(
+      &lt;table className=&quot;table table-striped&quot; width=&quot;auto&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope=&quot;col&quot;&gt;Image url&lt;/th&gt;          
+            &lt;th scope=&quot;col&quot;&gt;Title&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Description&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Price&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Popularity&lt;/th&gt;            
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          {books}
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    )
+  }
+}</code></pre></div></li>
+<li><p>Add the <code>Book</code> component:</p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+import PropTypes from &#39;prop-types&#39;;
+
+export default class Book extends React.Component {
+  static propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image_url: PropTypes.string,
+    price: PropTypes.number,
+    popularity: PropTypes.number
+  };
+
+  render = () =&gt; {
+    return(
+      &lt;tr className=&quot;spa_entry&quot;&gt;
+        &lt;td&gt;
+          &lt;img src={this.props.book.image_url.url} /&gt;
+        &lt;/td&gt;      
+        &lt;td&gt;{this.props.book.title}&lt;/td&gt;
+        &lt;td dangerouslySetInnerHTML={{__html: this.props.book.description}}&gt;&lt;/td&gt;
+        &lt;td&gt;{this.props.book.price}&lt;/td&gt;
+        &lt;td&gt;{Number(this.props.book.popularity)}&lt;/td&gt;        
+      &lt;/tr&gt;
+    )
+  };
+}</code></pre></div></li>
+<li><p>Now, launch the servers and refresh your browser, click the &quot;Home (SPA)&quot; link and see the results. If anything goes wrong, you will find the React Developer Tools (a Google Chrome Extension) that we installed in Project 1 an invaluable tool for you to do debugging. Also, in case of abnormal situations, watch the terminal where you have the servers up.</p></li>
+<li><p>Git alert</p></li>
+</ul>
+
+<h3 id="toc_6">3.   Project Specifications - Part III</h3>
+
+<h4 id="toc_7">3.1 Sorting Books with ReactJS</h4>
+
+<p><span style="color:red"><strong>This is probably the most complicated part in this project.</strong></span> </p>
+
+<blockquote>
+<p>Here is the plan: </p>
+
+<p>Through two params <code>:sort_by</code> and <code>:order</code> in an ajaxified HTTP request, the React component <code>Catalog</code> on the client side informs the Rails server how it wants the data to be sorted (it could be by <strong>title, price, or popularity</strong>) and in what order (it could be <strong>ascending or descending</strong>). The Rails server then fetches, sorts, and returns the data back to the client accordingly. </p>
+</blockquote>
+
+<h5 id="toc_8">3.1.1 Client Side</h5>
+
+<ul>
+<li><p>Obviously, the <code>Catalog</code> component needs to be updated.</p>
+
+<ul>
+<li><p>First, add two new states <code>sort</code> and <code>order</code> and their default values.</p>
+
+<div><pre><code class="language-none">...
+state = { books: [],
+          sort: &quot;popularity&quot;,
+          order: &quot;asc&quot;
+        };
+...</code></pre></div></li>
+<li><p>Second, add a callback function right before <code>render</code> in <code>Catalog</code>. Any time the user decides to change how he/she wants to books to be sorted, such a function is called. It sends an ajaxified HTTP request with two params <code>sort_by</code> and <code>order</code> to the server. Once the response (a JSON) comes back, it updates the relevant states, consequently, re-renders the entire <code>Catalog</code> component.</p>
+
+<div><pre><code class="language-none">handleSortColumn = (name, order) =&gt; {
+    if (this.state.sort != name) {
+      order = &#39;asc&#39;;
+    }
+
+    var self = this;
+
+    axios.defaults.headers.common[&#39;X-Requested-With&#39;] = &quot;XMLHttpRequest&quot;;
+    axios.get(&#39;/&#39;, {params: {sort_by: name, order: order }})
+      .then(function (response) {
+        console.log(response.data);
+        self.setState({ books: response.data, sort: name, order: order });
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(&#39;Cannot sort events: &#39;, error);
+    });
+};</code></pre></div></li>
+<li><p>Third, in the <code>render</code> function at the end of <code>Catalog</code>   , replace the line that renders the <code>BookList</code>   component with</p>
+
+<div><pre><code class="language-none">&lt;BookList   books={this.state.books}
+            sort ={this.state.sort}
+            order={this.state.order}
+            handleSortColumn={this.handleSortColumn}/&gt;</code></pre></div></li>
+</ul></li>
+<li><p>Next, in order to allow the user to change the sorting criteria, we need to make the headers of three columns (i.e. <code>title</code>, <code>price</code>, and <code>popularity</code>) clickable. How? Well, we will replace each of such headers which are now just simple texts with a new React component. </p>
+
+<p>Add a new <code>SortColumn.jsx</code> component:</p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+
+export default class SortColumn extends React.Component {
+  handleSort = e =&gt; {
+    e.preventDefault();
+    var order = this.props.order == &quot;desc&quot; ? &quot;asc&quot; : &quot;desc&quot;;
+    this.props.handleSortColumn(this.props.name, order);
+  };
+
+  render = () =&gt; {
+    var active = this.props.sort == this.props.name;
+    var display_name = active ? &lt;u&gt;{this.props.text}&lt;/u&gt; : this.props.text;
+    var direction;
+    if (active) {
+      direction =
+        this.props.order == &quot;asc&quot; ? (
+          &lt;span className=&quot;fa fa-angle-up&quot; aria-hidden=&quot;true&quot; /&gt;
+        ) : (
+          &lt;span className=&quot;fa fa-angle-down&quot; aria-hidden=&quot;true&quot; /&gt;
+        );
+    }
+    return (
+      &lt;span onClick={this.handleSort}&gt;
+        {display_name}
+        {direction}
+      &lt;/span&gt;
+    );
+  };</code></pre></div>
+
+<p>}</p>
+
+<p>In the code above, <code>handleSort</code> is called in response to a click on the component (see the <code>onClick</code> property of the <code>&lt;span&gt;</code> tag at the bottom of the code). Inside such a function, <code>handleSortColumn</code>, passed in as a props, is called. As you&#39;ll see in the updated <code>BookList</code> below, it is just the <code>handleSortColumn</code> callback function that we added to <code>Catalog</code> in the previous step.</p></li>
+<li><p>Next, modify the <code>BookList</code> component.</p>
+
+<ul>
+<li><p>At the top of the file, add a line:</p>
+
+<div><pre><code class="language-none">import SortColumn from &#39;./SortColumn&#39;;</code></pre></div></li>
+<li><p>Right above the <code>render</code> function, add</p>
+
+<pre>
+...
+handleSortColumn = (name, order) => {
+    this.props.handleSortColumn(name, order);
+};
+...
+</pre></li>
+<li><p>Replace the <code>&lt;th scope=&quot;col&quot;&gt;Title&lt;/th&gt;</code> line with:</p>
+
+<div><pre><code class="language-none">&lt;th scope=&quot;col&quot; className=&quot;sortable&quot;&gt;
+  &lt;SortColumn
+    name=&quot;title&quot;
+    text=&quot;Title&quot;
+    sort={this.props.sort}
+    order={this.props.order}
+    handleSortColumn={this.handleSortColumn}
+  /&gt;
+&lt;/th&gt;</code></pre></div></li>
+<li><p>Replace the other two <code>&lt;th&gt;</code> lines for <code>price</code> and <code>popularity</code> in the similar way as above. <strong>Be careful with letter cases</strong>.</p></li>
+</ul></li>
+<li><p>Oh, one more thing -- in <code>app/assets/stylesheets/store.scss</code>, inside the <code>.store</code> class, add the following such that when you hover over the column headers on the catalog page, the curser changes to a pointer:</p>
+
+<div><pre><code class="language-none">    ...
+    th.sortable {
+        cursor: pointer;
+    }
+    ...</code></pre></div></li>
+<li><p>Refresh the browser, click the &quot;Home (SPA)&quot; link, then click the column headers -- title, price, and popularity and see how they change. (Of course, the books are not sorted yet since we&#39;ve not updated the server side.)   </p></li>
+</ul>
+
+<h5 id="toc_9">3.1.2 Server Side</h5>
+
+<p>The only file that you need to update on the server side is the <code>StoreControllere</code>:</p>
+
+<ul>
+<li><p>Replace the <code>format json: {render json: @products}</code> line at the end of the <code>index</code> method with:</p>
+
+<div><pre><code class="language-none">format.json {render json: Product.order(sort_by + &#39; &#39; + order)}</code></pre></div></li>
+<li><p>Then right after the  <code>index</code> method, add two private methods:
+<pre>
+...
+<b>private 
+    def sort_by
+       %w(title
+          price
+          popularity).include?(params[:sort_by]) ? params[:sort_by] : &#39;popularity&#39;
+    end
+    def order
+       %w(asc desc).include?(params[:order]) ? params[:order] : &#39;asc&#39;
+    end</b>
+...
+</pre></p></li>
+</ul>
+
+<p>Finally, refresh the browser, click the &quot;Home (SPA)&quot; link, then click the column headers -- title, price, and popularity and see how the books are sorted based on the column header you clicked. <strong>Yeah!</strong></p>
+
+<h4 id="toc_10">3.2 Searching Books with ReactJS</h4>
+
+<p>Searching books is feature that could be implemented in a similar way as what we did for searching files in Project 1 (demo). </p>
+
+<p><span style="color:red"><strong>So again, you are challenged to put them together without coping the code below.</strong></span></p>
+
+<h5 id="toc_11">3.2.1 Client Side</h5>
+
+<ul>
+<li><p>Create a new component <code>SearchForm</code>:</p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+import ReactDOM from &#39;react-dom&#39;;
+import axios from &#39;axios&#39;;
+
+export default class SearchForm extends React.Component {
+  handleSearch = () =&gt; {
+    var query = ReactDOM.findDOMNode(this.refs.query).value;
+
+    var self = this;
+    axios.defaults.headers.common[&#39;X-Requested-With&#39;] = &quot;XMLHttpRequest&quot;;
+    axios.get(&#39;/search&#39;, {params: {query: query }})
+      .then(function (response) {
+        console.log(response.data);
+        self.props.handleSearch(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(&#39;Cannot sort events: &#39;, error);
+    });
+  };
+
+  render = () =&gt; {
+    return(
+      &lt;input onChange={this.handleSearch}
+             type=&quot;text&quot;
+             className=&quot;form-control&quot;
+             placeholder=&quot;Type the title of the book you are searching here...&quot;
+             ref=&quot;query&quot; /&gt;
+    )
+  }
+}</code></pre></div></li>
+<li><p>Then, update the <code>Catalog</code> component:</p>
+
+<ul>
+<li><p>Add the <code>import SearchForm from &#39;./SearchForm&#39;;</code> line at the top of the file</p></li>
+<li><p>Add a new function <code>handleSearch</code>:</p>
+
+<div><pre><code class="language-none">...
+handleSearch = (books) =&gt; {
+    this.setState({ books: books });
+};
+...</code></pre></div></li>
+<li><p>In the <code>render</code> function, right below the <code>&lt;div className=&quot;container&quot;&gt;</code> line, add a new embedded div:</p>
+
+<div><pre><code class="language-none">...
+&lt;div className=&quot;row&quot;&gt;
+            &lt;SearchForm handleSearch={this.handleSearch} /&gt;
+&lt;/div&gt;
+...         </code></pre></div></li>
+</ul></li>
+</ul>
+
+<h5 id="toc_12">3.2.2 Server Side</h5>
+
+<ul>
+<li><p>Add a new route in <code>config/routes.rb</code>:</p>
+
+<div><pre><code class="language-none">get &#39;search&#39;, to: &#39;store#search&#39;</code></pre></div></li>
+<li><p>In the <code>StoreController</code>, add a new <strong>public</strong> method:</p>
+
+<div><pre><code class="language-none">def search
+    products = Product.where(&quot;title LIKE &#39;%#{params[:query]}%&#39;&quot;)
+    render json: products
+end</code></pre></div></li>
+</ul>
+
+<p>Refresh the browser, click the &quot;Home (SPA)&quot; link, try to search a book by its title.</p>
+
+<h4 id="toc_13">3.3 Adding Books to Cart with ReactJS</h4>
+
+<h5 id="toc_14">3.3.1 Add the &quot;Add to Cart&quot; button</h5>
+
+<ul>
+<li><p>First, let&#39;s add an &quot;Add to Cart&quot; button next to each book on the Catalog page by modifying the following ReactJS components:</p>
+
+<p><code><strong>Catalog.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+// Add a new function to handle &quot;Add to Cart&quot;
+// This function will be modified later in section 3.3.2.
+handleAddToCart = (id) =&gt; {
+    console.log(id);
+};  
+...
+
+// Add the new function above as one more props 
+// to the &quot;BookList&quot; component when rendering it
+&lt;BookList books={this.state.books}
+                sort ={this.state.sort}
+                order={this.state.order}
+                handleSortColumn={this.handleSortColumn}
+                handleAddToCart={this.handleAddToCart} /&gt;
+...</code></pre></div>
+
+<p><code><strong>BookList.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+
+// Add a new function to handle &quot;Add to Cart&quot;
+// All it does is that it calls the handleAddToCart function
+// in the Catalog component above.
+handleAddToCart = (id) =&gt;{
+    this.props.handleAddToCart(id);
+}; 
+...
+// In the render function, add the new function above 
+// as one more props to the &quot;Book&quot; component when rendering it
+
+    ...
+    var self = this;
+    this.props.books.forEach(function(book) {
+      books.push(&lt;Book book={book}
+                       key={&#39;book&#39; + book.id}
+                       handleAddToCart={self.handleAddToCart} /&gt;);
+      }
+    );
+    ...
+
+    // Then when rendering the table head, add a new column 
+    // &quot;Actions&quot; in the end
+    ...
+    &lt;th scope=&quot;col&quot;&gt;Actions&lt;/th&gt; 
+    ...</code></pre></div>
+
+<p><code><strong>Book.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">// Add a new function to handle &quot;Add to Cart&quot;
+// All it does is that it calls the handleAddToCart function
+// in the BookList component above.
+handleAddToCart = (e) =&gt; {   
+    this.props.handleAddToCart(this.props.book.id); 
+};  
+
+...
+
+// Now, finally, add an &quot;Add to Cat&quot; button at the end 
+// of each book entry. A click on it will call the handleAddToCart
+// function above.
+&lt;td&gt;
+  &lt;a className=&quot;btn btn-success&quot;
+     onClick={this.handleAddToCart} &gt;
+    Add to Cart
+  &lt;/a&gt;
+&lt;/td&gt;
+...</code></pre></div></li>
+<li><p>Refresh the Catalog page (the SPA version) and check out the new buttons. Click them and see the logs in the React Developer&#39;s Tool in your browser.</p></li>
+</ul>
+
+<h5 id="toc_15">3.3.2 Make the &quot;Add to Cart&quot; button work</h5>
+
+<ul>
+<li><p>On the client side, modify the function <code>handleAddToCart</code> in the <code>Catalog</code> component:</p>
+
+<div><pre><code class="language-none">...
+handleAddToCart = (id) =&gt; {
+
+    var self = this;
+
+    axios.defaults.headers.common[&#39;X-Requested-With&#39;] = &quot;XMLHttpRequest&quot;;
+    axios.post(&#39;/line_items&#39;, {product_id: id})
+        .then(function (response) {
+            console.log(response);
+            window.location = response.headers.location;
+         })
+        .catch(function (error) {
+            console.log(error);
+            alert(&#39;Cannot sort events: &#39;, error);
+    });
+
+ };
+ ...</code></pre></div>
+
+<p>When an &quot;Add to Cart&quot; button is clicked, this function sends an HTTP POST message to the server to add a new line item to the shopping cart. When the response comes back, it redirects to the Cart page. Again, as you can see, this is the same as what we see on the regular Catalog page (Task E, the Rails book). We will make changes in the next project so as to stay on the same page.</p></li>
+<li><p>On the server side, modify the <code>LineItermsController</code>:</p>
+
+<div><pre><code class="language-none">class LineItemsController &lt; ApplicationController
+    # Add a new line here at the beginning of the file
+    skip_before_action :verify_authenticity_token
+    ...
+
+    def create
+        ...
+        respond_to do |format|
+            if @line_item.save
+                ...
+                # Change the following line. It assumes that you have
+                # a variable @line_item referring to the new line item
+                # to be created
+                format.json { redirect_to cart_path(@line_item.cart)}
+            else
+                ...
+            end
+        end
+    end
+    ...
+end</code></pre></div></li>
+</ul>
+
+<p>Refresh the Catalog page (the SPA version), click on the &quot;Add to Cart&quot; buttons and see if they redirect you the shopping cart page.</p>
+
+<h3 id="toc_16">4.   Project Deployment to Heroku</h3>
+
+<p>First, remove the alias <code>heroku</code> that you made in project 3.</p>
+
+<div><pre><code class="language-none">git remote rm heroku</code></pre></div>
+
+<p>Then the steps it takes to deploy your Depot application to Heroku are all the same as what you did in section 3.3. of Project 2 except that the name of your app on Heroku should be <strong><code>project4-yourfirstname-yourlastname</code></strong>.</p>
+
+<h3 id="toc_17">4.   What to Turn in?</h3>
+
+<ul>
+<li><p>Final version of the project source code pushed onto Github</p>
+
+<p><span style="color:red">Alert: <strong>Don&#39;t push your P4 to the master branch onto your Github repository  until I explicitly tell you so on BlazeVIEW</strong>. I need to pull your Project 3 down for grading purposes first before you overwrite it with the code for this Project 4.</span></p></li>
+<li><p>Final version of the project deployed on Heroku. You must name your application on Heroku:</p>
+
+<div><pre><code class="language-none">http://project4-yourfirstname-yourlastname.herokuapp.com</code></pre></div></li>
+<li><p>The Git log file reflecting the full history of your project submitted on BlazeVIEW</p></li>
+</ul>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+
+public class Recursion7 {
+	//Used to count comparisons
+	public int counts;
+	
+	//No argument constructor
+	public Recursion7 () {
+	
+	}
+	
+	//Populate the array with even values starting t 0
+	public void populateEvenList(int[] list) {
+		
+	}
+	
+	//Populate the array with odd values starting at 1
+	public void populateOddList(int[] list) {   
+		
+	}
+	
+	//Create clone of list and return clone
+	public int[] cloneList(int[] list) {
+		
+	}
+	
+	//Shuffle list **collections shuffle**
+	public void seuffleList (int[] list) {
+		
+	}
+	
+	//Uses selection sort, counts, and returns comparisons
+	public int selectionSort()
+}//End of class

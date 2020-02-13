@@ -1,0 +1,14 @@
+package prob3;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class NumberAdderTest {
+
+	@Test
+	void testGetSum() {
+		fail("Not yet implemented");
+	}
+
+}

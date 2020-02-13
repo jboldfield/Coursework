@@ -1,0 +1,19 @@
+#Number of Lines in File
+NLF:
+    0. 
+    1.
+  >=2.
+#Number of Skips
+NS:
+    0.
+    1.  
+  >=2.
+#Number of Skipped Lines
+NSL:
+    0.
+  >=1.	
+#Number of Imbedded Skips
+NIS:
+   True.
+  False.
+ 

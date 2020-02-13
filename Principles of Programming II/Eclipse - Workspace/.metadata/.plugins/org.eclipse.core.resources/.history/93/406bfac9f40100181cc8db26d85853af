@@ -1,0 +1,60 @@
+//***************************************************************************************
+//Purpose:	
+//
+//Input:
+//Output:				Document classes
+//
+//Author:
+//Course:
+//Date:
+//Program:
+//**************************************************************************************
+
+// Employee hierarchy test program.
+import java.util.ArrayList;
+import java.text.DecimalFormat;
+public class MyPayroll3{
+	//**********************************************************************************
+	//main:	declare needed data structures, populate arraylist, and process records
+	//**********************************************************************************
+	public static void main( String args[] ) {
+
+	   DecimalFormat df = new DecimalFormat("##,###,###.##");
+	   ArrayList<Employee> employee = new ArrayList<>();		
+	   
+	   //populate arraylist
+	   employee.add(new SalariedEmployee("John", "Smith", "111-11-1111", 48000.00 ));
+	   employee.add(new HourlyEmployee("Karen", "Price", "222-22-2222", 16.75, 40 ));
+	   employee.add(new CommissionEmployee("Sue", "Jones", "333-33-3333", 10000, .06 ));
+	   employee.add(new BasePlusCommissionEmployee("Bob", "Lewis", "444-44-4444", 5000, .04, 300 ));
+	   employee.add(new PieceWorker("Rick", "Bridges", "555-55-5555", 2.25, 400 ));
+	   employee.add(new SalariedEmployee("Joe", "Jones", "999-99-9999", 68800.00 ));
+	   employee.add(new SalariedEmployee("Chris", "Smith", "888-88-8888", 75432.00 ));
+	   employee.add(new HourlyEmployee("Sam", "Price", "777-77-7777", 25.75, 25 ));
+	   employee.add(new CommissionEmployee("Beth", "Jones", "555-55-5555", 20000, .07 ));
+	   employee.add(new BasePlusCommissionEmployee("Matt", "Lewis", "123-45-6789", 10000, .05, 500 ));
+	   employee.add(new PieceWorker("Zac", "Bridges", "123-44-5555", 5.25, 200 ));
+	   employee.add(new SalariedEmployee("Emily", "Smith", "123-55-6666", 100000.00 ));
+	       
+
+	   System.out.println ("\n\t Read handout and you may follow the instructions below ");
+	   //1.	Display content of Arraylist
+	   for(int i = 0; i < employee.size(); i++) {   
+		    System.out.print(employee.get(i));
+		    System.out.println();
+		}
+	   //2.	Change every Price's last name to your last name.
+	  
+	   //3.	Sort the items in the arraylist based on earning
+	 	  
+	   //4.	Display only first and last name of all employees with their earnings
+	  
+	   //5.	Compute and display the total earning of each employee category
+	   //	and the total earnings for all employees.
+	 
+	   //6.	Display total of different employee type
+	
+	   //7.	Display the total earnings for all employees
+	
+   } // end main
+} // end class MyPayroll5

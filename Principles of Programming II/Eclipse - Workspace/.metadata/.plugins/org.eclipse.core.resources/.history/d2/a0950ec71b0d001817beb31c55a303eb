@@ -1,0 +1,31 @@
+//Name:			Johnnie Oldfield
+//Program Name:	Kitchen
+//Date:			02/09/2018
+//Purpose:		Used to keep track of food supplies.
+//				Kitchen serves Guest.
+//************************************************
+public class Kitchen{
+	//Stock in servings
+	int [] stock = new int[] {120, 75, 75, 120, 65};
+
+	//Get the amount of stock
+	public int[] getStock() {
+		return this.stock;
+	}//End of getStock
+
+	//Update the amount of stock
+	public void updateStock (){
+
+	}//End of update stock
+
+	//Check stock
+	public boolean checkStock(){
+		boolean check = false;
+		for (int i = 0; i < stock.length; i++){
+			if (stock[i] <= 4) {
+				check = true;
+			}
+		}
+		return check;
+	}//End of checkStock
+}//End of class

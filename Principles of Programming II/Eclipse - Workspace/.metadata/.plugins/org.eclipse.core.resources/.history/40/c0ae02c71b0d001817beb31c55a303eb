@@ -1,0 +1,53 @@
+//Name:			Johnnie Oldfield
+//Program Name:	Diner
+//Date:			02/09/2018
+//Purpose:		A program that manages food stocks
+//				and estimates income for diner
+//************************************************
+public class Diner {
+	//Data fields
+	private int countFamily, countCouple,
+				countInd, countGroup, guestsStored;
+	private Guest[] array = new Guest[100];
+	public static void main(String[] args) {
+
+	}//End of main
+
+	//Run diner
+	public void runDiner(){
+		//Create random number tied to types of guests.
+		while (checkStock()){
+			int guest = (int)(Math.random() * 3);
+			//Type Family
+			if (guest == 0){
+				array[guestsStored++] = new Family();
+				countFamily++;
+			}
+			//Type Couple
+			if (guest == 1){
+				array[guestsStored++] = new Couple();
+				countCouple++;
+			}
+			//Type Individual
+			if (guest == 2){
+				array[guestsStored++] = new Individual();
+				countInd++;
+			}
+			//Type Group
+			if (guest == 3){
+				array[guestsStored++] = new Group();
+				countGroup++;
+			}
+		}//End of loop
+	}//End of runDiner
+
+	//Calculate bill
+	public void calculateBill(){
+
+	}//End of calculateBill
+
+	//Print report
+	public void printReport(){
+
+	}//End of printReport
+}//End of class

@@ -1,0 +1,5 @@
+Name: Alice	 Score: 98
+Name: Bob	 Score: 89
+Name: Charlie	 Score: 92
+Name: Dave	 Score: 78
+Name: Elli	 Score: 83

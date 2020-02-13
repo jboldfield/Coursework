@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>p2</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2019</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Project 2: Depot Tasks A through C, Uploading and Storing Pictures on Amazon S3, and More</h2>
+
+<h3 id="toc_1">Due: January 31, 2019</h3>
+
+<h3 id="toc_2">1. Introduction</h3>
+
+<p>This project aims at familiarizing you with the Ruby on Rails’ developmental philosophies, environment, and conventions by kicking off a series projects to construct a Web-based Book Shop called “Depot”. It also gives you an opportunity to incorporate certain new features into your project through third-party gems and utilize cloud storage such as Amazon’s Simple Storage Service (S3).</p>
+
+<blockquote>
+<p><strong>GIT ALERT</strong>: <span style="color:red"> <strong>For this entire project, you must strictly follow the &quot;Git work flow&quot; on page 14 of the &quot;Git Crash Course&quot;!</strong></span></p>
+</blockquote>
+
+<h3 id="toc_3">2.   Project Specifications - Part I</h3>
+
+<ul>
+<li>Read Chapters 3 and 4 in the &quot;<em>Rails Book</em>_&quot; thoroughly.</li>
+<li><p>Go to “Part II: Building an Application” in the “<em>Rails Book</em>”. </p>
+
+<ul>
+<li>Read Chapter 5 thoroughly. </li>
+<li><p>Then complete all the steps in <strong>Tasks A through C</strong> <span style="color:red"> <strong>EXCEPT those ones pertaining to testing such as Iterations B2 and C4</strong></span> .</p>
+
+<ul>
+<li><p>Since we will skip all the testing related steps, add the <code>-T</code> option when creating the app:</p>
+
+<div><pre><code class="language-none">rails new depot -T</code></pre></div>
+
+<blockquote>
+<p>As far as React frontend is concerned, unlike what we did for the <code>demo</code> project where boilerplate Javascript files were pre-created thanks to the <code>--webpack=react</code> option, we are going to add them (and more) through separate steps later.</p>
+
+<p>Also, it is worth mentioning here that, just like Node.js, Rails 5.1+ allows you to create an API-only Rails app/backend with the <code>--api</code> option. Such an app provides endpoints to serve JSON resources (and JSON resources only) to an API client built with modern frontend frameworks such as React, VUE, or Angular. Although it is trending nowadays to create the Web app that way, in this class, we are still going to create our Rails app in the regular way, except in addition to serving the client with HTML and Javascript,  if needed, it also serves JSON.</p>
+</blockquote></li>
+<li><p>In Iteration A2, when downloading images, you should download the zip file, unzip it, and copy all five images to the <code>app/assets/images</code> folder.</p></li>
+<li><p>Iteration C5 can be skipped all together.</p></li>
+</ul></li>
+</ul></li>
+<li><p>Revise the “Home” quick link on the side bar such that it uses the <code>link_to</code> helper. </p></li>
+<li><p>Follow the Step 4: “Adding picture uploads” in the tutorial <a href="http://guides.railsgirls.com/app">http://guides.railsgirls.com/app</a> such that cover pages of the books can be uploaded when new books are being created or when existing books are being updated.</p>
+
+<blockquote>
+<p>Warning: This part is a little bit challenging. </p>
+</blockquote>
+
+<p>Notes:</p>
+
+<ul>
+<li>Apparently, you will use a Gem named <code>carrierwave</code> which can also be found at <a href="https://github.com/carrierwaveuploader/carrierwave">https://github.com/carrierwaveuploader/carrierwave</a> if you need more information about it.</li>
+<li>You don’t want to blindly type each command as it is shown on “Rails Girls” because our model is called <code>Product</code> instead of <code>Idea</code> and our field for the book cover page is called <code>image_url</code> instead of <code>picture_url</code>.</li>
+<li><p>Whenever displaying an image say <code>product.image_url</code> using the <code>image_tag</code> helper function, convert it to its url before passing it to the function:</p>
+
+<div><pre><code class="language-none">image_tag(product.image_url.url ......)</code></pre></div></li>
+<li><p>Verify your work by creating some new books, updating some existing ones, and uploading some cover page images through <code>carrierwave</code>.</p></li>
+<li><p>However, remember before you added <code>carrierwave</code> to the Depot project, you already created three books through the seed file (Task A above)? To fix them,</p>
+
+<ul>
+<li>Delete all three books in the <code>products</code> table. This can be done in two ways: 
+
+<ul>
+<li>Download and use <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a>. </li>
+<li>You can also type <code>rails dbconsole</code> in the command-line terminal. Then the SQL statement to use here is <code>delete from products;</code></li>
+</ul></li>
+<li>Modify your <code>db/seeds.rb</code> file such that the <code>image_url:</code> line for the first book looks like this: <code>image_url: open(&#39;app/assets/images/dcbang.jpg&#39;)</code>. Make updates for the other two books similarly such that they are both carrierwave-ready too.</li>
+<li>Do <code>rails db:seed</code> (or <code>rake db:seed</code>) again to re-populate the <code>products</code> table.</li>
+</ul></li>
+<li><p>Make sure you update relevant view and CSS files such that all pictures look nice and neat on all product-related pages (i.e. index, show, and edit) and the catalog page.</p></li>
+</ul></li>
+</ul>
+
+<h3 id="toc_4">3.   Project Specifications - Part II</h3>
+
+<p>The image uploader above is good enough for the application development and testing on your local machine (or on Cloud 9), but as you might have noticed, it uses the local file system (<code>public/uploads</code>) for storing the images, which isn’t a good and scalable practice and consequently produces lots of headaches in production on Heroku. Therefore, we will use one of the most popular and well-supported cloud storage, <strong>Amazon Simple Storage Service (S3)</strong>, to store images separately from our application hosted on Heroku.</p>
+
+<h4 id="toc_5">3.1. Set up Amazon Simple Storage Service (S3)</h4>
+
+<p>Follow the three steps in <a href="http://blog.thefirehoseproject.com/posts/switching-carrierwave-to-use-s3-with-heroku-and-localhost/">http://blog.thefirehoseproject.com/posts/switching-carrierwave-to-use-s3-with-heroku-and-localhost/</a> to set things up as summaried below. </p>
+
+<blockquote>
+<p>Notice that there might be minor differences between this blog and the current AWS UI, please use common sense to navigate through. You can skip the “Figaro” part and everything after that.</p>
+</blockquote>
+
+<ul>
+<li><p>First, sign up for an Amazon Web Services (AWS) account if you don&#39;t have one yet</p>
+
+<blockquote>
+<p>Although you need to provide your credit card number for this step, services are free for the first year and cost you less than a cent per month thereafter. You may cancel it any time you want.</p>
+</blockquote></li>
+<li><p>Second, create an S3 bucket as your cloud storage</p></li>
+<li><p>And third, create your AWS Identity and Access Management (IAM) credentials</p>
+
+<p><span style="color:red"><strong>Security alert</strong></span>: Please make sure you download the <code>credentials.csv</code> file from the AWS web site and save it at a safe place on your local computer.</p></li>
+</ul>
+
+<h4 id="toc_6">3.2. Get the Project Ready for Heroku</h4>
+
+<p>In the previous project (i.e. Demo), we deployed our application to Heroku. However, there are two very important differences between that one and this project (i.e. Depot) -- Depot comes with a <strong>dataBase</strong> (to store products, i.e. books) and uses an external <strong>cloud storage</strong> (to store images of the book cover pages), both of which need special treatments as far as Heroku deployment is concerned.</p>
+
+<ul>
+<li><p>Modify <code>Gemfile</code> such that your project is deployment-ready:</p>
+
+<ul>
+<li><p>Add these three gems </p>
+
+<div><pre><code class="language-none">gem &#39;carrierwave&#39;
+gem &#39;carrierwave-aws&#39;
+gem &#39;mini_magick&#39;</code></pre></div></li>
+<li><p>Replace the gem <code>sqlite3</code> line with the following:</p>
+
+<div><pre><code class="language-none">group :development do
+    gem &#39;sqlite3&#39;
+end</code></pre></div></li>
+<li><p>Add the following</p>
+
+<div><pre><code class="language-none">group :production do
+    gem &#39;pg&#39;, &#39;0.18.4&#39;
+    gem &#39;rails_12factor&#39;, &#39;0.0.2&#39;
+end</code></pre></div></li>
+<li><p><code>bundle install --without production</code> </p></li>
+</ul></li>
+<li><p>Update <code>app/uploaders/picture_uploader.rb</code> so that file storage is used for local development whereas AWS S3 is used for production.</p>
+
+<p><code>app/uploaders/picture_uploader.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+    # Choose what kind of storage to use for this uploader:
+    if Rails.env.production?
+        storage :aws
+    else
+        storage :file
+    end
+...</code></pre></div></li>
+<li><p>In the folder <code>config/initializers</code>, create a new file <code>carrierwave.rb</code>. </p>
+
+<blockquote>
+<p>Notice the sensitive information such as the keys to access your AWS S3 bucket are not directly saved in this file. Instead, four environment variables (e.g. <code>S3_ACCESS_KEY</code>) are used as the placeholders.</p>
+</blockquote>
+
+<p><code>config/initializers/carrierwave.rb</code>:</p>
+
+<div><pre><code class="language-none">if Rails.env.production?
+  CarrierWave.configure do |config|
+    config.aws_credentials = {
+      :access_key_id     =&gt; ENV[&#39;S3_ACCESS_KEY&#39;],
+      :secret_access_key =&gt; ENV[&#39;S3_SECRET_KEY&#39;],
+      :region            =&gt; ENV[&quot;AWS_REGION&quot;]
+    }
+    config.aws_bucket      =  ENV[&#39;S3_BUCKET&#39;]
+    config.storage         =  :aws
+  end
+end</code></pre></div></li>
+<li><p>Update the <code>.gitignore</code> file such that images stored in <code>public/uploads</code> are ignored by Git.</p>
+
+<p><code>.gitignore</code>:</p>
+
+<div><pre><code class="language-none">...
+# Ignore images stored during local development
+/public/uploads</code></pre></div></li>
+<li><p>Git stage and commit. </p></li>
+<li><p>Also, make sure you do the following such that your current branch is <code>master</code> and it has your latest code.</p>
+
+<div><pre><code class="language-none">git checkout master
+git merge test_branch</code></pre></div></li>
+</ul>
+
+<h4 id="toc_7">3.3. Project Deployment to Heroku</h4>
+
+<ul>
+<li><p>Login to Heroku and create a project.</p>
+
+<div><pre><code class="language-none">heroku login
+heroku create project2-yourfirstname-yourlastname</code></pre></div>
+
+<blockquote>
+<p>Note, you must use your full name as shown in the Github repository name. Don’t abbreviate.</p>
+</blockquote></li>
+<li><p>On Heroku, setup four environmental variables <code>S3_ACCESS_KEY</code>, <code>S3_SECRET_KEY</code>,  <code>AWS_REGION</code>, and <code>S3_BUCKET</code>. </p>
+
+<blockquote>
+<p>They are going to be referred to in the <code>config/initializers/carrierwave.rb</code> file that you created  above. This is considered as a much safer approach than including the sensitive information like your AWS credentials directly in any of the files in your project. Remember, files are very <strong>vulnerable</strong> to hackers, especially when they are not encrypted.</p>
+</blockquote>
+
+<p>This can be done either by running the following commands or by going up to <a href="heroku.com">heroku.com</a>, your app, &quot;Settings&quot;, then &quot;Reveal Config Vars&quot;.</p>
+
+<div><pre><code class="language-none">heroku config:set S3_ACCESS_KEY=&lt;access key&gt;    ==&gt; Replace &lt;access key&gt; with the access key you downloaded from the AWS web site in step 3.1 above
+heroku config:set S3_SECRET_KEY=&lt;secret key&gt;    ==&gt; Replace &lt;secret key&gt; with the secret key you downloaded from the AWS web site in step 3.1 above
+heroku config:set AWS_REGION =&lt;aws region&gt;      ==&gt; Replace &lt;aws region&gt; with us-east-1 if your region is &quot;US East (N. Virginia)&quot;; otherwise, look it up at https://docs.aws.amazon.com/general/latest/gr/rande.html
+heroku config:set S3_BUCKET=&lt;bucket name&gt;       ==&gt; Replace &lt;bucket name&gt; with the the name of the S3 bucket you created on the AWS web site in step 3.1 above</code></pre></div></li>
+<li><p>Push your project to Heroku.</p>
+
+<div><pre><code class="language-none">git push heroku master:master</code></pre></div></li>
+<li><p>Create and populate Database table(s) on Heroku</p>
+
+<div><pre><code class="language-none">heroku pg:reset DATABASE
+heroku run rails db:migrate
+heroku run rails db:seed</code></pre></div></li>
+<li><p>And finally, as always, do the following to push the source code of your project to Github and generate a log file. </p>
+
+<p><span style="color:red">Alert: <strong>Don&#39;t do the following until I explicitly tell you so on BlazeVIEW</strong>. I need to pull your Project 1 (Demo) from  the master branch on your Github repository before you overwrite it with code for this Project 2. </span></p>
+
+<div><pre><code class="language-none">git push --force origin master:master
+git log &gt; logfile.txt</code></pre></div></li>
+</ul>
+
+<h3 id="toc_8">4.   What to Turn in?</h3>
+
+<ul>
+<li>Final version of the project source code pushed onto Github</li>
+<li>Final version of the project deployed on Heroku</li>
+<li><p>On BlazeVIEW</p>
+
+<ul>
+<li><p>Submit the Git log file reflecting the full history of your project. </p>
+
+<p>Again, <span style="color:red"><strong>Up to 50% of points</strong></span> will be deducted for a student project whose git comments are overly simplified, meaningless, or rubbish. </p></li>
+<li><p>Also, I need you to submit a snapshot of your AWS S3 Bucket indicating images sent from your Depot project have all been properly saved. </p>
+
+<p><img src="./S3_Bucket.tiff" alt=""></p></li>
+</ul></li>
+</ul>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+
+public class PieceWorker extends Employee{
+	private double wage;   //Wage per piece 
+	private double pieces; //Number of pieces 
+	
+	//Five-argument constructor
+	public PieceWorker(String first, String last, String ssn, double wagePerPiece, double numberOfPieces) {
+		super (first, last, ssn);
+		setWage (wagePerPiece);
+		setPieces (numberOfPieces);
+	}
+	
+	//Sets wage
+	public void setWage(double wagePerPiece){
+		wage = (wagePerPiece < 0.0 ) ? 0.0 : wagePerPiece;
+	}
+
+	//Returns wage
+	public double getWage(){
+		return wage;
+	}
+
+	//Set number of pieces
+	public void setPieces(double numberOfPieces){
+		pieces = numberOfPieces;
+	}
+
+	//Returns number of pieces
+	public double getPieces(){
+		return pieces;
+	}
+
+	//Calculate earnings
+	public double earnings(){
+		return pieces * wage;
+	}
+
+	//Returns string of PieceWorker
+	public String toString(){
+		return String.format("Piece worker: %s\n%s: $%,.2f; %s: %,.2f", 
+							  super.toString(), "wage per piece", getWage(), 
+							  "number of pieces", getPieces());
+	}
+}

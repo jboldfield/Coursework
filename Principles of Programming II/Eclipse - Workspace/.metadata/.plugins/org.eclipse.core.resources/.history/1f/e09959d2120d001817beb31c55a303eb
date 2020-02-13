@@ -1,0 +1,19 @@
+//Name:			Johnnie Oldfield
+//Program Name:	Diner
+//Date:			02/09/2018
+//Purpose:		A program that manages food stocks
+//				and estimates income for diner 
+//************************************************
+public class Diner {
+	public static void main(String[] args) {
+		//Run diner 
+		int guest = (int)(Math.random() * 3);
+      if (guest = 0)
+         new Family;
+         
+		//Calculate bill
+		
+		//Print report
+
+	}//End of main
+}//End of class

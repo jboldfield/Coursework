@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>p7</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2019</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Project 7: User Authentication, User Authorization, and Admin Dashboards</h2>
+
+<h3 id="toc_1">Due: March 7, 2018</h3>
+
+<h3 id="toc_2">0.   Introduction</h3>
+
+<p>In this project, we are going to add two very important features to the Depot application -- User Authentication and Authorization. Additionally, as seen in most web applications, we are also going to add admin&#39;s dashboards.</p>
+
+<p>Task J in the <em>Rails</em> book covers User Authentication (signing up, logging in, logging out) and Authorization (Limiting access), however at low level and with very limited capabilities and flexibilities. Therefore, instead, we are going to use a number of well-tested and popularly-used gems – in particular, <span style="color:orange"><code>Devise</code></span> for user authentication, <span style="color:orange"><code>Pundit</code></span> for user authorization, and <span style="color:orange"><code>Administrate</code></span> for admin&#39;s dashboards. Inevitably, we will customize these gems to fit our project’s specific requirements. </p>
+
+<blockquote>
+<p>By no means though, these gems are the only ones out there for us to use, you are highly encouraged to explore others.</p>
+
+<p>In addition, in Appendix A, you will find my personal opinionated take on these gems. <span style="color:red"><strong>So I strongly suggest you to stop here, read Appendix A, come back, and continue.</strong></span></p>
+</blockquote>
+
+<h3 id="toc_3">1.   Project Specifications - Part I</h3>
+
+<p>Here is how we envision user authentication and authorization in the Depot project.</p>
+
+<ul>
+<li><p>There are three types of users/accounts in Depot: <em>admin</em>, <em>seller</em>, and <em>buyer</em>. Anyone can sign up either as a seller or as a buyer. However, for security reasons, the admin account should only be pre-created. </p></li>
+<li><p>Anyone (with or without an account) can see the catalog page (either regular or SPA).</p></li>
+<li><p>When logging in either as a seller or as a buyer, a user can update his/her profile that includes name, address, payment type (for buyers only), etc. </p>
+
+<p>Of course, he/she can also opt to cancel his/her account.</p>
+
+<p>Neither a seller nor a buyer is allowed to see other seller’s or buyer&#39;s profile. Only admin is (see the last item below).</p></li>
+<li><p>When logging in as a seller, a user can add, edit, and delete products (i.e. books). </p>
+
+<p>When navigating to the “products” page, the seller only sees those products that he/she owns. </p>
+
+<p>When navigating to the “orders” page, only those orders containing products that are owned by him/her are listed.</p>
+
+<p>A seller user should not be allowed place orders.</p></li>
+<li><p>When placing orders, for a buyer who is currently logged in, information such as name, email, address, and payment type in his/her profile will be automatically used to fill up the ordering form. </p>
+
+<p>Such orders will then be linked to his/her account. When navigating to the “orders” page, a buyer shall only see his/her order listed.</p>
+
+<p>A buyer user should not be allowed to see the “products” page.</p></li>
+<li><p>When placing orders without logging in as a buyer, the order placer has to fill up the ordering form with information such as name, email, address, and payment type when placing that order.</p>
+
+<p>Such orders will not be linked to any account. Only admin and sellers who own the products contained in these orders can see them listed on the “orders” page.</p></li>
+<li><p>When logging in as the admin (who does not necessarily have a profile though), all site-wise administrative functions are available. Such functions include adding, editing, and deleting products, orders, and users/accounts (i.e. buyers and sellers) as well as shopping carts, line items, etc.</p></li>
+</ul>
+
+<h3 id="toc_4">2.   Project Specifications - Part II</h3>
+
+<p>In this part, we are going to work on user authentication with Devise. For more information about Devise, go to <a href="https://github.com/plataformatec/devise">https://github.com/plataformatec/devise</a>.</p>
+
+<h4 id="toc_5">2.1 Bootstrap Navigation Bar</h4>
+
+<p>First of all, we are going to create a <strong>Bootstrap Navigation Bar</strong> on the top of all <em>Depot</em> pages where top-level links are displayed. These links include &quot;Sign Up&quot;, &quot;Sign In&quot;, &quot;Sign Out&quot;, &quot;Catalog&quot;, &quot;Catalog(SPA)&quot;, &quot;Orders&quot;, &quot;Products&quot;, etc. Also, the side column on the &quot;Catalog&quot; page shall be removed since all the links are now displayed 
+in the Bootstrap Nav. Bar.</p>
+
+<ul>
+<li><p>Modify <code>app/views/layouts/application.html.erb:</code> </p>
+
+<div><pre><code class="language-none">...
+  &lt;body&gt;
+    &lt;header class=&quot;main&quot;&gt;
+      &lt;%= render &#39;layouts/navigation&#39; %&gt;
+    &lt;/header&gt;
+    &lt;section class=&quot;content&quot;&gt;
+      &lt;% if @spa.nil? %&gt;
+        &lt;nav class=&quot;side_nav&quot;&gt;
+          &lt;div id=&quot;cart&quot;&gt;
+            &lt;%= render_if @cart &amp;&amp; @cart.line_items.any?, @cart %&gt;
+          &lt;/div&gt;
+        &lt;/nav&gt;
+      &lt;% end %&gt;
+      &lt;main class=&#39;&lt;%= controller.controller_name %&gt;&#39;&gt;
+        &lt;%= yield %&gt;
+      &lt;/main&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+...</code></pre></div></li>
+<li><p>In the <code>app/views/layouts/</code> folder, create two partials</p>
+
+<p><code>_navigation.html.erb:</code></p>
+
+<div><pre><code class="language-none">&lt;nav class=&quot;navbar navbar-expand-lg navbar-dark&quot;&gt;
+    &lt;%= image_tag &#39;logo.svg&#39;, alt: &#39;The Pragmatic Bookshelf&#39; %&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbarNavDropdown&quot; aria-controls=&quot;navbarNavDropdown&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt;
+        &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNavDropdown&quot;&gt;
+        &lt;ul class=&quot;navbar-nav&quot;&gt;
+            &lt;%= render &#39;layouts/navigation_links&#39; %&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre></div>
+
+<p><code>_navigation_links.html.erb:</code></p>
+
+<div><pre><code class="language-none">&lt;li class=&quot;nav-item dropdown&quot;&gt;
+    &lt;a class=&quot;nav-link dropdown-toggle&quot; href=&quot;#&quot; id=&quot;navbarDropdownMenuLink&quot; role=&quot;button&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+        Catalog Links
+    &lt;/a&gt;
+    &lt;div class=&quot;dropdown-menu&quot; aria-labelledby=&quot;navbarDropdownMenuLink&quot;&gt;
+        &lt;%= link_to &#39;Catalog&#39;, store_index_path(spa: false), class: &quot;dropdown-item&quot;  %&gt;
+        &lt;%= link_to &quot;Catlog(SPA)&quot;, store_index_path(spa: true), class: &quot;dropdown-item&quot; %&gt;
+    &lt;/div&gt;
+&lt;/li&gt;</code></pre></div></li>
+<li><p>In <code>app/view/carts/_cart.html.erb</code>, enclose the current contents entirely within a div of css class <code>carts</code>:</p>
+
+<div><pre><code class="language-none">&lt;div class=&quot;carts&quot;&gt;
+    &lt;article&gt;
+        ...
+    &lt;/article&gt;  
+&lt;/div&gt;</code></pre></div></li>
+<li><p>Then, fix some style sheets in the <code>app/assets/stylesheets/</code> folder. See details in Appendix B.</p></li>
+<li><p>Reload your browser and check out the changes.</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h4 id="toc_6">2.2 Devise - Basics</h4>
+
+<ul>
+<li><p>Add <code>gem &#39;devise&#39;</code> into <code>Gemfile</code> and bundle install it.</p>
+
+<p>Then run </p>
+
+<div><pre><code class="language-none">rails generate devise:install</code></pre></div></li>
+<li><p>Now, let&#39;s create a model <code>account</code> which is going to be used by <code>devise</code> for authentication purposes:</p>
+
+<div><pre><code class="language-none">rails g devise account
+
+rails db:migrate</code></pre></div>
+
+<blockquote>
+<p>An alternative and popular name for this model could be <code>user</code>. Be careful with such a name you shall choose in your group project because it will have direct impact in almost all user authentication steps below.</p>
+</blockquote></li>
+<li><p><code>Devise</code> provides two very handy built-in functions <strong><code>account_signed_in</code></strong> telling you if there is an actively signed-in account and <strong><code>current_account</code></strong> telling you who. You can also access the session for this account through <code>account_session</code>. Let&#39;s take advantage of <code>account_signed_in</code> to customize the links available on the Nav. Bar.  </p>
+
+<p>Change <code>app/views/layouts/_navigation_links.html.erb</code>:</p>
+
+<div><pre><code class="language-none">...
+...
+
+&lt;% if account_signed_in? %&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;%= link_to &#39;Edit account&#39;, edit_account_registration_path, class:&quot;nav-link&quot; %&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;%= link_to &#39;Sign out&#39;, destroy_account_session_path, :method=&gt;&#39;delete&#39;, class:&quot;nav-link&quot; %&gt;
+    &lt;/li&gt;
+&lt;% else %&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;%= link_to &#39;Sign in&#39;, new_account_session_path, class:&quot;nav-link&quot; %&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;%= link_to &#39;Sign up&#39;, new_account_registration_path,  class:&quot;nav-link&quot; %&gt;
+    &lt;/li&gt;
+&lt;% end %&gt;</code></pre></div></li>
+<li><p>Restart the server and check out the changes. You should now be able to sign up accounts on Depot as well as sign in and sign out. </p>
+
+<p><strong>Don&#39;t sign up though</strong> since the automatically created account model is still subject to customization. Let&#39;s move on.</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h4 id="toc_7">2.3 Devise - Customization</h4>
+
+<p>The <code>account</code> model that we created above is a generic model used by <code>Devise</code> to perform basic user authentication. They don&#39;t have any linkage to the rest of the Depot application.</p>
+
+<p>Now, we need to create two models <code>buyer</code> and <code>seller</code> that represent profiles of such two types of accounts respectively and link them to <code>account</code> through a pair of foreign keys/references in <code>account</code> as shown on the left hand side of the figure below, i.e. a one-to-one relationship between Account and Buyer and between  Account and seller. </p>
+
+<blockquote>
+<p>Later on, we will bind <code>Buyer</code> with <code>Order</code> and <code>Seller</code> with <code>Product</code> as shown on the right hand side of the figure below.</p>
+</blockquote>
+
+<p><img src="./account-buyer-seller-models.png" alt="Model Relationships"></p>
+
+<p>Well, wait a minute, what if we had some other types of accounts? (As a matter of fact, in <em>Depot</em>, we will only have one more account type -- <code>admin</code>, but generally speaking, we could have more.) Do we  need to have one foreign key for each of such type? That does not sound efficient, does it? Here is where <strong>polymorphic association</strong> comes into play. Through polymorphic association, we could associate the <code>account</code> model with multiple other models such as <code>buyer</code> and <code>seller</code> through only one reference <code>accountable_id</code> (well, technically two references because Rails needs another attribute <code>accountable_type</code> to indicate the type of the reference) instead of multiple references.</p>
+
+<blockquote>
+<p>For example, for 10 types of account types, without polymorphic association, we need 10 foreign keys in <code>account</code> to refer to them; with polymorphic association, (regardless of the number of account types,) we need only two -- <code>accountable_id</code> and <code>accountable_type</code>.</p>
+</blockquote>
+
+<p><span style="color:red"><strong>So first, let&#39;s work on the models</strong></span>.</p>
+
+<ul>
+<li><p>Run the following commands:</p>
+
+<div><pre><code class="language-none">rails g model buyer name:string address:string pay_type
+rails g model seller name:string address:string
+rails g migration add_accountable_to_account accountable:references{polymorphic}
+rails db:migrate</code></pre></div></li>
+<li><p>Next, modify the three model files affected in the previous step:</p>
+
+<p><code>app/models/account.rb:</code></p>
+
+<div><pre><code class="language-none">...
+belongs_to :accountable, polymorphic: true
+...</code></pre></div>
+
+<p><code>app/models/buyer.rb:</code></p>
+
+<div><pre><code class="language-none">...
+has_one :account, as: :accountable
+...</code></pre></div>
+
+<p><code>app/models/seller.rb:</code></p>
+
+<div><pre><code class="language-none">...
+has_one :account, as: :accountable
+...     </code></pre></div></li>
+</ul>
+
+<blockquote>
+<p>Now run <code>rails routes | grep account</code>. As you can see, by default, <code>Devise</code> provides three kinds of basic user authentication features as listed below: </p>
+
+<ul>
+<li>sign in/sign out - xxx_account_session(_path)</li>
+<li>update password - xxx_account_password(_path)</li>
+<li>sign up/cancel - xxx_account_registration(_path)</li>
+</ul>
+
+<p>In the <code>Depot</code> application, to accommodate the account&#39;s &quot;type&quot; attribute (i.e. buyer or seller) when signing up an account, we only need to customize the third one (registration). Should you need to customize any other feature(s), you need to make changes to the pertaining controller(s), view(s), and route(s) like what we will do below.</p>
+</blockquote>
+
+<p><span style="color:red"><strong>Next, let&#39;s work on the views</strong></span>.</p>
+
+<ul>
+<li><p>In order to allow a new user to select the type of account (i.e. either buyer or seller) when he/she signs up his/her account on <em>Depot</em>, we need to customize the <code>devise</code> view file that renders a form for the new user to fill up with a handy gem <code>simple_form</code> and to customize the <code>devise</code> controller that handles the request for signing up an account.</p>
+
+<blockquote>
+<p>Different from the order form where we use the basic HTML <code>form</code> element, here for user authenticatioin, we take advantage of a more versatile and powerful gem <a href="https://github.com/plataformatec/simple_form"><code>simple_form</code></a> - &quot;<em>Rails forms made easy</em>&quot;. You are highly recommended to consider using it in your group project whereever a form is needed.</p>
+</blockquote>
+
+<ul>
+<li><p>Add <code>gem &#39;simple_form&#39;</code> into <code>Gemfile</code> and bundle install it.</p>
+
+<p>Then run </p>
+
+<div><pre><code class="language-none">rails generate simple_form:install --bootstrap</code></pre></div>
+
+<p>Update <code>config/locals/simple_form.en.yml</code>   so as to get rid of the &quot;*&quot; marks on all the required fields. (They are just annoying.)</p>
+
+<div><pre><code class="language-none">...
+required:
+    text: &#39;required&#39;
+    mark: &#39;&#39;
+...</code></pre></div></li>
+<li><p>Add a new scss in the <code>app/assets/stylesheets</code> folder:</p>
+
+<p><code>accounts.scss</code>:</p>
+
+<div><pre><code class="language-none">@import &quot;bootstrap&quot;;
+
+.registrations,
+.sessions,
+.passwords,
+.buyers,
+.sellers {
+    width: 80%;
+    margin: 0 auto;
+
+    .form-actions {
+        .btn {
+            @extend .btn-primary
+        }
+    }
+}</code></pre></div></li>
+<li><p>Run the following command to generate a bunch of view files for devise, one of which (<code>new.html.erb</code>) will have to be customized:</p>
+
+<div><pre><code class="language-none">rails generate devise:views</code></pre></div>
+
+<p>In  <code>app/views/devise/registrations/new.html.erb</code>, add one more input field for the type attribute:</p>
+
+<div><pre><code class="language-none">...
+&lt;div class=&quot;form-inputs&quot;&gt;
+    ...
+    &lt;%= f.input :type, required: true, as: :radio_buttons, label: &quot;Type of Account&quot;, collection: Account::ACCOUNT_TYPES, checked: &#39;Buyer&#39;%&gt;
+&lt;/div&gt;
+...</code></pre></div>
+
+<p>Apparently, the <code>f.input</code> field above assumes that there is an attribute <code>type</code> and an array <code>ACCOUNT_TYPES</code> in the <code>Account</code> model. So let&#39;s go ahead to add such two items to the <code>Account</code> model:</p>
+
+<div><pre><code class="language-none">class Account &lt; ApplicationRecord
+    ...
+    ACCOUNT_TYPES=[&quot;Buyer&quot;, &quot;Seller&quot;]
+    attr_accessor :type
+end</code></pre></div>
+
+<blockquote>
+<p>Notice that the <code>type</code> attribute above was only added to the <code>Account</code> model. We didn&#39;t create a migration to add it as a new column to the <code>accounts</code> database table though. Well we didn&#39;t need to because once the server receives the sign up request that carries such <code>type</code> value, it is going to translate it into the creation of either a &quot;Buyer&quot; or a &quot;Seller&quot;. Thereafter, this <code>type</code> attribute is no longer needed thereafter.</p>
+</blockquote>
+
+<p>Don&#39;t forget to modify the <code>ApplicationController</code> such that the new attribute <code>type</code> becomes one of the permitted parameters:</p>
+
+<div><pre><code class="language-none">class ApplicationController &lt; ActionController::Base
+  protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+      def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:type])
+      end
+end</code></pre></div></li>
+</ul></li>
+</ul>
+
+<p><span style="color:red"><strong>Finally, the controller&#39;s turn</strong></span>.</p>
+
+<ul>
+<li><p>Modify <code>config/routes.rb</code> by replacing the line <code>devise_for :accounts</code> with </p>
+
+<div><pre><code class="language-none">devise_for :accounts,  :controllers =&gt; { :registrations =&gt; &#39;registrations&#39; }</code></pre></div></li>
+<li><p>Then add a new controller <code>registrations_controller.rb</code> to the folder <code>app/controllers/</code> (see below). In particular, pay attention to the <code>create</code> method, which is just a copy of the <code>create</code> method in the parent class <code>Devise::RegistrationsController</code> except now, depending on the type of the account that the user selected, not only a new <code>account</code> object itself but also a <code>buyer</code> (or <code>seller</code>) object are created. Thanks to the Rails convention, the <code>resource.save</code> statement automatically persists both of these objects in the database.</p>
+
+<pre>
+class RegistrationsController < Devise::RegistrationsController
+    def new
+        super
+    end
+
+    def create
+        build_resource(sign_up_params)
+
+        <b>if (resource.type=="Buyer")
+            resource.accountable = Buyer.new
+            resource.accountable.pay_type = 0 # default pay_type is Check
+        else
+            resource.accountable = Seller.new
+        end</b>
+
+        resource.save
+        yield resource if block_given?
+        if resource.persisted?
+          if resource.active_for_authentication?
+            set_flash_message! :notice, :signed_up
+            sign_up(resource_name, resource)
+            respond_with resource, location: after_sign_up_path_for(resource)
+          else
+            set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+            expire_data_after_sign_in!
+            respond_with resource, location: after_inactive_sign_up_path_for(resource)
+          end
+        else
+          clean_up_passwords resource
+          set_minimum_password_length
+          respond_with resource
+        end
+    end
+
+    def destroy
+        @account.accountable.destroy!
+        super
+    end
+end
+
+</pre>
+
+<blockquote>
+<p>Supposedly, the <code>create</code> method above should have looked much simpler because all it has to do is just to override the <code>create</code> method it inherits from the parent via the <code>super</code> statement and then add the highlighted <code>if...else...end</code> statement. However, for some reason, I was not able to modify the code such that it works that way. I ran out of time and had to move on with the sub-optimal version as shown above. Sad -:(</p>
+</blockquote></li>
+<li><p>Restart the servers and check out the changes. You should now be able to sign up accounts of two different types -- buyer or seller. <strong>Here, when testing your program, I highly recommend you to use the <em>DB Browser for SQLite</em> tool to investigate how the database tables are updated.</strong></p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h4 id="toc_8">2.4 User Profiles</h4>
+
+<p>As you saw in step 2.2 above, <code>Devise</code> has built-in support for the update of certain attributes such as email and password listed in the model of <code>account</code> because <code>account</code> was created through the command <code>rails g devise account</code> in the first place. </p>
+
+<p>However, remember at the beginning of step 2.3 above, when we created the <code>buyer</code> and <code>seller</code> models, we also specified a number of attributes like name, address, etc. <code>Devise</code> is not aware of any of such attributes, which are going to be referred to as <strong>User Profiles</strong> below, so it is our responsibility to add some code to the project so users can update them. </p>
+
+<p>Now, let&#39;s do it.</p>
+
+<blockquote>
+<p>It turns out that all steps below are routine,  mechanical, and unsurprising Rails operations.</p>
+</blockquote>
+
+<ul>
+<li><p>First, add the following two <span style="color:red"><strong>routes</strong></span> to <code>config/routes.rb</code>.</p>
+
+<div><pre><code class="language-none">resources :buyers, only: [:edit, :update]
+resources :sellers, only: [:edit, :update]</code></pre></div>
+
+<p>Notice that since the buyer/seller model is created (or destroyed) when the account model is created (or destroyed) automatically thanks to what we did in step 2.3 above, the only two routes that we are going to add here are for edit and update actions.</p></li>
+<li><p>Second, add items to the <span style="color:red"><strong>navigation bar</strong></span> so users can update their profiles. However, our nav. bar becomes too crowded as we keep adding new items to it. So we need to group some items up there. </p>
+
+<p><code><strong>app/views/layouts/_navigation_links.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+...
+&lt;% if account_signed_in? %&gt;
+  &lt;li class=&quot;nav-item dropdown&quot;&gt;
+    &lt;a class=&quot;nav-link dropdown-toggle&quot; href=&quot;#&quot; id=&quot;editAccountDropdownMenuLink&quot; role=&quot;button&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+      Edit Settings (&lt;%= (current_account.accountable.name.nil? or current_account.accountable.name == &quot;&quot;) ? &quot;No Name&quot; : current_account.accountable.name %&gt;)
+    &lt;/a&gt;
+    &lt;div class=&quot;dropdown-menu&quot; aria-labelledby=&quot;editAccountDropdownMenuLink&quot;&gt;
+      &lt;% if current_account.accountable_type == &quot;Seller&quot; %&gt;
+        &lt;%= link_to &#39;Seller Profile&#39;, edit_seller_path(current_account.accountable_id), class: &quot;dropdown-item&quot; %&gt;&lt;% else %&gt;
+        &lt;%= link_to &#39;Buyer Profile&#39;, edit_buyer_path(current_account.accountable_id), class: &quot;dropdown-item&quot;  %&gt;
+      &lt;% end %&gt;
+      &lt;%= link_to &#39;Account Settings&#39;, edit_account_registration_path, class: &quot;dropdown-item&quot;  %&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;%= link_to &#39;Sign out&#39;, destroy_account_session_path, :method=&gt;&#39;delete&#39;, class:&quot;nav-link&quot; %&gt;
+  &lt;/li&gt;
+&lt;% else %&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;%= link_to &#39;Sign in&#39;, new_account_session_path, class:&quot;nav-link&quot; %&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;%= link_to &#39;Sign up&#39;, new_account_registration_path,  class:&quot;nav-link&quot; %&gt;
+  &lt;/li&gt;
+&lt;% end %&gt;</code></pre></div>
+
+<p>Also, since we have more and more nav items on our nav bar, let&#39;s shift them all the way to the right.</p>
+
+<p><code><strong>app/views/layouts/_navigation.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+    &lt;ul class=&quot;navbar-nav ml-auto&quot;&gt;
+        &lt;%= render &#39;layouts/navigation_links&#39; %&gt;
+    &lt;/ul&gt;
+...</code></pre></div></li>
+<li><p>Third, add two <span style="color:red"><strong>controllers</strong></span>, one for the buyers and the other for the sellers. </p>
+
+<p><code><strong>app/controllers/buyers_controller.rb</strong>:</code></p>
+
+<div><pre><code class="language-none">class BuyersController &lt; ApplicationController
+  before_action :set_buyer, only: [:edit, :update]
+
+  # GET /buyers/1/edit
+  def edit
+  end
+
+  # PATCH/PUT /buyers/1
+  # PATCH/PUT /buyers/1.json
+  def update
+    respond_to do |format|
+      if @buyer.update(buyer_params)
+        format.html { redirect_to store_index_url, notice: &quot;The profile of the buyer #{@buyer.name} was successfully updated.&quot; }
+        format.json { head :no_content }
+      else
+        format.html { render action: &#39;edit&#39; }
+        format.json { render json: @buyer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_buyer
+      @buyer = Buyer.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def buyer_params
+      params.require(:buyer).permit(:name, :address, :pay_type)
+    end
+end</code></pre></div>
+
+<p><code><strong>app/controllers/sellers_controller.rb</strong>:</code></p>
+
+<div><pre><code class="language-none">class SellersController &lt; ApplicationController
+  before_action :set_seller, only: [:edit, :update]
+
+  # GET /sellers/1/edit
+  def edit
+  end
+
+  # PATCH/PUT /sellers/1
+  # PATCH/PUT /sellers/1.json
+  def update
+    respond_to do |format|
+      if @seller.update(seller_params)
+        format.html { redirect_to store_index_url, notice: &quot;The profile of the seller #{@seller.name} was successfully updated.&quot; }
+        format.json { head :no_content }
+      else
+        format.html { render action: &#39;edit&#39; }
+        format.json { render json: @seller.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_seller
+      @seller = Seller.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def seller_params
+      params.require(:seller).permit(:name, :address)
+    end
+end</code></pre></div></li>
+<li><p>Fourth, add the <span style="color:red"><strong>views</strong></span> files for the buyers.</p>
+
+<p><code><strong>app/views/buyers/edit.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">&lt;%= render &#39;form&#39; %&gt;</code></pre></div>
+
+<p><code><strong>app/views/buyers/_form.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">&lt;% if @buyer.name.nil? or @buyer.name == &quot;&quot; %&gt;
+    &lt;h2&gt;Edit Buyer&#39;s Profile&lt;/h2&gt;
+&lt;% else %&gt;
+    &lt;h2&gt;Edit &lt;%= @buyer.name %&gt;&#39;s Profile&lt;/h2&gt;
+&lt;% end %&gt;
+
+&lt;%= simple_form_for(@buyer, as: @buyer, url: buyer_path(@buyer), html: { method: :patch }) do |f| %&gt;
+  &lt;%= f.error_notification %&gt;
+
+  &lt;div class=&quot;form-inputs&quot;&gt;
+    &lt;%= f.input :name, required: true, autofocus: true %&gt;
+    &lt;%= f.input :address, required: true %&gt;
+    &lt;%= f.input :pay_type, collection: Order::pay_types,  as: :radio_buttons %&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;form-actions&quot;&gt;
+    &lt;%= f.button :submit, &quot;Update&quot; %&gt;
+  &lt;/div&gt;
+&lt;% end %&gt;</code></pre></div></li>
+<li><p>Fifth, add the <span style="color:red"><strong>view files</strong></span> for the <span style="color:red"><strong>sellerss</strong></span> similar to the two files added for buyers above.</p>
+
+<p>Note: <code>Seller</code> does not have the    <code>pay_type</code> attribute though.</p></li>
+<li><p>Finally, you might want to comment out the code in <code>StoreController</code> that you added in one of the previous projects to remind users to place some books in his/her cart after certain number of visits to the store page. That way, the notifications for confirming user sign up/log in/log out/profile update/... can be displayed.</p>
+
+<p>Now, restart the servers and your user authentication features should be working fine. Yeah!</p>
+
+<blockquote>
+<p>There are far more that Devise can do for you. What makes it even better is that all of them are customizable and bootstrap-decoratable. Go to <a href="https://github.com/plataformatec/devise">https://github.com/plataformatec/devise</a> for details.</p>
+</blockquote></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_9">3.   Project Specifications - Part III</h3>
+
+<p>Now that we have user authentication in place, at any time, we know what &quot;type&quot; of user is visiting our web site, be it a logged-in seller, a logged-in buyer, or  someone without an account with us at all who is simply browsing the catalog page. Base on that information, we can customize the links on the nav. bar. E.g. buyers should not see the “Products” link because it is only available for the sellers. On the &quot;Products&quot; page, a seller should only see a list of his/her own books. Review Part I above for more details.</p>
+
+<p>In order to do all these, there are two associations that we have to build -- a one-to-many relationship from Seller to Product and a one-to-many relationship from Buyer to Order. <span style="color:green"><strong>Please refresh your mind with the figure in section 2.3.</strong></span></p>
+
+<blockquote>
+<p>Again, good news is that except for the &quot;nested routes&quot; added to <code>config/routes.rb</code> below to facilitate so-called &quot;scope-based&quot; handling of products belonging to a specific seller or orders placed by a specific buyer, it turns out that all steps below are routine,  mechanical, and unsurprising Rails operations.</p>
+</blockquote>
+
+<h4 id="toc_10">3.1 Bind Products (i.e. Books) to Sellers</h4>
+
+<ul>
+<li><p>First, create a <span style="color:red"><strong>migration</strong></span> to add a new column <code>seller_id</code> in the <code>products</code> table.</p>
+
+<div><pre><code class="language-none">rails g migration add_seller_to_product seller:references
+rails db:migrate</code></pre></div></li>
+<li><p>Second, modify the two <span style="color:red"><strong>model</strong></span> files affected in the previous step:</p>
+
+<p><code>app/models/product.rb:</code></p>
+
+<div><pre><code class="language-none">...
+belongs_to :seller
+...</code></pre></div>
+
+<p><code>app/models/seller.rb:</code></p>
+
+<div><pre><code class="language-none">...
+has_many :products
+...</code></pre></div></li>
+<li><p>Third, add the following two <span style="color:red"><strong>nested routes</strong></span> to <code>config/routes.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+resources :sellers do
+    resources :products                                         # a nested route: seller_products_path
+
+    member do
+        get &#39;orders&#39;, to: &#39;line_items#show_orders_for_seller&#39;   # a nested route: orders_seller_path
+    end
+end
+...</code></pre></div>
+
+<blockquote>
+<p>Notice that a <strong>bi-product</strong> of binding products to sellers is that we could also restrict what orders to show for a certain seller -- basically, only those orders that contain products belonging to this perticular seller. This is what the second nested route &quot;orders_seller_path&quot; above is for.</p>
+</blockquote></li>
+<li><p>Fourth, add a new group of links to the <span style="color:red"><strong>navigation bar</strong></span> so that a seller can check his/her products and orders; a buyer can check his/her orders -- to be implemented later.</p>
+
+<p><code><strong>app/views/layouts/_navigation_links.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+&lt;% if account_signed_in? %&gt;
+
+    &lt;li role=&quot;presentation&quot; class=&quot;dropdown&quot;&gt;
+            &lt;a class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot; role=&quot;button&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+              Resources &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                    &lt;% if current_account.accountable_type == &quot;Seller&quot; %&gt;
+                        &lt;li&gt;&lt;%= link_to &#39;My Products&#39;, seller_products_path(current_account.accountable_id) %&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;%= link_to &#39;My Orders&#39;, orders_seller_path(current_account.accountable_id) %&gt;&lt;/li&gt;
+                    &lt;% else %&gt;
+                        &lt;li&gt;&lt;%= link_to &#39;My Orders&#39;, &quot;#&quot; %&gt;&lt;/li&gt;
+                    &lt;% end %&gt;
+            &lt;/ul&gt;
+    &lt;/li&gt;
+    ...
+    ...
+&lt;% else %&gt;
+
+    ...
+
+&lt;% end %&gt;</code></pre></div></li>
+<li><p>Fifth, update two <span style="color:red"><strong>controllers</strong></span>, one for binding products with the currently logged-in seller when such products are created and listed and the other for listing those orders containing products owned by the currently logged-in seller.</p>
+
+<p><code><strong>app/controllers/products_controller.rb</strong>:</code></p>
+
+<div><pre><code class="language-none">class ProductsController &lt; ApplicationController
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+
+  # GET /products
+  # GET /products.json
+  def index
+     if (params[:seller_id])
+      @seller = Seller.find(params[:seller_id])
+      @products = @seller.products
+    else
+      @products = Product.all
+    end   
+  end
+   ...
+   ...
+
+  # POST /products
+  # POST /products.json
+  def create
+    @product = Product.new(product_params)
+
+    if current_account &amp;&amp; current_account.accountable_type == &quot;Seller&quot;
+        @product.seller = current_account.accountable
+    end
+
+    ...
+  end
+  ...
+  ...
+end</code></pre></div>
+
+<p><code><strong>app/controllers/line_items_controller.rb</strong>:</code>     </p>
+
+<div><pre><code class="language-none">...
+def show_orders_for_seller
+    seller = Seller.find(params[:id])   
+    products = seller.products
+    @line_items = LineItem.where(product_id: products)
+    products.each do |product|
+      logger.info(product)
+    end
+end 
+...</code></pre></div></li>
+<li><p>Sixth, add the following <span style="color:red"><strong>view</strong></span> file.</p>
+
+<p><code><strong>app/views/line_items/show_orders_for_seller.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">&lt;div class=&quot;container&quot;&gt;
+  &lt;h3&gt;Orders Containing My Books:&lt;/h3&gt;
+  &lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&quot;2&quot; align=&quot;center&quot;&gt;Book Info&lt;/th&gt;
+      &lt;th colspan=&quot;3&quot; align=&quot;center&quot;&gt;Order Info&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Book Title&lt;/th&gt;
+      &lt;th&gt;Nr. Copies&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Address&lt;/th&gt;
+      &lt;th&gt;Pay Type&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;% @line_items.each do |line_item| %&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;%= line_item.product.title %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= line_item.quantity %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= line_item.order.name %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= line_item.order.address %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= line_item.order.pay_type %&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;% end %&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></div></li>
+<li><p>Seventh, hide the &quot;Add to Cart&quot; buttons from the Catalog pages for a currently logged-in seller because your don&#39;t want sellers to become buyers.</p>
+
+<ul>
+<li><p>It is pretty simple to hide the &quot;Add to Cart&quot; buttons from the non-SPA Catalog page:</p>
+
+<p><code><strong>app/views/store/index.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+&lt;% if current_account.nil? or current_account.accountable_type == &quot;Buyer&quot;%&gt;
+   &lt;%= button_to &#39;Add to Cart&#39;, line_items_path(product_id: product), remote: true %&gt;
+&lt;% end %&gt;
+...</code></pre></div></li>
+<li><p>However, to hide the &quot;Add to Cart&quot; buttons from the SPA Catalog page, you have to modify multiple files. The idea is very straight-forward though: pass a boolean props &quot;seller&quot; to the <code>Catalog</code> component which forwards it to <code>BookList</code> and <code>Book</code>. Then depending on the value of that props, we either hide or display the &quot;Add to Cart&quot; buttons.</p>
+
+<p><code><strong>app/views/store/index_spa.html.erb</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+...
+&lt;% if account_signed_in? and current_account.accountable_type == &quot;Seller&quot; %&gt;
+    &lt;%= content_tag :div,
+            id: &quot;catalog&quot;,
+            seller: true,
+            cart_id: @cart.id  do %&gt;
+    &lt;%= javascript_pack_tag &#39;catalog&#39; %&gt;
+    &lt;% end %&gt;
+&lt;%else %&gt;
+    &lt;%= content_tag :div,
+      id: &quot;catalog&quot;,
+      seller: false,
+      cart_id: @cart.id  do %&gt;
+    &lt;%= javascript_pack_tag &#39;catalog&#39; %&gt;
+    &lt;% end %&gt;
+&lt;% end %&gt;</code></pre></div>
+
+<p><code><strong>app/javascript/catalog/index.js</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+    ...
+    const seller = JSON.parse(catalog.getAttribute(&quot;seller&quot;));
+    ReactDOM.render(&lt;Catalog cart_id={cart_id} seller={seller} /&gt;, catalog);
+...</code></pre></div>
+
+<p><code><strong>app/javascript/catalog/components/Catalog.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+&lt;BookList books={this.state.books}
+            sort ={this.state.sort}
+            order={this.state.order}
+            seller={this.props.seller}
+            handleSortColumn={this.handleSortColumn}
+            handleAddToCart={this.handleAddToCart} /&gt;
+...</code></pre></div>
+
+<p><code><strong>app/javascript/catalog/components/BookList.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+    books.push(&lt;Book 
+                book={book}
+                key={&#39;book&#39; + book.id}
+                seller={self.props.seller}
+                handleAddToCart={self.handleAddToCart} /&gt;);
+...
+...
+...
+{ this.props.seller ?  &lt;th /&gt; : &lt;th scope=&quot;col&quot;&gt;Actions&lt;/th&gt; }
+...</code></pre></div>
+
+<p><code><strong>client/app/bundles/Catalog/components/Book.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+{ this.props.seller ?  &lt;td /&gt; : 
+  &lt;td&gt;
+    &lt;a className=&quot;btn btn-success&quot;
+       onClick={this.handleAddToCart} &gt;
+      Add to Cart
+    &lt;/a&gt;
+ &lt;/td&gt;  
+}
+...</code></pre></div></li>
+</ul></li>
+<li><p>Eighth, to facilitate you to test this project more efficiently, in the <code>create</code> method of the <code>OrderController</code>, comment out the line that sends out email.</p>
+
+<div><pre><code class="language-none">...
+    # OrderNotifierMailer.received(@order).deliver
+...</code></pre></div></li>
+<li><p>Finally, restart the server and test your program</p>
+
+<ul>
+<li>Log in as a seller</li>
+<li>Create some products</li>
+<li>log out and log back in as a buyer (or don&#39;t log in at all)</li>
+<li>Add some products (some of which should be the ones you created above) to the cart, checkout, and place the order. </li>
+<li>Place more orders.</li>
+<li>Log in as the same seller above</li>
+<li>Check if you see only those products belonging to you</li>
+<li>Check if you see only those orders containing products belonging to you</li>
+</ul>
+
+<p>If everything works, give yourself a big hug!</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h4 id="toc_11">3.2 Bind Orders to Buyers</h4>
+
+<p>As you can imagine, the process for binding orders to buyers is very similar to what we did in step 3.1 above.</p>
+
+<ul>
+<li><p>First, create a <span style="color:red"><strong>migration</strong></span> to add a new column <code>buyer_id</code> in the <code>orders</code> table.</p>
+
+<div><pre><code class="language-none">rails g migration add_buyer_to_order buyer:references
+rails db:migrate</code></pre></div></li>
+<li><p>Second, modify the two <span style="color:red"><strong>model</strong></span> files affected in the previous step:</p>
+
+<p><code>app/models/order.rb:</code></p>
+
+<div><pre><code class="language-none">...
+belongs_to :buyer, optional: true
+...</code></pre></div>
+
+<p><code>app/models/buyer.rb:</code></p>
+
+<div><pre><code class="language-none">...
+has_many :orders
+...</code></pre></div></li>
+<li><p>Third, add the following <span style="color:red"><strong>nested route</strong></span> to <code>config/routes.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+resources :buyers do
+    resources :orders                       # a nested route: buyer_orders_path
+end
+...</code></pre></div></li>
+<li><p>Fourth, replace the dumb link <code>&lt;li&gt;&lt;%= link_to &#39;My Orders&#39;, &quot;#&quot; %&gt;&lt;/li&gt;</code> that we added to the <span style="color:red"><strong>navigation bar</strong></span> in <code>app/views/layouts/_navigation_links.html.erb</code> with the following so that buyers can check the orders they&#39;ve placed so far.</p>
+
+<div><pre><code class="language-none">&lt;%= link_to &#39;My Orders&#39;, buyer_orders_path(current_account.accountable_id), class: &quot;dropdown-item&quot; %&gt;</code></pre></div></li>
+<li><p>Fifth, update the following <span style="color:red"><strong>controller</strong></span> for binding orders with the currently logged-in buyer when such orders are placed and listed.</p>
+
+<p>Notice that, when placing a new order, information in the profile of the currently logged-in buyer are automatically used to fill up the form (see the <code>new</code> method below).</p>
+
+<p><code><strong>app/controllers/orders_controller.rb</strong>:</code></p>
+
+<div><pre><code class="language-none">...
+def index
+    if (params[:buyer_id])
+      @buyer = Buyer.find(params[:buyer_id])
+      @orders = @buyer.orders.order(&#39;created_at desc&#39;).page params[:page]
+    else
+      @orders = Order.all
+      @orders = @orders.order(&#39;created_at desc&#39;).page params[:page]
+    end    
+end  
+
+...
+
+def new
+    @order = Order.new
+
+    if current_account &amp;&amp; current_account.accountable_type == &quot;Buyer&quot;
+        @order.name     = current_account.accountable.name
+        @order.address  = current_account.accountable.address
+        @order.email  = current_account.email
+        @order.pay_type = current_account.accountable.pay_type.to_i
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: {&quot;redirect&quot;:true,&quot;redirect_url&quot;: new_order_path }}
+    end
+end
+
+...
+
+def create
+    @order = Order.new(order_params)
+    @order.add_line_items_from_cart(@cart)
+
+    if current_account &amp;&amp; current_account.accountable_type == &quot;Buyer&quot;
+            @order.buyer = current_account.accountable
+    end
+
+    ...
+end
+
+...</code></pre></div></li>
+<li><p>Sixth, in the form for creating a new order, since the <code>Pay Type</code> selector now is implemented using ReactJS (See Project 6, Part II), in order to import the buyer&#39;s preferred payment type from his/her profile, a number of files need to be updated:</p>
+
+<ul>
+<li><p>In <code>app/view/orders/_form.html.erb</code>, replace the <code>content_tag</code> line with the following:</p>
+
+<div><pre><code class="language-none">  &lt;%= content_tag :div,
+    id: &quot;order_pay_type&quot;,
+    pay_type: order.pay_type  do %&gt;</code></pre></div></li>
+<li><p>Update <code>app/javascript/order_form/pay_type_selector.js</code>:</p>
+
+<div><pre><code class="language-none">...
+    ...
+    const pay_type = order_pay_type.getAttribute(&quot;pay_type&quot;);
+    ReactDOM.render(&lt;PayTypeSelector pay_type={pay_type}/&gt;, order_pay_type);
+...</code></pre></div></li>
+<li><p>Then in the <code>PayTypeSelector</code> React component, add a new function:</p>
+
+<div><pre><code class="language-none">componentDidMount = () =&gt; {
+    this.setState({ selectedPayType: this.props.pay_type ? this.props.pay_type : &quot;&quot; });
+};</code></pre></div>
+
+<p>Still in the <code>PayTypeSelector</code> React component, in the <code>return</code> function, add the following new property to the <code>&lt;select ...&gt;</code> tag such that <code>PayTypeSelector</code> becomes a &quot;controlled&quot; component:</p>
+
+<div><pre><code class="language-none">&lt;select ......, value={this.state.selectedPayType}&gt;</code></pre></div></li>
+</ul></li>
+<li><p>Finally, restart the server and test your program.</p>
+
+<ul>
+<li>Log in as a buyer</li>
+<li>Place some orders</li>
+<li>Check to see if only those orders that you placed are listed. </li>
+</ul>
+
+<p><span style="color:blue"><strong>Make sure you use Bootstrap to prettify the orders page.</strong></span></p>
+
+<p>Note though, if you don&#39;t log in first as a buyer, you still can place orders. But those orders won&#39;t be bound to any buyer. Only system admin can see them - to be implemented later.</p>
+
+<p>If everything works, give yourself a <strong>bigger</strong> hug!</p></li>
+</ul>
+
+<p>... or one last thing😉, add the following line </p>
+
+<div><pre><code class="language-none">...
+before_action :authenticate_account!
+...</code></pre></div>
+
+<p>at the beginning the these controllers:</p>
+
+<ul>
+<li> <code>ProductsController</code> </li>
+<li> <code>BuyersController</code> </li>
+<li> <code>SellersController</code> </li>
+</ul>
+
+<p>such that you must login first before being allowed to see any of related pages. If you want, you can do the same thing in <code>CartsController</code> and <code>LineItemsController</code>. I will be just focusing on the three kinds of pages listed above.</p>
+
+<p>Notice that <code>OrdersController</code> is not on the list above though because we allow people to add books to their shopping carts and place orders, not necessarily with an account at Depot first. </p>
+
+<h3 id="toc_12">4.   Project Specifications - Part IV</h3>
+
+<p>In order to facilitate you (and me) to test your Depot project, I created a script as seen in Appendix C. It populates the database with four sellers and eleven products. Each seller owns two to three books.</p>
+
+<ul>
+<li><p>Copy the script <code>create_sellers_and_products.rb</code> from Appendix C to the <code>lib/</code> folder of your project.</p>
+
+<p><span style="color:red"><strong>From now on, this script replaces <code>db/seeds.eb</code> whenever the db tables are to be populated</strong></span></p>
+
+<p>Note: This script assumes that you have successfully implemented the &quot;image upload&quot; feature of Project 2. You have to fix your issues if there is still any.</p></li>
+<li><p>Copy all eleven images at <a href="https://1drv.ms/f/s!AuP02Ye51S7vgeMsH5F_a5qdF31MGw">https://1drv.ms/f/s!AuP02Ye51S7vgeMsH5F_a5qdF31MGw</a> to the <code>app/assets/images/</code> folder of your project.</p></li>
+<li><p>Delete the folder <code>product/</code> in <code>public/uploads/</code> all together.</p></li>
+<li><p>Run the following commands to re-rake all the migrations and populate the database tables with four book sellers <em>Dave, Bob, Mary, and John</em> and their books:</p>
+
+<div><pre><code class="language-none">rails db:drop
+rails db:migrate
+rails runner lib/create_sellers_and_products.rb     =&gt; From now on, this command replaces &quot;rails db:seed&quot; to populate the tables</code></pre></div></li>
+<li><p>Now, restart the servers.</p></li>
+<li><p>Test your project -- create some <strong>buyer accounts</strong> from the Web browser, place some orders, and see if everything works.</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_13">5.   Project Specifications - Part V</h3>
+
+<p>In this part, we are going to work on user authorization with Pundit. For more information about Pundit, go to <a href="https://github.com/elabs/pundit">https://github.com/elabs/pundit</a>.</p>
+
+<h4 id="toc_14">5.1 Pundit - Configurations</h4>
+
+<ul>
+<li><p>Add <code>gem &#39;pundit&#39;</code> into <code>Gemfile</code> and bundle install it.</p></li>
+<li><p>Include Pundit in your <code>ApplicationController</code>:</p>
+
+<div><pre><code class="language-none">class ApplicationController &lt; ActionController::Base
+    include Pundit
+    ...
+    ...
+end</code></pre></div></li>
+<li><p>Create a new files to change the behavior of a &quot;<em>not authorized</em>&quot; error produced by Pundit -- instead, an &quot;<em>Access denied</em>&quot; flash notice will be displayed.</p>
+
+<p><code>config/initializers/pundit.rb:</code></p>
+
+<div><pre><code class="language-none">module PunditHelper
+  extend ActiveSupport::Concern
+
+  included do
+    include Pundit
+    rescue_from Pundit::NotAuthorizedError, with: :account_not_authorized
+  end
+
+  private
+
+  def account_not_authorized
+    respond_to do |format|
+      format.html {
+        redirect_to request.referrer || store_index_url, notice: &quot;Access denied.&quot;
+      }
+      format.json {render json: {&quot;redirect&quot;:true, &quot;redirect_url&quot;: store_index_url}}
+    end
+  end
+
+end
+
+ApplicationController.send :include, PunditHelper</code></pre></div></li>
+<li><p>Then create a folder <code>app/policies/</code>. All pundit policy files that we are going to create later will be placed in this folder.</p></li>
+<li><p>Restart your servers.</p></li>
+</ul>
+
+<h4 id="toc_15">5.2 Pundit Policies</h4>
+
+<h4 id="toc_16">5.2.1 Sellers</h4>
+
+<p>As of now, a seller&#39;s profile (i.e. name and address) can be modified by anybody who has logged in. </p>
+
+<blockquote>
+<p>Login as Bob the seller (whose id is 3) and type <code>http://localhost:3000/sellers/1/edit</code> in the address bar, you can modify Dave&#39;s profile.</p>
+
+<p>NO GOOD!</p>
+</blockquote>
+
+<p>To fix the issue,</p>
+
+<ul>
+<li><p>In the <code>app/policies</code> folder, create a new Pundit policy file for the sellers:</p>
+
+<p><code>app/policies/seller_policy.rb:</code></p>
+
+<div><pre><code class="language-none">class SellerPolicy
+  attr_reader :current_account, :model
+
+  def initialize(current_account, model)
+    @current_account = current_account
+    @seller = model
+  end
+
+  def edit?
+    @current_account == @seller.account
+  end
+
+  def update?
+    @current_account == @seller.account
+  end
+
+end</code></pre></div></li>
+<li><p>Then modify <code>SellersController</code></p>
+
+<pre>
+class SellersController < ApplicationController
+  ...
+
+  <b>def pundit_user
+     current_account
+  end</b>
+
+  def edit
+    <b>authorize @seller</b>
+  end
+
+  def update
+     <b>authorize @seller</b>
+     ...
+ end
+ ...
+ ...
+end
+</pre></li>
+<li><p>Now, restart the servers and test your app again. Bob is not allowed to change Dave&#39;s profile anymore. </p></li>
+</ul>
+
+<h4 id="toc_17">5.2.2 Buyers</h4>
+
+<p>Go ahead to take care the use authorizations for the <strong>buyers</strong> in the same way above. </p>
+
+<blockquote>
+<p>Everytime there is a change to the <code>app/policies</code> folder, servers have to be restarted.</p>
+</blockquote>
+
+<h4 id="toc_18">5.2.3 Products</h4>
+
+<ul>
+<li><p>In the <code>app/policies</code> folder, create a new Pundit policy file for the products:</p>
+
+<p><code>app/policies/product_policy.rb:</code></p>
+
+<div><pre><code class="language-none">class ProductPolicy
+  attr_reader :current_account, :model
+
+  def initialize(current_account, model)
+    @current_account = current_account
+    @product = model
+  end
+
+  def index?
+    current_account.accountable_type == &quot;Seller&quot;
+  end
+
+  def show?
+    @current_account == @product.seller.account
+  end
+
+  def new?
+    current_account.accountable_type == &quot;Seller&quot;
+  end
+
+  def create?
+    current_account.accountable_type == &quot;Seller&quot;
+  end
+
+  def edit?
+    @current_account == @product.seller.account
+  end
+
+  def update?
+    @current_account == @product.seller.account
+  end
+
+  def destroy?
+    @current_account == @product.seller.account
+  end
+
+  class Scope &lt; Struct.new(:current_account, :model)
+    def resolve
+        model.where(seller: current_account.accountable)
+    end
+  end
+
+end</code></pre></div>
+
+<p>The sub-class <code>Scope</code> above is the Pundit&#39;s way of restricting certain scope of objects that are allowed to be exposed to a specific account. In our case, a seller is only allowed to see his/her own books.</p></li>
+<li><p>Then modify <code>ProductsController</code></p>
+
+<pre>
+class ProductsController < ApplicationController
+  ...   
+  <b>def pundit_user
+    current_account
+  end</b>
+  ...
+  def index
+    #  if (params[:seller_id])
+    #   @seller = Seller.find(params[:seller_id])
+    #   @products = @seller.products
+    # else
+    #   @products = Product.all
+    # end   
+
+    # The following is much neater than above, isn't it?
+    <b>authorize Product 
+    @products = policy_scope(Product)</b>
+  end
+  ...
+  def show
+    <b>authorize @product </b>
+    @orders = @product.orders    
+  end
+  ...
+  def new
+    @product = Product.new
+    <b>authorize @product</b>
+  end
+  ...
+  def edit
+    <b>authorize @product</b>
+  end
+  ...
+  def create
+    @product = Product.new(product_params)
+    <b>authorize @product </b>
+    ...
+  end
+  ...
+  def update
+    <b>authorize @product </b>
+    ...
+  end
+  ...
+  def destroy
+    <b>authorize @product </b>
+    @product.destroy
+    ...
+  end
+  ...
+  ...
+end
+
+</pre>
+
+<p>Also, update <code>ProductsController</code> as what you did in <code>CartsController</code> to <strong>handle invalid products</strong>.</p></li>
+<li><p>Now, restart the servers and test your app again.</p></li>
+</ul>
+
+<h4 id="toc_19">5.2.4 Orders</h4>
+
+<p>According Part I at the beginning of this document, if a seller wants to see the orders, he/she should only be allowed to see those orders that contain his/her books. (Also, according the figure in step 2.3, there is no direct relationship between Seller and Order models.) We already implemented that feature in step 3.1 above through a special method <code>show_orders_for_seller</code> in <code>LineItemsController</code>. </p>
+
+<p>Now in order to prevent a seller&#39;s orders from being viewed by any other arbitrary sellers (or by someone who&#39;s even not currently logged in), we need to make changes to the following files:</p>
+
+<ul>
+<li><p><code>app/policies/seller_policy.rb</code>:  </p>
+
+<div><pre><code class="language-none">class SellerPolicy
+    ...
+
+    # add this new method
+    def show_orders_for_seller?
+        @current_account == @seller.account
+    end
+end</code></pre></div></li>
+<li><p><code>app/controllers/line_items_controller.rb</code>:</p>
+
+<pre>
+class LineItemsController < ApplicationController
+  ...   
+  <b>def pundit_user
+    current_account
+  end</b>
+  ...
+  ...
+
+  def show_orders_for_seller
+    seller = Seller.find(params[:id])  
+
+    <b>authorize seller, :show_orders_for_seller?</b>
+
+    ...   
+   end   
+   ...
+   ... 
+end
+</pre></li>
+</ul>
+
+<p>Next, we need to worry about buyers, who are supposed to be restricted to see only those orders he/she has placed.</p>
+
+<ul>
+<li><p>In the <code>app/policies</code> folder, create a new Pundit policy file for the orders:</p>
+
+<p><code>app/policies/order_policy.rb:</code></p>
+
+<div><pre><code class="language-none">class OrderPolicy
+  attr_reader :current_account, :model
+
+  def initialize(current_account, model)
+    @current_account = current_account
+    @order = model
+  end
+
+  def index?
+    if (@current_account) 
+        current_account.accountable_type == &quot;Buyer&quot;
+    else
+        false
+     end 
+  end
+
+  def show?
+    @order.buyer &amp;&amp; @current_account == @order.buyer.account
+  end
+
+  def new?
+    if (@current_account) 
+      @current_account.accountable_type == &quot;Buyer&quot;
+    else
+      true
+    end
+  end
+
+  def create?
+    if (@current_account) 
+      @current_account.accountable_type == &quot;Buyer&quot;
+    else
+      true
+    end
+  end
+
+  def edit?
+    @current_account == @order.buyer.account 
+  end
+
+  def update?
+    @current_account == @order.buyer.account 
+  end
+
+  def destroy?
+    @current_account == @order.buyer.account 
+  end
+
+  class Scope &lt; Struct.new(:current_account, :model)
+    def resolve
+      model.where(buyer: current_account.accountable)
+    end
+  end
+
+end</code></pre></div></li>
+<li><p>Then modify <code>OrdersController</code></p>
+
+<pre>
+class OrdersController < ApplicationController
+  ...   
+  <b>def pundit_user
+    current_account
+  end</b>
+  ...
+  ...
+  def index
+    # if (params[:buyer_id])
+    #   @buyer = Buyer.find(params[:buyer_id])
+    #   @orders = @buyer.orders.order('created_at desc').page params[:page]
+    # else
+    #   @orders = Order.all
+    #   @orders = @orders.order('created_at desc').page params[:page]
+    # end     
+    <b>authorize Order 
+    @orders = policy_scope(Order)
+    @orders = @orders.order('created_at desc').page params[:page]</b>
+  end
+  ...
+  def show
+    <b>authorize @order  </b>
+    @products = @order.products   
+  end
+  ...
+  def new
+    @order = Order.new
+    <b>authorize @order</b>
+    ...
+  end
+  ...
+  def edit
+    <b>authorize @order</b>
+  end
+  ...
+  def create
+    @order = Order.new(order_params)
+    <b>authorize @order </b>
+    ...
+  end
+  ...
+  def update
+    <b>authorize @order </b>
+    ...
+  end
+  ...
+  def destroy
+    <b>authorize @order </b>
+    @order.destroy
+    ...
+  end
+  ...
+  ...
+end
+
+</pre>
+
+<p>Also, update <code>OrdersController</code> as what you did in <code>CartsController</code> to <strong>handle invalid orders</strong>.</p></li>
+<li><p>Now, restart the servers and test your app thoroughly.</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_20">6.   Project Specifications - Part VI</h3>
+
+<p>In this part, we are going to work on admin dashboards with Administrate. For more information about Administrate, go to <a href="https://github.com/thoughtbot/administrate">https://github.com/thoughtbot/administrate</a>.</p>
+
+<ul>
+<li><p>Modify the <code>Gemfile</code> and run <code>bundle install --without production</code></p>
+
+<div><pre><code class="language-none">...
+gem &#39;administrate&#39;
+...</code></pre></div></li>
+<li><p>Run <code>rails generate administrate:install</code></p></li>
+<li><p>Restart the servers and check out the admin dashboard page at <code>localhost:5000/admin</code>.</p></li>
+<li><p>One last thing though. As of now, the admin&#39;s dashboards are accessible by everyone, which is not good. So the following steps is to make sure only an &quot;admin&quot; can see the admin&#39;s pages.</p>
+
+<ul>
+<li><p>First, add the following line to the <code>authenticate_admin</code> method in <code>app/controllers/admin/application_controller.rb</code>:</p>
+
+<div><pre><code class="language-none">redirect_to store_index_url, notice: &#39;Admin\&#39;s Privilege Is Needed&#39; unless current_account &amp;&amp; current_account.accountable_type == &#39;SuperAccount&#39;</code></pre></div></li>
+<li><p>Second, update <code>app/models/account.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+ACCOUNT_TYPES=[&quot;SuperAccount&quot;, &quot;Buyer&quot;, &quot;Seller&quot;] 
+...</code></pre></div>
+
+<p>However, you don&#39;t want an arbitrary user to sign up as a &quot;SuperAccount&quot;, so update <code>app/views/devise/registrations/new.html.erb</code>:</p>
+
+<div><pre><code class="language-none">...
+&lt;%= f.input :type, required: true, as: :radio_buttons, label: &quot;Type of Account&quot;, collection: Account::ACCOUNT_TYPES.drop(1), checked: &#39;Buyer&#39; %&gt;
+...</code></pre></div></li>
+<li><p>Third, run the following commands to create a new model <code>SuperAccount</code> which has just one attribute <code>name</code>:</p>
+
+<div><pre><code class="language-none">rails g model super_account name:string
+rails db:migrate</code></pre></div>
+
+<p>Then modify <code>app/models/super_account.rb</code>:</p>
+
+<div><pre><code class="language-none">...
+has_one :account, as: :accountable
+...</code></pre></div></li>
+<li><p>Fourth, create a script <code>lib/create_super_account.rb</code>:</p>
+
+<div><pre><code class="language-none">SuperAccount.transaction do
+  SuperAccount.delete_all
+  SuperAccount.create( :name =&gt; &#39;super&#39; )
+end
+
+Account.transaction do
+  Account.create( :email =&gt; &#39;super@depot.com&#39;, :password =&gt; &#39;changeme&#39;, :password_confirmation =&gt; &#39;changeme&#39;, 
+                  :accountable =&gt; SuperAccount.first())
+end</code></pre></div>
+
+<p>Run the following command to pre-create a super account:</p>
+
+<div><pre><code class="language-none">rails runner lib/create_super_account.rb</code></pre></div></li>
+<li><p>Fifth, we need to make Administrate be aware of this newly created model.</p>
+
+<ul>
+<li>In <code>config/routes.rb</code>, add <code>resources :super_accounts</code> to the admin namespace</li>
+<li><p>In the <code>app/controllers/admin/</code> folder, create <code>super_accounts_controller.rb</code>:</p>
+
+<div><pre><code class="language-none">module Admin
+  class SuperAccountsController &lt; Admin::ApplicationController
+  end
+end</code></pre></div></li>
+<li><p>In the <code>app/dashboards/</code> folder, create <code>super_account_dashboard.rb</code>:</p>
+
+<div><pre><code class="language-none">require &quot;administrate/base_dashboard&quot;
+
+class SuperAccountDashboard &lt; Administrate::BaseDashboard
+  # ATTRIBUTE_TYPES
+  # a hash that describes the type of each of the model&#39;s fields.
+  #
+  # Each different type represents an Administrate::Field object,
+  # which determines how the attribute is displayed
+  # on pages throughout the dashboard.
+  ATTRIBUTE_TYPES = {
+    account: Field::HasOne,
+    id: Field::Number,
+    name: Field::String,
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime,
+  }.freeze
+
+  # COLLECTION_ATTRIBUTES
+  # an array of attributes that will be displayed on the model&#39;s index page.
+  #
+  # By default, it&#39;s limited to four items to reduce clutter on index pages.
+  # Feel free to add, remove, or rearrange items.
+  COLLECTION_ATTRIBUTES = [
+    :account,
+    :id,
+    :name,
+  ].freeze
+
+  # SHOW_PAGE_ATTRIBUTES
+  # an array of attributes that will be displayed on the model&#39;s show page.
+  SHOW_PAGE_ATTRIBUTES = [
+    :account,
+    :id,
+    :name,
+    :created_at,
+    :updated_at,
+  ].freeze
+
+  # FORM_ATTRIBUTES
+  # an array of attributes that will be displayed
+  # on the model&#39;s form (`new` and `edit`) pages.
+  FORM_ATTRIBUTES = [
+    :account,
+    :name,
+  ].freeze
+
+  # Overwrite this method to customize how sellers are displayed
+  # across all pages of the admin dashboard.
+  #
+  # def display_resource(seller)
+  #   &quot;Seller ##{seller.id}&quot;
+  # end
+end</code></pre></div></li>
+</ul></li>
+<li><p>Sixth, modify <code>app/views/layouts/_navigation_links.html.erb</code> such that when a super user logs in, the only items shown on the nav. bar are <strong>Catalog Links, Admin Dashboard, and Logout</strong>.</p></li>
+<li><p>Seventh, typically you don&#39;t want the super user to place orders, do you? The &quot;Add to Cart&quot; buttons are already removed from the regular catalog page when a super user logs in, however, they are still showing on the SPA catalog page. So we need to remove them too. </p>
+
+<p><code>app/views/store/index_spa.html.erb:</code></p>
+
+<div><pre><code class="language-none">&lt;p id=&quot;notice&quot;&gt;&lt;%= notice %&gt;&lt;/p&gt;
+
+&lt;% if account_signed_in? and ( current_account.accountable_type == &quot;Seller&quot; or current_account.accountable_type == &quot;SuperAccount&quot;)%&gt;
+    &lt;%= content_tag :div,
+            id: &quot;catalog&quot;,
+            seller: true,
+            cart_id: @cart.id  do %&gt;
+    &lt;%= javascript_pack_tag &#39;catalog&#39; %&gt;
+    &lt;% end %&gt;
+&lt;%else %&gt;
+    &lt;%= content_tag :div,
+      id: &quot;catalog&quot;,
+      seller: false,
+      cart_id: @cart.id  do %&gt;
+    &lt;%= javascript_pack_tag &#39;catalog&#39; %&gt;
+    &lt;% end %&gt;
+&lt;% end %&gt;</code></pre></div></li>
+</ul></li>
+<li><p>Finally, restart the server and test your Depot app one last time. </p>
+
+<p>We started the development of Depot since Project 2. Now it is time to call it and move on. It has been a long journey!</p></li>
+</ul>
+
+<h3 id="toc_21">7.   Project Specifications - Part VII</h3>
+
+<p>First, remove the alias <code>heroku</code> that you made in project 6.</p>
+
+<div><pre><code class="language-none">git remote rm heroku</code></pre></div>
+
+<p>Then login to Heroku and create a project.</p>
+
+<div><pre><code class="language-none">heroku login
+heroku create project7-yourfirstname-yourlastname</code></pre></div>
+
+<p>Update the two &quot;action_cable&quot; lines in <code>config/environments/production.rb</code> to accommodate project6. </p>
+
+<p>Re-create <code>config/application.yml</code> for sending email through SendGrid (project 6):</p>
+
+<div><pre><code class="language-none">SENDGRID_USERNAME: &lt;your_sendgrid_username&gt;
+SENDGRID_PASSWORD: &lt;your_sendgrid_username&gt;</code></pre></div>
+
+<p>Git stage and commit the codebase.</p>
+
+<p>Then do the configurations and deployment as summarize below. In particular, in order to populate the database tables, instead of using the seed file as what we did in the previous projects, <strong>run the two scripts in the <code>lib/</code> folder that we created in Part VI and Part IV above respectively</strong>. </p>
+
+<div><pre><code class="language-none">heroku config:set S3_ACCESS_KEY=&lt;access key&gt;.   =&gt; These four are for storing images on AWS S3 (project 2)
+heroku config:set S3_SECRET_KEY=&lt;secret key&gt;
+heroku config:set AWS_REGION =&lt;aws region&gt;
+heroku config:set S3_BUCKET=&lt;bucket name&gt;
+
+figaro heroku:set -e production                 =&gt; This is for sending emails via SendGrid (project 6)
+
+git push heroku master:master                   =&gt; Heroku deployment (project 6)
+
+heroku addons:add redistogo                     =&gt; Redis (project 5)
+
+heroku pg:reset DATABASE                        =&gt; These two are for the database (projects 2~6)
+heroku run rails db:migrate
+
+heroku run rails runner lib/create_sellers_and_products.rb   =&gt; project 7
+heroku run rails runner lib/create_super_account.rb        =&gt; project 7
+
+heroku run rails runner lib/load_orders.rb      =&gt; This is for testing pagination (project 6)</code></pre></div>
+
+<h3 id="toc_22">8.   What to Turn in?</h3>
+
+<ul>
+<li><p>Final version of the project source code pushed onto Github, </p>
+
+<p><span style="color:red">Alert: <strong>Don&#39;t push your P8 to the master branch onto your Github repository  until I explicitly tell you so on BlazeVIEW</strong>. I need to pull your Project 7 down for grading purposes first before you overwrite it with the code for this Project 8.</span></p></li>
+<li><p>Final version of the project deployed on Heroku. You must name your application on Heroku:</p>
+
+<div><pre><code class="language-none">http://project8-yourfirstname-yourlastname.herokuapp.com</code></pre></div></li>
+<li><p>The Git log file reflecting the full history of your project submitted on BlazeVIEW</p></li>
+</ul>
+
+<h3 id="toc_23">Appendix A.</h3>
+
+<h4 id="toc_24">A.1 User Authentication</h4>
+
+<p><strong>Devise</strong> is almost the de-facto default for Rails user authentication. Just use it. Period.</p>
+
+<h4 id="toc_25">A.2 User Authorization</h4>
+
+<h5 id="toc_26">A.2.1 Principles</h5>
+
+<p>Almost every web application needs an authorization system, if there are parts of the web site that are restricted to some users. Most web sites set access restrictions based on roles; that is, users are grouped by privilege. The web application checks the user’s role to determine if access is allowed. We call this <em>role-based authorization</em>.</p>
+
+<p>What is worth of mentioning here is <em>Security is Not Obscurity</em>. For example, in a simple application, you might wonder if we really need to block a user from viewing another person’s profile. After all, a user has to be an administrator to see a list of users, so there is no way for an ordinary user to click a link to another user’s profile. However, a clever user can examine the URL when viewing their own profile: <code>http://localhost:3000/users/2</code>. It is not difficult to guess that another profile is available at <code>http://localhost:3000/users/1</code>. <strong>Even though there is no link on a web page to the other user’s profile, we need to protect profiles from users who simply manipulate the URL</strong>. We should not rely on “security through obscurity” to protect the user profiles.</p>
+
+<p>Role-based authorization can be implemented with simple conditional if statements in Rails controllers or views. In the simplest implementation, we check if a user has a specific role (such as administrator) and either allow access or redirect with an “Access Denied” message. As a framework, Rails allows you to add as much complexity to a controller as you wish. However, the Rails community has come to a consensus that complexity in controllers is a not a best practice; you’ll often hear the advice, <strong>“Keep your controllers skinny.”</strong> Given that advice, some developers attempt to implement access rules as methods in a model. But access rules don’t belong in a model either, given that a model is best used for retrieving and manipulating data, and not for logic that controls program flow through the application. <strong>Rather than build “fat models” with complex access rules for program flow, developers look for ways to keep both models and controllers free from authorization code</strong>.</p>
+
+<h5 id="toc_27">A.2.2 Gems</h5>
+
+<p>Two approaches stand out. The gem <code>CanCan</code> and its successor <code>CanCanCan</code>; and a newer gem, <code>Pundit</code>. Both are amazingly good.</p>
+
+<p><code>CanCan</code> provides a DSL (domain-specific language) that isolates all authorization logic in a single Ability class. As an application grows in complexity, the <code>CanCan</code> Ability class can grow unwieldy. Also, every authorization request requires evaluation of the full <code>CanCan</code> Ability class, adding performance overhead. <code>Pundit</code> is an authorization system that uses simple Ruby objects for access rules instead of a centralized Ability class. <code>Pundit</code> provides two helper methods and a set of conventions instead of a DSL. Overall, <code>Pundit</code> is simpler than <code>CanCan</code> but also offers the advantage of segregating access rules into a central location. With <code>Pundit</code> the central location is not a single Ability file. Instead, it is a folder named <code>app/policies/</code> containing plain Ruby objects that implement access rules. Adding authorization to a controller action requires one line of code that calls a helper method. <code>Pundit</code> uses meta-programming magic to instantiate a policy object that matches an access rule to the controller action. <code>Pundit</code> policy objects are lightweight, adding authorization logic without as much overhead as <code>CanCan</code>.</p>
+
+<p><code>Pundit</code> is well-suited to the service-oriented architecture that is popular for large Rails applications, emphasizing object-oriented design with discrete Ruby objects providing specialized services. If you wish, you can create a single <code>Pundit</code> policy object for use with all your controllers. More often, developers create a policy object that corresponds with a specific model (for example, a <code>StudentPolicy</code> class to match a <code>Student</code> model) and will use the policy object to control access for actions in a specific controller (for example, a <code>Students</code> controller).</p>
+
+<p><code>Pundit</code> policy objects are often described as POROs, or “<em>plain old Ruby objects</em>”. PORO simply means that a <code>Pundit</code> policy object doesn’t inherit from other classes or include code mixed in from elsewhere. In contrast, a Rails model that inherits from Active Record is not a PORO; the model inherits behavior that is defined in a parent class. Because <code>Pundit</code> policy objects are POROs, the code is simple and easy to understand.</p>
+
+<p>So, personally, I am sold on <code>Pundit</code>.</p>
+
+<h4 id="toc_28">A.3 Admin&#39;s Dashboards</h4>
+
+<p><code>ActiveAdmin</code> and <code>RailsAdmin</code> are the two gems that I&#39;ve primarily used for the Admin interfaces in the past. Although they both worked fine, they became more and more complicated to the extend that I started searching around for alternatives and thus I came across <code>Administrate</code>. </p>
+
+<p><code>Administrate</code> is simple and straightforward. All <code>rails generate administrate:install</code> does is it </p>
+
+<ul>
+<li>adds its own namespace in <code>config/routes.eb</code> so existing routes are not affected;</li>
+<li>creates the <code>app/controllers/admin</code> folder that contains all the controllers for the admin;</li>
+<li>and creates the <code>app/dashboards</code> folder that includes regular ruby files specifying the contents and layouts of all the dashboard pages. No views files are needed.</li>
+</ul>
+
+<p>Of course, all above are highly customizable.</p>
+
+<h3 id="toc_29">Appendix B.</h3>
+
+<p>In the folder <code>app/assets/stylesheets</code>:</p>
+
+<ul>
+<li><p>In <code>application.scss</code>:</p>
+
+<ul>
+<li><p>find and <strong>remove</strong> the line </p>
+
+<div><pre><code class="language-none">...
+    padding: 1em;     // and needs more padding
+...</code></pre></div></li>
+<li><p>find the <code>main</code> tag at the end of the <code>.content</code> class and add one more property <code>max-width</code> in it:</p>
+
+<div><pre><code class="language-none">.content {
+    ...
+    ...
+    ...
+    main {
+        padding: 0.5em;
+        max-width: 98%;
+    }
+}   </code></pre></div></li>
+</ul></li>
+<li><p>In <code>store.scss</code>, stretch the div to take 100% of the width</p>
+
+<div><pre><code class="language-none">.store {
+    width: 100%;
+    ...
+}</code></pre></div></li>
+<li><p>In <code>carts.scss</code>, add back the <code>padding</code> line that you removed from  <code>application.css</code> above</p>
+
+<div><pre><code class="language-none">.carts {
+    padding: 1em; // and needs more padding
+    ...
+}</code></pre></div></li>
+<li><p>Create <code>navbar.scss</code> so that the new Bootstrap Navigation Bar at the top of the web page looks right. </p>
+
+<div><pre><code class="language-none">@import &quot;bootstrap&quot;;
+
+.navbar {
+    position: relative;
+    min-height: 40px;
+
+    border-bottom: 2px solid;
+    font: small-caps 25px/25px &quot;Arial&quot;, serif;
+    color: #282;
+    text-align: center;
+
+    .navbar-nav {
+        font-size: inherit;
+    }
+}</code></pre></div></li>
+</ul>
+
+<h3 id="toc_30">Appendix C.</h3>
+
+<p><code>lib/create_sellers_and_products.rb</code> </p>
+
+<div><pre><code class="language-none">Seller.transaction do
+  Seller.delete_all
+  Seller.create( :name =&gt; &#39;Dave&#39;, :address =&gt; &quot;Dallas, TX&quot;)
+  Seller.create( :name =&gt; &#39;Mary&#39;, :address =&gt; &quot;San Jose, CA&quot;)
+  Seller.create( :name =&gt; &#39;Bob&#39;, :address =&gt; &quot;Seattle, WA&quot;)
+  Seller.create( :name =&gt; &#39;John&#39;, :address =&gt; &quot;Boston, MA&quot;)
+end
+
+Account.transaction do
+  Account.delete_all
+  Account.create( :email =&gt; &#39;dave@depot.com&#39;, :password =&gt; &#39;changeme&#39;, :password_confirmation =&gt; &#39;changeme&#39;, 
+                  :accountable =&gt; Seller.find_by_name(&quot;Dave&quot;))
+  Account.create( :email =&gt; &#39;mary@depot.com&#39;, :password =&gt; &#39;changeme&#39;, :password_confirmation =&gt; &#39;changeme&#39;, 
+                  :accountable =&gt; Seller.find_by_name(&quot;Mary&quot;))
+  Account.create( :email =&gt; &#39;bob@depot.com&#39;, :password =&gt; &#39;changeme&#39;, :password_confirmation =&gt; &#39;changeme&#39;, 
+                  :accountable =&gt; Seller.find_by_name(&quot;Bob&quot;))
+  Account.create( :email =&gt; &#39;john@depot.com&#39;, :password =&gt; &#39;changeme&#39;, :password_confirmation =&gt; &#39;changeme&#39;, 
+                  :accountable =&gt; Seller.find_by_name(&quot;John&quot;))
+end
+Product.transaction do    
+  Product.delete_all
+# Products owned by Dave
+  Product.create!(title: &#39;Agile Web Development with Rails 4&#39;,
+    description: 
+      %{&lt;p&gt;
+        Rails just keeps on changing. Both Rails 3 and 4, as well as Ruby 1.9 and 2.0, 
+        bring hundreds of improvements, including new APIs and substantial performance 
+        enhancements. The fourth edition of this award-winning classic has been reorganized 
+        and refocused so it&#39;s more useful than ever before for developers new to Ruby and Rails.
+      &lt;/p&gt;},
+    image_url:   open(&#39;app/assets/images/agile.jpg&#39;),    
+    seller_id: Seller.find_by_name(&quot;Dave&quot;).id,
+    price: 26.46)
+
+   Product.create!(title: &#39;jQuery Mobile, Up and Running&#39;,
+    description: 
+      %{&lt;p&gt;
+        By the time you finish this book, you&#39;ll know how to create responsive, 
+        Ajax-based interfaces that work on a variety of smartphones and tablets, 
+        using jQuery Mobile and semantic HTML5 code.
+      &lt;/p&gt;},
+    image_url:   open(&#39;app/assets/images/jQuery-Mobile.jpg&#39;),    
+    seller_id: Seller.find_by_name(&quot;Dave&quot;).id,
+    price: 19.21)
+
+# Products owned by Mary
+  Product.create!(title: &#39;Pragmatic Version Control Using Git&#39;,
+    description: 
+      %{&lt;p&gt;
+        There&#39;s a change in the air. High-profile projects such as the Linux Kernel, 
+        Mozilla, Gnome, and Ruby on Rails are now using Distributed Version Control Systems (DVCS) 
+        instead of the old stand-bys of CVS or Subversion.
+      &lt;/p&gt;},
+    image_url:   open(&#39;app/assets/images/git.jpg&#39;),    
+    seller_id: Seller.find_by_name(&quot;Mary&quot;).id,
+    price: 18.03)
+
+   Product.create!(title: &#39;CoffeeScript Programming with jQuery, Rails, and Node.js&#39;,
+    description: 
+      %{&lt;p&gt;
+        Learn CoffeeScript programming with the three most popular web technologies around.
+      &lt;/p&gt;},
+    image_url:   open(&#39;app/assets/images/coffeescript.jpg&#39;),    
+    seller_id: Seller.find_by_name(&quot;Mary&quot;).id,
+    price: 26.99)
+
+   Product.create!(title: &#39;CoffeeScript: Accelerated JavaScript Development&#39;,
+    description: 
+      %{&lt;p&gt;
+        For 15 years, dynamic web content has been written in a single language: 
+        JavaScript. Now, for the first time, programmers have an alternative that doesn&#39;t
+         add an extra layer of abstraction or require plugins. CoffeeScript provides all
+          of JavaScript&#39;s functionality wrapped in a cleaner, more succinct syntax that 
+          encourages use of &quot;the good parts&quot; of the language.
+      &lt;/p&gt;},
+    image_url:   open(&#39;app/assets/images/coffee-ajd.jpg&#39;),    
+    seller_id: Seller.find_by_name(&quot;Mary&quot;).id,
+    price: 26.10)
+
+# Products owned by Bob
+  Product.create!(title: &#39;CoffeeScript&#39;,
+    description:
+      %{&lt;p&gt;
+        CoffeeScript is JavaScript done right. It provides all of JavaScript&#39;s
+  functionality wrapped in a cleaner, more succinct syntax. In the first
+  book on this exciting new language, CoffeeScript guru Trevor Burnham
+  shows you how to hold onto all the power and flexibility of JavaScript
+  while writing clearer, cleaner, and safer code.
+      &lt;/p&gt;},
+    image_url:   open(&#39;app/assets/images/cs.jpg&#39;),
+    seller_id: Seller.find_by_name(&quot;Bob&quot;).id,
+    price: 36.00)
+
+  Product.create!(title: &#39;Programming Ruby 1.9 &amp; 2.0&#39;,
+    description:
+      %{&lt;p&gt;
+        Ruby is the fastest growing and most exciting dynamic language
+        out there. If you need to get working programs delivered fast,
+        you should add Ruby to your toolbox.
+      &lt;/p&gt;},
+    image_url: open(&#39;app/assets/images/ruby.jpg&#39;),
+    seller_id: Seller.find_by_name(&quot;Bob&quot;).id,
+    price: 49.95)
+
+  Product.create!(title: &#39;Rails Test Prescriptions&#39;,
+    description:
+      %{&lt;p&gt;
+        &lt;em&gt;Rails Test Prescriptions&lt;/em&gt; is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      &lt;/p&gt;},
+    image_url: open(&#39;app/assets/images/rtp.jpg&#39;),
+    seller_id: Seller.find_by_name(&quot;Bob&quot;).id,
+    price: 34.95)   
+
+# Products owned by John
+  Product.create(title: &#39;Rails, Angular, Postgres, and Bootstrap&#39;,
+    description:
+      %{&lt;p&gt;
+        &lt;em&gt;Powerful, Effective, and Efficient Full-Stack Web Development&lt;/em&gt;
+        As a Rails developer, you care about user experience and performance,
+        but you also want simple and maintainable code. Achieve all that by
+        embracing the full stack of web development, from styling with
+        Bootstrap, building an interactive user interface with AngularJS, to
+        storing data quickly and reliably in PostgreSQL. Take a holistic view of
+        full-stack development to create usable, high-performing applications,
+        and learn to use these technologies effectively in a Ruby on Rails
+        environment.
+        &lt;/p&gt;},
+    image_url: open(&#39;app/assets/images/dcbang.jpg&#39;),
+    seller_id: Seller.find_by_name(&quot;John&quot;).id,
+    price: 45.00)
+
+  Product.create(title: &#39;Seven Mobile Apps in Seven Weeks&#39;,
+    description:
+      %{&lt;p&gt;
+        &lt;em&gt;Native Apps, Multiple Platforms&lt;/em&gt;
+        Answer the question “Can we build this for ALL the devices?” with a
+        resounding YES. This book will help you get there with a real-world
+        introduction to seven platforms, whether you’re new to mobile or an
+        experienced developer needing to expand your options. Plus, you’ll find
+        out which cross-platform solution makes the most sense for your needs.
+        &lt;/p&gt;},
+    image_url: open(&#39;app/assets/images/7apps.jpg&#39;),
+    seller_id: Seller.find_by_name(&quot;John&quot;).id,
+    price: 26.00)
+
+
+  Product.create(title: &#39;Ruby Performance Optimization&#39;,
+    description:
+      %{&lt;p&gt;
+        &lt;em&gt;Why Ruby Is Slow, and How to Fix It&lt;/em&gt; 
+        You don’t have to accept slow Ruby or Rails performance. In this
+        comprehensive guide to Ruby optimization, you’ll learn how to write
+        faster Ruby code—but that’s just the beginning. See exactly what makes
+        Ruby and Rails code slow, and how to fix it. Alex Dymo will guide you
+        through perils of memory and CPU optimization, profiling, measuring,
+        performance testing, garbage collection, and tuning. You’ll find that
+        all those “hard” things aren’t so difficult after all, and your code
+        will run orders of magnitude faster.
+        &lt;/p&gt;},
+    image_url: open(&#39;app/assets/images/adrpo.jpg&#39;),
+    seller_id: Seller.find_by_name(&quot;John&quot;).id,
+    price: 46.00)  
+
+end  </code></pre></div>
+
+
+
+
+</body>
+
+</html>

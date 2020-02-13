@@ -1,0 +1,8 @@
+hide: hidden.o encrypt.o
+	gcc -o hidetext hidden.o encrypt.o
+
+hidden.o: hidden.c encode.h
+	gcc -c hidden.c -o hidden.o
+
+encrypt.o: encrypt.c encode.h
+	gcc -c encrypt.c -o encrypt.c

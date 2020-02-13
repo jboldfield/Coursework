@@ -1,0 +1,61 @@
+//Cruise ship class that extends ship
+public class CruiseShip extends Ship{
+	//Data fields
+	private String name;
+	private int year;
+	private int passengers;
+		
+	//No argument constructor 
+	public CruiseShip () {
+		this.name = "No name";
+		this.year = 1776;
+		this.passengers = 1000;
+	}
+		
+	//Overloaded constructor (Accepts name and passengers)
+	public CruiseShip (String name, int passengers) {
+		this.name = name;
+		this.year = 1776;
+		this.passengers = passengers;
+	}
+
+	//Overloaded constructor (Accepts name, year, passengers)
+	public CruiseShip (String name, int year, int passengers) {
+		this.name = name;
+		this.year = year;
+		this.passengers = passengers;
+	}
+		
+	//Accessors and mutators
+	public void setName (String name) {
+		this.name = name;
+	}
+		
+	public String getName () {
+		return this.name;
+	}
+		
+	public void setYear (int year) {
+		this.year = year;
+	}
+		
+	public int getYear () {
+		return this.year;
+	}
+		
+	public void setPassengers(int passengers) {
+		this.passengers = passengers;
+	}
+		
+	public int getPassengers () {
+		return this.passengers;
+	}
+		
+	//toString 
+	public String toString(){
+		return String.format
+		("\tCruise ship:\n\t%-20s\t%s\n\t%-20s\t%d\n\t%-20s\t%d",
+		 "Cruise Name", getName(), "Ship Year", getYear(), 
+		 "Cruise Passengers", getPassengers());
+	}
+}

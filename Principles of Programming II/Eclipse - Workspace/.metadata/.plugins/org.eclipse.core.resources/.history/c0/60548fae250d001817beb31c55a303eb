@@ -1,0 +1,74 @@
+import java.util.ArrayList;
+
+//Name:			Johnnie Oldfield
+//Program Name:	Diner
+//Date:			02/09/2018
+//Purpose:		A program that manages food stocks
+//				and estimates income for diner
+//************************************************
+public class Diner {
+	//Data fields
+	private int countFamily, countCouple,countInd,
+				countGroup, totalOrders;
+	static ArrayList<Guest> guests = new ArrayList<Guest>();
+
+	public static void main(String[] args) {
+
+	}//End of main
+
+	//Run diner
+	public void runDiner(){
+		Kitchen k = new Kitchen();
+		//Create random number tied to types of guests.
+		Guest g;
+		while (k.checkStock()){
+			int guest = (int)(Math.random() * 3);
+			//Type Family
+			if (guest == 0){
+				g = new Family();
+				countFamily++;
+				totalOrders++;
+
+			}
+			//Type Couple
+			if (guest == 1){
+				g = new Couple();
+				countCouple++;
+				totalOrders++;
+			//	k.updateStock();
+			}
+			//Type Individual
+			if (guest == 2){
+				g = new Individual();
+				countInd++;
+				totalOrders++;
+			//	k.updateStock();
+			}
+			//Type Group
+			if (guest == 3){
+				g = new Group();
+				countGroup++;
+				totalOrders++;
+			//	k.updateStock();
+			}
+			else{
+				g = new Individual();
+				countInd++;
+				totalOrders++;
+			//	k.updateStock();
+			}
+			k.updateStock(g.getOrder());
+			guests.add(g);
+		}//End of loop
+	}//End of runDiner
+
+	//Calculate bill
+	public void calculateBill(){
+
+	}//End of calculateBill
+
+	//Print report
+	public void printReport(){
+
+	}//End of printReport
+}//End of class

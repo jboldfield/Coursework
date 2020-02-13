@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>p1</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2019</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Project 1: “Gitting” started with Ruby on Rails and ReactJS</h2>
+
+<h3 id="toc_1">Due: January 24, 2019</h3>
+
+<h3 id="toc_2">1. Introduction</h3>
+
+<p>This project has four goals:</p>
+
+<ul>
+<li>It ensures that your Full-Stack Web development ecosystem has been properly installed. Such ecosystem includes Rails in the back end and ReactJS in the front end. </li>
+<li>It introduces you the entire process of getting your Web application on Rails/ReactJS up and running. </li>
+<li>It familiarizes you with how to work on a &quot;training&quot; project in this course and get it submitted for grading.</li>
+<li>It familiarizes you with some basic <em>Git</em> commands.</li>
+</ul>
+
+<p>Undoubtedly, through this project, we will start learning Rails and ReactJS right away. However, most of the subjects discussed here will be further studied down the road. Therefore, don&#39;t panic if you get a little bit confused and/or feel lost from time to time, just stay focused and hang on tight!</p>
+
+<h3 id="toc_3">2.   Project Prerequisites</h3>
+
+<p>For this project, I am assuming that you have completed all the steps listed in the &quot;Software Installation Instructions&quot; document either on your local computer (running Linux/MacOS) or equivalently on AWS Cloud9. </p>
+
+<p>Also, make sure the lasted JavaScript bundler <code>yarn</code> is installed. </p>
+
+<p>On MacOS, run</p>
+
+<div><pre><code class="language-none">brew install yarn</code></pre></div>
+
+<p>On Liunx or AWS Cloud9, run</p>
+
+<div><pre><code class="language-none">npm install -g yarn</code></pre></div>
+
+<h3 id="toc_4">3.   Project Specifications</h3>
+
+<blockquote>
+<p>Tip: For the best learning results when working on this project, instead of copying the commands and code from this document, <span style="color:red"> <strong>flex your fingers and type them out</strong></span>!</p>
+</blockquote>
+
+<h4 id="toc_5">3.1 Create a new Rails project</h4>
+
+<ul>
+<li>Go into the workspace folder on your computer </li>
+<li>Or, open the environment you created on AWS cloud9 </li>
+<li><p>In the terminal window, create a new Rails project by the name of <strong>&quot;demo&quot;</strong> by issuing the following command:</p>
+
+<div><pre><code class="language-none">rails new demo --webpack=react -T</code></pre></div>
+
+<blockquote>
+<p>--webpack=react: the <code>Webpacker</code> gem that comes bundled with Rails since version 5.1 makes it very straight-forward for us to embrace both the mature backend platform of Rails and modern frontend practice of ReactJs.</p>
+
+<p>-T: it is to omit tests, as we will not have time to do them in this class.</p>
+</blockquote></li>
+</ul>
+
+<h4 id="toc_6">3.2 Configure Git to version-control your project</h4>
+
+<p>It is very important to get into the project folder by doing <span style="color:red"><code>cd demo</code></span> <strong>before</strong> issuing any of the other Git commands below. The two <code>git config</code> commands can be skipped if you have already done them when setting up Git on your computer. You may check your Git configurations using <code>git config --list</code>.</p>
+
+<div><pre><code class="language-none">cd demo
+
+git config --global user.name “Your Name”
+
+git config --global user.email youremail@youremail.com
+
+git init            → Not needed on Cloud9 since it seems the .git/ folder has already been created
+
+git add -A
+
+git commit -m &quot;Just created a Rails project&quot;</code></pre></div>
+
+<blockquote>
+<p>Everytime you do git commit, make sure the comments are descriptive and meaningful. <span style="color:red"><strong>Up to 50% of points</strong></span> will be deducted for a student project whose git comments are overly simplified, meaningless, or rubbish.</p>
+</blockquote>
+
+<h4 id="toc_7">3.3 Start the Rails server</h4>
+
+<ul>
+<li><p>In the terminal window, (make sure you are in the demo folder), start the Rails server:</p>
+
+<div><pre><code class="language-none">rails server</code></pre></div></li>
+<li><p>Launch a browser and go to <code>localhost:3000</code> to verify that the server is up. </p>
+
+<p>On Cloud 9, click <em>Preview</em> then <em>Preview Running Application</em> at the top of the window, then &quot;pop out into a new window&quot;.</p></li>
+</ul>
+
+<h4 id="toc_8">3.4 Start to build your Web application on a new Git branch</h4>
+
+<div><pre><code class="language-none">git checkout -b test_branch     → This command creates 
+                                → a new branch named test_branch.</code></pre></div>
+
+<p><strong>GIT ALERT</strong>: At the conclusion of EACH task in 3.5 below, do the following:</p>
+
+<blockquote>
+<p>First, stage and commit your work on the <code>test_branch</code> branch by executing the following commands.</p>
+
+<blockquote>
+<p><code>git add -A</code></p>
+
+<p><code>git commit -m “Comments describing what you’ve just done …”</code></p>
+</blockquote>
+
+<p>Then, go to the <code>master</code> branch and merge your work to it.</p>
+
+<blockquote>
+<p><code>git checkout master</code></p>
+
+<p><code>git merge test_branch</code></p>
+</blockquote>
+
+<p>Finally, switch back to the <code>test_branch</code> branch so you can continue on with the next task.</p>
+
+<blockquote>
+<p><code>git checkout test_branch</code></p>
+</blockquote>
+</blockquote>
+
+<h4 id="toc_9">3.5 Project tasks</h4>
+
+<h4 id="toc_10">Task 1: Instant gratification</h4>
+
+<ul>
+<li>Open the “Agile Web Development with Rails 5.1” book, read chapters 1 &amp; 2 thoroughly.</li>
+<li><p>Go to “Chapter 2 Instant Gratification”. Starting from page 27, complete all tasks in that chapter. </p>
+
+<p>Please include <strong>your name</strong> as part of the greetings on the “hello” page.</p>
+
+<blockquote>
+<p>On cloud 9, if you get &quot;Listen error: unable to monitor directories for changes...&quot;, visit the recommended web site (right underneath the error message) to fix it.</p>
+</blockquote></li>
+<li><p>Complete the second task under “Playtime” to display a list of all the files in the current directory. </p>
+
+<p>Add links so you can go back and forth between the “say/hello” and “say/filenames” pages. </p></li>
+<li><p>Add the following line to <code>config/routes.rb</code> to set the root url of your project to the <code>say/hello</code> page:</p>
+
+<div><pre><code class="language-none">root &#39;say#hello&#39;</code></pre></div></li>
+<li><p>Git Alert</p></li>
+</ul>
+
+<h4 id="toc_11">Task 2: Integrate Bootstrap to your project</h4>
+
+<p>For more information about Bootstrap, go to <a href="http://getbootstrap.com/">http://getbootstrap.com/</a></p>
+
+<ul>
+<li><p>Add the following gems for the Bootstrap 4 integration to the <code>Gemfile</code>:</p>
+
+<div><pre><code class="language-none">gem &#39;jquery-rails&#39;
+gem &#39;bootstrap&#39;, &#39;~&gt; 4.2.1&#39;</code></pre></div></li>
+<li><p>Run the command <code>bundle update</code> in terminal to install the gems above and their dependencied. Restart the Rails server.</p></li>
+<li><p>Under the folder <code>app/assets/stylesheets</code>, rename the file <code>application.css</code> to <code>application.scss</code> and add the following line to the bottom of that file:</p>
+
+<div><pre><code class="language-none">@import &quot;bootstrap&quot;;</code></pre></div>
+
+<p>Then, remove all the <code>*= require</code> and <code>*= require_tree</code> statements. </p>
+
+<blockquote>
+<p>SCSS (Sassy CSS) is an extension of the syntax of CSS. Files using this syntax have the .scss extension. </p>
+
+<p>We will use <code>@import</code> to import Sass files.</p>
+</blockquote></li>
+<li><p>In <code>app/assets/javascripts/application.js</code>, right above the <code>//=require_tree .</code> line , add the following lines:</p>
+
+<div><pre><code class="language-none">//= require jquery3
+//= require popper
+//= require bootstrap-sprockets</code></pre></div></li>
+<li><p>Git Alert</p></li>
+</ul>
+
+<h4 id="toc_12">Task 3: Use Bootstrap to re-format/prettify the <code>hello</code>, <code>goodbye</code>, and <code>filenames</code> pages</h4>
+
+<ul>
+<li><p>Change <code>app/views/say/hello.html.erb</code> to the following:</p>
+
+<div><pre><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;div class=&quot;card-header&quot;&gt;
+        It is now &lt;%=@time%&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h5 class=&quot;card-title&quot;&gt;Hello World from Zhiguang Xu&lt;/h5&gt;
+         &lt;p&gt;
+                List of 
+                &lt;%=link_to &quot;File Names&quot;, say_filenames_path %&gt;!
+         &lt;/p&gt;
+         &lt;p&gt;
+                Time to say 
+                &lt;%=link_to &quot;Goodbye&quot;, say_goodbye_path %&gt;!
+         &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></li>
+<li><p>In order for the <code>goodbye</code> and <code>filenames</code> pages to be able to display the current time too, change <code>app/applications/say_controller.rb</code> to the following:</p>
+
+<div><pre><code class="language-ruby">class SayController &lt; ApplicationController
+    before_action :time_now
+
+    def hello
+    end
+
+    def goodbye
+    end
+
+    def filenames
+        @files = Dir.glob(&#39;*&#39;)
+    end
+
+    private
+
+    def time_now
+        @time = Time.now
+    end
+end</code></pre></div></li>
+<li><p>Change <code>app/views/say/goodbye.html.erb</code> and <code>app/views/say/filenames.html.erb</code> in the similar way as what we did in <code>app/views/say/hello.html.erb</code> above.</p></li>
+<li><p>Refresh the  browser to check your Web pages.</p></li>
+<li><p>Git Alert</p></li>
+</ul>
+
+<h4 id="toc_13">Task 4: Use ReactJS for the frontend</h4>
+
+<p>For more information about ReactJS, go to <a href="https://facebook.github.io/react/">https://facebook.github.io/react/</a></p>
+
+<ul>
+<li><p>Install the following extension in the Google Chrome browser. It is an indispensable tool for ReactJS development.</p>
+
+<ul>
+<li>React Developer Tools</li>
+</ul></li>
+<li><p>Thanks to the <code>--webpack=react</code> option that we had when creating the <code>demo</code> app, the <code>webpacker</code> gem has already been added to the <code>Gemfile</code>. Check that file out if you want.</p>
+
+<blockquote>
+<p>Webpacker makes it easy to manage application-like JavaScript libraries, including React, in Rails 5.1+ while using native Javascript pre-processor and bundler tools like yarn and Webpack.</p>
+
+<p>For now, that is all I want to say about the gem before getting you unnecessarily sidetracked and overwhelmed. For more information about it, go to <a href="https://github.com/rails/webpacker">https://github.com/rails/webpacker</a>.</p>
+</blockquote></li>
+<li><p><strong>Remove</strong> the following line from <code>app/assets/javascripts/application.js</code>:</p>
+
+<div><pre><code class="language-none">//= require turbolinks</code></pre></div></li>
+<li><p>Update the following line in <code>config/environments/development.rb</code>:</p>
+
+<div><pre><code class="language-none">config.webpacker.check_yarn_integrity = false</code></pre></div></li>
+<li><p>With Webpacker, React components are embedded into Rails views with a <code>javascript_pack_tag</code> helper. So, we need a view. Get back to the Ruby world for a minute. </p>
+
+<p>In <code>app/views/say/filenames.html.erb</code>, add the following:</p>
+
+<div><pre><code class="language-none">...
+...
+    &lt;%= content_tag :div,
+    id: &quot;hello_react&quot;,
+    data: @files.to_json do %&gt;
+        &lt;%= javascript_pack_tag &#39;hello_react&#39; %&gt;
+    &lt;% end %&gt;
+
+    &lt;p&gt;
+        Say &lt;%= link_to &quot;Hello&quot;, say_hello_path %&gt; again.
+    &lt;/p&gt;
+...
+...</code></pre></div></li>
+<li><p>Then edit <code>app/javascript/packs/hello_react.jsx</code>:</p>
+
+<div><pre><code class="language-none">...
+const Hello = props =&gt; {
+    return (
+        &lt;button className=&quot;btn btn-secondary float-right&quot;&gt;
+            {props.name} says: {props.data.length} files
+        &lt;/button&gt;
+    );
+};
+...
+...
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+    const hello_react = document.querySelector(&quot;#hello_react&quot;);
+    const data = JSON.parse(hello_react.getAttribute(&quot;data&quot;));
+    ReactDOM.render(&lt;Hello name=&quot;Your name&quot; data={data} /&gt;, hello_react);
+});</code></pre></div>
+
+<p>Basically, we tell React to render the React component <code>Hello</code> right in the HTML div by the id of &quot;hello_react&quot;. </p>
+
+<blockquote>
+<p><strong>Attention</strong>: in class, I will elaborate what is going between the Rails view file <code>filenames.html.erb</code> and the React component <code>Hello</code> in detail. </p>
+
+<p><span style="color:red">In particular, the integration of React with Rails (including passing Rails data as props to React component) is done through Webpacker itself. We are not using any third-party gem such as <code>react-rails</code>, <code>react_on_rails</code>, or <code>webpacker-react</code>, just to name a few. This way, we don&#39;t need to rely on (and be puzzled by) the magicness of such gems.</span></p>
+</blockquote></li>
+<li><p>Rails 5.1+ comes with the fantastic <code>webpack-dev-server</code> which allows &quot;hot-reload&quot;, i.e., it will analyse changes in our <code>app/javascript</code> folder and rebuild the frontend on the fly.</p>
+
+<blockquote>
+<p>Unfortunately, on AWS cloud 9, I am running out of time figuring out how to make &quot;hot reload&quot; to work. So, if you are an AWS Cloud9 user, only run one server which is the Rails server. And when you need to test your React code, just refresh the browser.</p>
+</blockquote>
+
+<ul>
+<li><p>Run the following command to install <code>foreman</code>, a tool that allows us to run two processes simultaneously: <code>rails s</code> you all know and love and <code>webpack-dev-server</code>.</p>
+
+<div><pre><code class="language-none">gem install foreman</code></pre></div></li>
+<li><p>Under the root folder of the <code>demo</code> project, create a new file <code>Procfile.dev</code> and add the following two lines into it, one for starting the Rails server and the other for starting the webpack server:</p>
+
+<div><pre><code class="language-none">web: bundle exec rails s
+webpacker: ./bin/webpack-dev-server</code></pre></div></li>
+<li><p>Finally, start both Rails and webpack servers:</p>
+
+<div><pre><code class="language-none">foreman start -f Procfile.dev -p 3000</code></pre></div>
+
+<p>Reload the application at <code>localhost:3000</code> in the browser and use the React Developer Tools to check your project.</p></li>
+</ul></li>
+<li><p>Git Alert</p></li>
+</ul>
+
+<h4 id="toc_14">Task 5: Upgrade the Client UI with ReactJS</h4>
+
+<p>In Task 4 above, we rendered the dummy React component <code>Hello</code>  in the Rails view  page where a list of files are displayed. It was an overly simplified example mainly to make sure that everything is configured correctly.</p>
+
+<p>In this task, we are going to render the file list as a chain of ReactJS components while two key ReactJS concepts of <code>properties</code> and <code>states</code> are preliminarily introduced.</p>
+
+<p>Also, Webpacker recommends a certain way to go about the folder structure for your JS packs, and we are not going to fight it. Structuring your components and related files is one of the keys to maintainable code. It is so easy to get lost in JavaScript modules. Just adopt a strategy and stick to it. In the end, our /<code>app/javascript</code> folder is going to look like this:</p>
+
+<ul>
+<li>app/javascript/
+
+<ul>
+<li>files/
+
+<ul>
+<li>components/
+
+<ul>
+<li>FileApp.jsx</li>
+<li>FileNames.jsx</li>
+<li>FileNames.jsx</li>
+</ul></li>
+<li>index.js</li>
+</ul></li>
+<li>packs/
+
+<ul>
+<li>files.jsx</li>
+<li>application.js (not used)</li>
+<li>hello_react.js (not used)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>So, let&#39;s do this.</p>
+
+<ul>
+<li>In the <code>app/javascript</code> folder, create a new folder <code>files</code>. In the <code>files</code> folder, create a new folder <code>components</code>.</li>
+<li><p>Create a new file <code>app/javascript/packs/files.jsx</code> which contains nothing but the following line:</p>
+
+<div><pre><code class="language-none">import &quot;files&quot;; // This imnplies to use app/javascript/files/index.js</code></pre></div></li>
+<li><p>Create a new file <code>app/javascript/files/index.js</code>:</p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+import FileApp from &quot;./components/FileApp&quot;;
+
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+    const files = document.querySelector(&quot;#files&quot;);
+    const data = JSON.parse(files.getAttribute(&quot;data&quot;));
+    ReactDOM.render(&lt;FileApp name=&quot;Your name&quot; data={data} /&gt;, files);
+});</code></pre></div></li>
+<li><p>Then in the <code>app/javascript/files/components</code> folder, create three files, one for each component. </p>
+
+<p><code>FileApp.jsx</code></p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+import PropTypes from &quot;prop-types&quot;;
+import FileNames from &quot;./FileNames&quot;;
+
+export default class FileApp extends React.Component {
+    state = { name: &quot;&quot;, files: [] };
+
+    componentDidMount = () =&gt; {
+        this.setState({ name: this.props.name });
+        this.setState({ files: this.props.data });
+    };
+
+    render = () =&gt; {
+        return (
+            &lt;div&gt;
+                &lt;FileNames files={this.state.files} /&gt;
+                &lt;br /&gt;
+                &lt;button className=&quot;btn btn-secondary float-right&quot;&gt;
+                    {this.state.name} says: {this.state.files.length} files
+                &lt;/button&gt;
+            &lt;/div&gt;
+        );
+    };
+}
+</code></pre></div>
+
+<p><code>FileNames.jsx</code></p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+import FileName from &quot;./FileName&quot;;
+
+export default class FileNames extends React.Component {
+    render = () =&gt; {
+        var files = [];
+        this.props.files.forEach(function(f, index) {
+            files.push(&lt;FileName file={f} key={&quot;file_&quot; + index} /&gt;);
+        });
+
+        return &lt;ul className=&quot;list-group&quot;&gt;{files}&lt;/ul&gt;;
+    };
+}</code></pre></div>
+
+<p><code>FileName.jsx</code></p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+
+export default class FileName extends React.Component {
+    render = () =&gt; {
+        return &lt;li className=&quot;list-group-item&quot;&gt; {this.props.file} &lt;/li&gt;;
+    };
+}
+</code></pre></div></li>
+<li><p>Finally, render the React components above from the Rails view by updating <code>app/views/say/filenames.html.erb</code>:</p>
+
+<div><pre><code class="language-none">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;div class=&quot;card-header&quot;&gt;
+        It is now &lt;%=@time%&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h5 class=&quot;card-title&quot;&gt;File Names&lt;/h5&gt;
+
+        &lt;%= content_tag :div,
+            id: &quot;files&quot;,
+            data: @files.to_json do %&gt;
+
+            &lt;%= javascript_pack_tag &#39;files&#39; %&gt;
+
+        &lt;% end %&gt;
+
+        &lt;p&gt;
+          Say &lt;%= link_to &quot;Hello&quot;, say_hello_path %&gt; again.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></li>
+<li><p>Restart the Rails server. In Chrome, use the <em>React Developer Tools</em> to check your app. </p></li>
+<li><p>Git Alert</p></li>
+</ul>
+
+<h4 id="toc_15">Task 6: Showcase ReactJS with a new UI feature -- File Search</h4>
+
+<p>We are going to implement a new UI feature that allows users to search for files where the concepts of <code>properties</code> and <code>states</code> in ReactJS are further investigated. In addition, we will also see how <code>references</code> (another important concept) are used in ReactJS.</p>
+
+<p>Again, let&#39;s start from the front end.</p>
+
+<ul>
+<li><p>Create a new component file in the <code>app/javascript/components/</code> folder. </p>
+
+<p><code>FileSearchForm.jsx</code></p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+
+export default class FileSearchForm extends React.Component {
+    handleSearch = () =&gt; {
+        var query = ReactDOM.findDOMNode(this.refs.query).value;
+        var self = this;
+        $.ajax({
+            url: &quot;/say/filesearch&quot;,
+            data: { query: query },
+            success: function(data) {
+                self.props.handleSearch(data);
+            },
+            error: function(xhr, status, error) {
+                alert(&quot;Search error: &quot;, status, xhr, error);
+            }
+        });
+    };
+    render = () =&gt; {
+        return (
+            &lt;input
+                onChange={this.handleSearch}
+                type=&quot;text&quot;
+                className=&quot;form-control&quot;
+                placeholder=&quot;Type search phrase here...&quot;
+                ref=&quot;query&quot;
+            /&gt;
+        );
+    };
+}
+</code></pre></div>
+
+<p>Notice that this time, we request from the server a list of files that satisfy the search criteria via an Ajax call and expect them to come back in the form of JSON. Therefore, the back end needs to be modified accordingly. We will work on that in just a little bit.</p></li>
+<li><p>Then, include the <code>FileSearchForm</code> component in the <code>FileApp</code> component.</p>
+
+<p><code>FileApp.jsx</code></p>
+
+<div><pre><code class="language-none">import React from &quot;react&quot;;
+import PropTypes from &quot;prop-types&quot;;
+import FileNames from &quot;./FileNames&quot;;
+import FileSearchForm from &quot;./FileSearchForm&quot;;
+
+export default class FileApp extends React.Component {
+    state = { name: &quot;&quot;, files: [] };
+
+    componentDidMount = () =&gt; {
+        this.setState({ name: this.props.name });
+        this.setState({ files: this.props.data });
+    };
+
+    handleSearch = files =&gt; {
+        this.setState({ files: files });
+    };
+
+    render = () =&gt; {
+        return (
+            &lt;div&gt;
+                &lt;div className=&quot;row&quot;&gt;
+                    &lt;div className=&quot;col-md-12&quot;&gt;
+                        &lt;FileSearchForm handleSearch={this.handleSearch} /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;br /&gt;
+                &lt;FileNames files={this.state.files} /&gt;
+                &lt;br /&gt;
+                &lt;button className=&quot;btn btn-secondary float-right&quot;&gt;
+                    {this.state.name} says: {this.state.files.length} files
+                &lt;/button&gt;
+            &lt;/div&gt;
+        );
+    };
+}
+</code></pre></div></li>
+</ul>
+
+<p>Switching to the back end. There are two files that have to be modified:</p>
+
+<ul>
+<li><p>Add a new route in <code>config/routes.rb</code>:</p>
+
+<div><pre><code class="language-none">get &#39;say/filesearch&#39;</code></pre></div></li>
+<li><p>Add a new method in <code>app/controllers/say_controller.rb</code> (make sure it is before the <code>private</code> line though):</p>
+
+<div><pre><code class="language-none">def filesearch
+    query = params[:query]
+    files = Dir.glob(&#39;*&#39;).select {|s| s.include? &quot;#{query}&quot;}
+
+    render json: files
+end
+</code></pre></div></li>
+<li><p>Refresh the browser and use the <em>React Developer Tools</em> to check your project. </p></li>
+<li><p>Git Alert</p></li>
+</ul>
+
+<h4 id="toc_16">Task 7: Deploy your project to <code>heroku.com</code></h4>
+
+<ul>
+<li><p>Modify <code>Gemfile</code> so that your project is deployment-ready.  </p>
+
+<p>Replace the <code>gem &#39;sqlite3&#39;</code> line with the following in <code>Gemfile</code>:</p>
+
+<div><pre><code class="language-none">group :development do
+    gem &#39;sqlite3&#39;
+end</code></pre></div>
+
+<p>Add the following in the end of <code>Gemfile</code>:</p>
+
+<div><pre><code class="language-none">group :production do
+    gem &#39;pg&#39;, &#39;0.18.4&#39;
+    gem &#39;rails_12factor&#39;, &#39;0.0.2&#39;
+end</code></pre></div>
+
+<p>Then run the command <code>bundle install --without production</code></p>
+
+<p>Note: technically speaking, this step is not needed for this project because database is not truly used here. However, it doesn&#39;t hurt to do it.</p></li>
+<li><p>Git Alert</p></li>
+<li><p>Project deployment to <code>Heroku</code></p>
+
+<div><pre><code class="language-none">git checkout master
+
+heroku login
+
+heroku create demo-your-full-name
+
+git push heroku master:master
+</code></pre></div>
+
+<p>Note, you must use your full name as shown in the Github repository name. <strong>Don’t abbreviate</strong>.</p>
+
+<p>Run the following command to test your project in a browser:</p>
+
+<div><pre><code class="language-none">heroku open</code></pre></div></li>
+</ul>
+
+<h4 id="toc_17">Task 8: Finally, push the final version of your project to Github</h4>
+
+<p>On Github, after switching the account context to <strong>VSU-CS-Senior-Seminar</strong>, you will see a private repository <strong>Projects-for-Your-Name</strong>. All individual projects that are assigned to you will be tracked as separate branches on such a repository with the master branch always dedicated to the project that you are currently working on. </p>
+
+<ul>
+<li><p>Give the remote repo. at Github an alias name <code>origin</code>:</p>
+
+<div><pre><code class="language-none">git remote add origin git@github.com:VSU-CS-Senior-Seminar/Projects-for-Your-Name.git</code></pre></div></li>
+<li><p>Final push</p>
+
+<div><pre><code class="language-none">git push -u origin master:master</code></pre></div></li>
+<li><p>Optionally, you can delete the local branch:</p>
+
+<div><pre><code class="language-none">git branch -d test_branch</code></pre></div></li>
+</ul>
+
+<h3 id="toc_18">4. What to Turn in on BlazeVIEW?</h3>
+
+<p>Run the command <code>git log &gt; logfile.txt</code> in the terminal and send <code>logfile.txt</code> in through BlazeVIEW by the due time of this project. </p>
+
+<p>Here is a checklist for you to avoid substantial point deductions:</p>
+
+<ul>
+<li><p>On BlazeVIEW, submit the Git log file reflecting the full history of your project. </p>
+
+<p>Again, <span style="color:red"><strong>Up to 50% of points</strong></span> will be deducted for a student project whose git comments are overly simplified, meaningless, or rubbish. </p></li>
+<li><p>Push the final version of the project source code to Github</p></li>
+<li><p>Deploy the final version of the project on Heroku</p></li>
+</ul>
+
+<h3 id="toc_19">5. Warnings</h3>
+
+<ul>
+<li>Verify if your&#39;ve taken care of all the features in your app by comparing it with <a href="https://demo-zhiguang-xu.herokuapp.com/">https://demo-zhiguang-xu.herokuapp.com/</a>.</li>
+<li>I don&#39;t take late submissions. Don&#39;t even try.</li>
+<li>This project serves as the prerequisite to all other subsequent projects down the road, i.e. without a completion of this project, you will <strong>NOT BE ALLOWED</strong> to work on any of them.</li>
+</ul>
+
+
+
+
+</body>
+
+</html>

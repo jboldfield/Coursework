@@ -1,0 +1,8 @@
+
+public class PieceWorker extends Employee{
+
+	public PieceWorker() {
+		
+	}
+
+}

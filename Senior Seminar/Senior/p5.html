@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>p5 complete</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2019</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Project 5: Complete the Shopping Cart</h2>
+
+<p><span style="color:red"><strong>THIS IS A MAJOR PROJECT. You&#39;d better start working on it sooner than later.</strong></span></p>
+
+<h3 id="toc_1">Due: February 21, 2019</h3>
+
+<p>In this project, we are going to complete the shopping cart (well, sort of), in two ways:</p>
+
+<ul>
+<li><strong>through JavaScript</strong> (Task F in the <em>Rails</em> Book)</li>
+<li><strong>through ReactJS</strong></li>
+</ul>
+
+<p>Both of these approaches use Ajax for the underlying asynchronous communications between the client and the server.</p>
+
+<p><strong>Don&#39;t forget to git stage and commit your project often.</strong> </p>
+
+<p>Now let&#39;s start.</p>
+
+<h3 id="toc_2">1.   Project Specifications - Part I</h3>
+
+<ul>
+<li><p>Complete Task F: Add a Dash of Ajax. Skip all  steps pertaining to testing.</p>
+
+<p>Note: </p>
+
+<ul>
+<li><p>You literally have to <strong>read every single word</strong> of this Task in the &quot;Rails&quot; book.</p></li>
+<li><p>For Iteration F1, you should remove the &quot;My Cart&quot; quick link (if you have one) from the side bar now that we are no longer displaying the cart in a separate page, therefore that quick link is no use any more.</p></li>
+<li><p>For Iteration F2, notice that after adding the new <code>format js</code> line to the <code>create</code> method in <code>LineItemsController</code>, Rails will respond to different requests in different ways:</p>
+
+<ul>
+<li><p><code>format.html</code>: for traditional and non-ajaxified clients</p>
+
+<p>It simply renders and sends back the entire updated catalog web page <code>app/views/store/index.html.erb</code>, including a list of books, side bar, shopping cart,..., everything.</p></li>
+<li><p><code>format.js</code>: for ajaxified clients as described in Iteration F2.</p>
+
+<p><span style="color:red">Due to the reasons stated below, replace <code>create.js.coffee</code> with <code>create.js.erb</code></span> and let it have the following contents:</p>
+
+<div><pre><code class="language-none">$(&#39;#cart&#39;).html(&quot;&lt;%=j render(@cart) %&gt;&quot;);</code></pre></div>
+
+<blockquote>
+<p>Both CoffeeScipt and JSX (used by React) are just syntactical sugarcoats for Javascript, intended to make programmers&#39; life easier when writing Javascript because Vanilla Javascript is a VERY VERBOSE language. However, they both have to be compiled into Vanilla Javascript before being used by the browser. Personally, I have never seen a fan of CoffeeScript because its syntax is simply counterintuitive and unnatural.</p>
+
+<p>Let&#39;s all use erb instead of coffeescript in this class.</p>
+</blockquote>
+
+<p>The server interpolates the Ruby code embedded in the JavaScript code above and generates the updated shopping cart in HTML. It then sends the resulting Javascript file <code>create.js</code> (i.e. Javascript + HTML, no more Ruby code) back to the client. Such a JS file will be executed by the client (i.e. browser) to render the cart only, leaving other parts of the web page untouched. <strong>A great performance booster!</strong> </p></li>
+<li><p><code>format.json</code>: for ReactJS and SPA clients (more on this later...)</p>
+
+<p>For now, it simply redirects to the cart page (<code>format.json { redirect_to cart_path(@line_item.cart) }</code>) thanks to what we did in step 3.3.2. of Project 4. We will change it later in Part III of this document (<span style="color:green">specifically, section 3.2</span>) so it renders the shopping cart as a ReactJS component while staying on the same Web page. </p></li>
+</ul></li>
+<li><p>Still for Iteration F2, ajaxify the &quot;Empty Cart&quot; button. </p>
+
+<p>Hint: in Javascript, to hide the cart by the css id of &quot;cart&quot;, just do <code>$(&#39;#cart&#39;).hide();</code></p></li>
+<li><p>For Iteration F4, since we&#39;ve decided not to use CoffeeScript, in order to hide the flash message when a line item is added to an empty cart, add the following to <code>create.js.erb</code>:</p>
+
+<div><pre><code class="language-none">if ( $(&#39;#notice&#39;).length ){
+    $(&#39;#notice&#39;).css(&quot;display&quot;,&quot;none&quot;);
+}</code></pre></div>
+
+<p>Then, in order to show the cart as soon as the first line item is added to it, add the following to the same Javascript file <code>create.js.erb</code>:</p>
+
+<div><pre><code class="language-none">if ($(&#39;#cart tr&#39;).length == 2) { $(&#39;#cart&#39;).show(); }</code></pre></div>
+
+<blockquote>
+<p>Can you figure out why we should use 2 instead of 1 for the condition of the if statement above?</p>
+</blockquote></li>
+<li><p>For Iteration F5, it is showcasing Action Cable, a very powerful WebSocket based real-time feature newly introduced in Rails 5. In this iteration, we truly just scratch the surface of it. For more information about Action Cable in Rails, please go to <a href="http://edgeguides.rubyonrails.org/action_cable_overview.html">http://edgeguides.rubyonrails.org/action<em>cable</em>overview.html</a>.</p>
+
+<p>On Heroku, for a more performant handling of Action Cable/WebSocket, <strong>Redis</strong> is used. Redis is &quot;<em>an open source, in-memory data structure store, used as a database, cache, and messsage broker</em>&quot;. For more information about Redis, please go to <a href="https://redis.io/">https://redis.io/</a>. </p>
+
+<p>Special steps have to be taken to make Redis and everything work on Heroku. <strong>See Part IV below</strong>.</p></li>
+</ul></li>
+</ul>
+
+<h3 id="toc_3">2.   Project Specifications - Part II</h3>
+
+<blockquote>
+<p><span style="color:red"><strong>All of the three tasks below are challenging yet doable. Be completing them, your understanding of Rails and Ajax will be greatly deepened.</strong></span></p>
+</blockquote>
+
+<ul>
+<li><p>Add a “-“ button next to each item in the cart. When being clicked, it should invoke an action to decrement the quantity of the item, deleting it from the cart when the quantity reaches zero, and emptying the cart when there is nothing left in the cart. Get it to work without using Ajax first, and then add the Ajax goodness.</p>
+
+<p>Hints: </p>
+
+<ul>
+<li><p>Add a new method say <code>decrement</code> in <code>LineItemsController</code> to implement the logic described aboe. You might also need to update the <code>LineItem</code> model to support the controller.</p></li>
+<li><p>Update <code>config/routes.rb</code> so that Rails knows how to route HTTP requests to the <code>decrement</code> method you just added in the previous step:</p>
+
+<div><pre><code class="language-none"> ...
+ resources :line_items do
+    member do
+      patch &quot;decrement&quot;
+    end
+ end
+ ...</code></pre></div></li>
+<li><p>In <code>app/views/line_items/_line_item.html.erb</code>, add a new ajaxified &quot;-&quot; button to the end of each line item row. When being pressed, an HTTP post message will be sent to the serer where the <code>decrement</code> method described above would be called to handle it.</p></li>
+<li><p>Add a new Javascript file <code>decrement.js.erb</code> in views folder for line items to update the cart.</p></li>
+</ul></li>
+<li><p>When adding/removing a book into/from your ajaxified shopping cart, adjust the popularity value underneath the corresponding book on the catalog page to reflect such a change. Make sure this is done &quot;ajaxifiedly&quot;.</p>
+
+<p>You don’t have to re-sort the catalog though, unless the user refreshes the catalog him-/her-self.</p>
+
+<p>Hints: in order to assign an unique css class to the popularity value for each individual product such that it can be uniquely located and updated, you could make the id of that product be part of the css class. </p>
+
+<p>i.e. </p>
+
+<div><pre><code class="language-none">&lt;i class=&quot;product_&lt;%=product.id%&gt;&quot;&gt;&lt;%=pluralize product.popularity.to_i, &#39;time&#39;%&gt;&lt;/i&gt;</code></pre></div></li>
+<li><p>When emptying the cart, adjust the popularity values underneath all the pertaining books on the catalog page to reflect such changes. Make sure this is done &quot;ajaxifiedly&quot;.</p>
+
+<p>You don’t have to re-sort the catalog though, unless the user refreshes the catalog him-/her-self.</p></li>
+</ul>
+
+<blockquote>
+<p>Git alert</p>
+</blockquote>
+
+<h3 id="toc_4">3.   Project Specifications - Part III</h3>
+
+<p>In this part, we are going to create a new ReactJS component <code>Cart</code> embedded inside the <code>Catalog</code>component that we created in Project 4. That mean, <code>Cart</code> is a child of <code>Catalog</code>; or <code>Catalog</code> is a parent of <code>Cart</code>. A click on any &quot;Add to Cart&quot; button will update the shopping cart rendered by this new ReactJS component while staying on the same web page. </p>
+
+<blockquote>
+<p>Supposedly, <code>Cart</code> and <code>Catalog</code> components should be separate and independent. However, that way, in order to be able to pass data (as props) between them and set their states, we need to use <strong><code>Redux</code></strong> -- &quot;<em>a predictable state container for JavaScript apps</em>&quot; from Facebook (<a href="http://redux.js.org/">http://redux.js.org/</a>). </p>
+
+<p>Due to time constraints, we are going to just go with the sub-optimal approach to implement the communications between <code>Cart</code> and <code>Catalog</code> components as described above (i.e. <code>Cart</code> is a child contained in its parent <code>Catalog</code>.). </p>
+
+<p><span style="color:red">Also, as I mentioned in class many many times, you will find the Chrome Developer Tools an indispensable tool when it comes to ReactJS programming. Any time you need to do some debugging, just do <code>console.log(...);</code>, your log message will be displayed in the console of Chrome for you to review.</span></p>
+</blockquote>
+
+<h4 id="toc_5">3.1 Clean the SPA Catalog page</h4>
+
+<p>First of all, let&#39;s hide the side column including the shopping cart and all the quick links from the SPA catalog page.</p>
+
+<ul>
+<li>In <code>app/controllers/store_controller.rb</code>, in the <code>index</code> method, right before the <code>render &#39;index_spa&#39;</code> line, add <code>@spa = true</code>.</li>
+<li><p>Then in <code>app/views/layouts/application.html.erb</code>, enclose the entire division with the class of <code>side_nav</code> in an <code>if</code> statement such that the side column is displayed on the Non-SPA catalog page but not on the SPA catalog page:</p>
+
+<div><pre><code class="language-none">...
+&lt;% if @spa.nil? %&gt;
+    &lt;nav class=&quot;side_nav&quot;&gt;
+    ...
+    &lt;/nav&gt;
+&lt;% end %&gt;           
+...</code></pre></div>
+
+<p>Also, in the same file, add a new style to the <code>main</code> tag:</p>
+
+<div><pre><code class="language-none">...
+&lt;main class=&#39;&lt;%= controller.controller_name %&gt;&#39; style=&quot;width:100%&quot;&gt;
+    &lt;%= yield %&gt;
+&lt;/main&gt;
+...</code></pre></div>
+
+<p>Still in the same file, in order to easily switch back to the non-SPA catalog page, let&#39;s make the logo at the top-left corner of the page clickable:</p>
+
+<div><pre><code class="language-none">...
+...
+    &lt;%= link_to image_tag(&#39;logo.svg&#39;, alt: &#39;The Pragmatic Bookshelf&#39;), store_index_path(spa: false)  %&gt;
+...
+...</code></pre></div></li>
+</ul>
+
+<p>One more thing to do in order to get ready for the SPA Catalog page that will contain the shopping cart as one of its sub-components. </p>
+
+<ul>
+<li><p>In <code>app/views/store/inde_spa.html.erb</code>, add one more argument <code>cart_id</code> to <code>content_tag</code>:</p>
+
+<div><pre><code class="language-none">...
+&lt;%= content_tag :div,
+    id: &quot;catalog&quot;,
+    cart_id: @cart.id  do %&gt;
+  &lt;%= javascript_pack_tag &#39;catalog&#39; %&gt;
+&lt;% end %&gt;</code></pre></div></li>
+<li><p>Then in <code>app/javascript/catalog/index.js</code>,update the codebase so as to receive this <code>cart_id</code> and pass it as a props to the <code>Catalog</code> component:</p>
+
+<div><pre><code class="language-none">...
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+    const catalog = document.querySelector(&quot;#catalog&quot;);
+    const cart_id = JSON.parse(catalog.getAttribute(&quot;cart_id&quot;));
+    ReactDOM.render(&lt;Catalog cart_id={cart_id} /&gt;, catalog);
+});</code></pre></div>
+
+<p>Basically, we pass the id of the current cart as a property to the <code>Catalog</code> component such that it knows which cart to render.</p></li>
+</ul>
+
+<h4 id="toc_6">3.2 Get the Rails server ready</h4>
+
+<p>When we click on the &quot;Add to Cart&quot; button on the SPA catalog page powered by ReactJS, we want the Rails server to deal with such a request in  the same way as it does with any other request, except that at the end, it needs to return the updated shopping cart <strong>in JSON format</strong>. </p>
+
+<p>Remember in Project 4 (section 3.1.2), we did something similar to this in the <code>index</code> method of <code>StoreController</code> (i.e., the <code>format.json {render json: Product...}</code> line). However, at that time, it was quite simple because we were only dealing with one single model of <code>Product</code>. Now, the data that we need to collect from the database, put in the desired format, and send back to the client involve three associated models: <code>Cart</code>, <code>LineItem</code>, and <code>Product</code>. If we stick with the same approach as in project 4, the <code>format.json {...}</code> line in <code>LineItemsController</code> can grow very complicated before you realize it.😰 </p>
+
+<p><span style="color:red"><strong>JBuilder to the rescue!</strong></span></p>
+
+<blockquote>
+<p>JBuidler <em>gives you a simple DSL for declaring JSON structures that beats manipulating giant hash structures.</em> It used to be an optional gem in the previous version of Rails. Now, Rails 5 includes it by default. For more information about this gem that comes handy, especially for us having to feed ReactJS components with multiple JSON data, please go to <a href="https://github.com/rails/jbuilder">https://github.com/rails/jbuilder</a>.</p>
+</blockquote>
+
+<ul>
+<li><p>First of all, there seems to be some incompatibility issue between ruby 2.4 and the most current version of json (json 2.1). Therefore, we need to downgrade the gem <code>json</code> in the Gemfile:</p>
+
+<div><pre><code class="language-none">gem &#39;json&#39;, &#39;2.0.2&#39;</code></pre></div>
+
+<p>Then run <code>bundle update</code>.</p></li>
+<li><p>In the <code>app/views/line_items</code> folder, create a new file <code>create.json.jbuilder</code>:</p>
+
+<div><pre><code class="language-none">json.id @cart.id
+
+json.line_items @cart.line_items do |line_item|
+    json.id                 line_item.id
+    json.quantity           line_item.quantity
+    json.title              line_item.product.title
+    json.total_price        line_item.total_price
+    if (line_item == @line_item )
+            json.current_item true
+    end
+end
+
+json.total_price @cart.total_price</code></pre></div>
+
+<blockquote>
+<p>Notice that we structure the JSON data here in the same way as how we want them to be displayed in the shopping cart. An alternative way is to just send back the raw data and let ReactJS work on the structure of the cart.</p>
+</blockquote></li>
+<li><p>In the <code>create</code> method of <code>LineItemsController</code>, replace the entire <code>format.json {...}</code> line with the following. By default, Rails will render the data as specified in the .jbuilder file above and return it back to the client.</p>
+
+<div><pre><code class="language-none">...
+format.json { }  
+...</code></pre></div></li>
+<li><p>Although not quite needed for now yet, it is probably a good idea to make the following changes while we are still on the server side.</p>
+
+<ul>
+<li><p>At the beginning of <code>CartsController</code>, add the following line:</p>
+
+<div><pre><code class="language-none"> skip_before_action :verify_authenticity_token</code></pre></div></li>
+<li><p>Then in the <code>show</code> method of <code>CartsController</code>, add the following:</p>
+
+<div><pre><code class="language-none">...
+respond_to do |format|
+    format.html 
+    format.json
+end
+...</code></pre></div></li>
+</ul>
+
+<p>As we just learned, for the second format (json) above, Rails will automatically render the file <code>app/views/carts/show.json.jbuilder</code>. This file was pre-created for you. <strong>Now, you need to replace its current contents with the same code as we did in <code>app/views/line_items/create.json.jbuilder</code> above</strong>.</p></li>
+</ul>
+
+<p>Then for the sake of testing what we did above, in the <code>handleAddToCart</code> function of the <code>Catalog</code> component on the client side, replace the <code>window.location = response.headers.location;</code> line with the following:</p>
+
+<div><pre><code class="language-none">...
+console.log(response.data);
+...</code></pre></div>
+
+<p>Notice <code>response.data</code> above? It is the updated shopping cart with new contents that we put together in the format of JSON in <code>create.json.jbuilder</code> just now. </p>
+
+<p>On the SPA page, click the &quot;Add to Cart&quot; button, do you see the cart displayed in <strong>the console window of the React Developers&#39; Tool in Chrome</strong>? Cool.</p>
+
+<blockquote>
+<p><strong>Warning</strong>: You can&#39;t proceed without completing the test described in the last paragraph above.</p>
+
+<p>Git alert</p>
+</blockquote>
+
+<h4 id="toc_7">3.3 Componentize the Shopping Cart with ReactJS</h4>
+
+<blockquote>
+<p>Our experience with ReactJS so far teaches us how to modify the state of a parent component from a child component through the state-modifying function passed from the parent down to the child as a property. </p>
+
+<ul>
+<li><p>E.g. In <code>SortColumn</code>, whenever one of the table headers (i.e. title, price, or popularity) is clicked, the local function <code>handleSort</code> is called, which in turn calls <code>this.props.handleSortColumn</code>. Such a function was  passed down from <code>Catalog</code> via <code>BookList</code> to <code>SortColumn</code> as one of the props. It is the <code>handleSortColumn</code> function in the <code>Catalog</code> component that actually fetches data from the server according to the new sorting criterion and updates the state of <code>Catalog</code> once the data comes back.</p></li>
+<li><p>Similarly, in project 4, as soon as one of the &quot;Add to Cart&quot; buttons is clicked, via a chain of props from <code>Book</code> to <code>BookList</code> to <code>Catalog</code>, a function <code>handleAddToCart</code> in <code>Catalog</code> is called. </p></li>
+</ul>
+
+<p>Now, we need to be able to do the <strong>opposite</strong> from what we learned before -- we need to update the state of the child <code>Cart</code> from the parent <code>Catalog</code>. In ReactJS, this is done through <strong>refs</strong> (or references). For more information, go to <a href="https://facebook.github.io/react/docs/refs-and-the-dom.html">https://facebook.github.io/react/docs/refs-and-the-dom.html</a>.</p>
+</blockquote>
+
+<ul>
+<li><p>Modify the <code>Catalog</code> component in the following way so that instead of going to a different page display the shopping cart, we stay on the same SPA page:</p>
+
+<ul>
+<li><p>At the beginning, add</p>
+
+<div><pre><code class="language-none">import Cart from &#39;./Cart&#39;;</code></pre></div></li>
+<li><p>In the <code>render</code> function, add one new div to render the <code>Cart</code> component, which will be defined  later. <code>Cart</code> has two properties: <code>ref=&quot;cart&quot;</code> which will be used by the parent component <code>Catalog</code> to hook to its child component <code>Cart</code> (see next step); and <code>id={this.props.cart_id}</code> as a props whose value comes from the last step in section 3.1 above.</p>
+
+<div><pre><code class="language-none">...
+render() {
+    return (
+        &lt;div className=&quot;container&quot;&gt;
+
+            &lt;div className=&quot;row&quot;&gt;
+                &lt;div className=&quot;col-md-12 pull-right&quot;&gt;
+                        &lt;Cart ref=&quot;cart&quot; id={this.props.cart_id}/&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            ...
+            ...
+        &lt;/div&gt;
+    );
+}
+...</code></pre></div></li>
+<li><p>Then in the <code>handleAddToCart</code> function, add the following:</p>
+
+<div><pre><code class="language-none">...
+self.refs.cart.handleAddToCart(response.data);
+...</code></pre></div>
+
+<p>Again, notice <code>response.data</code> above? <strong>It is the updated shopping cart with new contents that we put together in the format of JSON in section 3.2</strong>.</p></li>
+</ul></li>
+<li><p>One last step before writing the <code>Cart</code> component itself: add the following CSS description in <code>app/assets/stylesheets/store.scss</code> such that the cart on the SPA catalog page appears to be similar to the one on the regular non-SPA page:</p>
+
+<div><pre><code class="language-none">.store {
+    ...
+    ...
+
+  .spa_cart {    
+    text-align: right;
+
+    float: right;
+    padding-bottom: 5px;
+
+    .item_price, .total_line {
+      text-align: right;
+    }
+
+    .total_line .total_cell {
+      font-weight: bold;
+      border-top: 1px solid #595;
+    }
+
+    input {
+      color: buttontext;
+    }
+  }
+}</code></pre></div></li>
+<li><p>Finally, you need to put together three ReactJS components -- <code>Cart</code>, <code>LineItems</code>, and <code>LineItem</code>. As you may see, this step tests if you can wrap your head around ReactJS. The plan is outlined below. </p>
+
+<p><span style="color:red"><strong>Although the code is attached to this document in Appendix A, I encourage you to challenge yourself by working it out first.</strong></span></p>
+
+<ul>
+<li><code>Cart</code> maintains the states (i.e. cart) and contains <code>LineItems</code>. <code>LineItems</code> in turn contains <code>LineItem</code>.
+
+<ul>
+<li>A grammar note: in jsx, any time you need to specify a CSS class, you need to say <code>className</code> because <code>class</code> is already a reserved word in jsx.</li>
+</ul></li>
+<li>Use <code>Catalog</code>, <code>BookList</code>, and <code>Book</code> as your references when writing your components.</li>
+<li>At the beginning, worry neither about the &#39;-&#39; buttons at the end of line items rows in the cart, nor the &quot;Empty Cart&quot; button. Make sure that the rest of the cart works first.</li>
+<li>Finally, implement the &#39;-&#39; and &#39;Empty Cart&#39; buttons. In order for them to work, on the server side, you need to 
+
+<ul>
+<li>Modify the <code>decrement</code> method in <code>LineItemsController</code>. Add <code>decrement.json.jbuilder</code> correspondingly. </li>
+<li>Modify the <code>destroy</code> method in <code>CartsController</code>. Add <code>destroy.json.jbuilder</code> correspondingly. </li>
+</ul></li>
+<li>In order to focus on componentizing the shopping cart as hereby outlined, you don&#39;t have to worry about dynamically updating the popularity values of the books in the catalog. I am leaving it as an optional task in Section 3.4 below.</li>
+</ul></li>
+</ul>
+
+<h4 id="toc_8">3.4 Optional</h4>
+
+<p>On the SPA page, </p>
+
+<ul>
+<li><p>Update the popularity value of a book dynamically as it is added to and/or removed from the shopping cart. </p></li>
+<li><p>Update the popularity values of all pertaining books dynamically as the shopping cart is emptied. </p></li>
+</ul>
+
+<h3 id="toc_9">4.   Project Specifications - Part IV</h3>
+
+<p>First, remove the alias <code>heroku</code> that you made in project 4.</p>
+
+<div><pre><code class="language-none">git remote rm heroku</code></pre></div>
+
+<p>Then login to Heroku and create a project.</p>
+
+<div><pre><code class="language-none">heroku login
+heroku create project5-yourfirstname-yourlastname</code></pre></div>
+
+<p>In order for the Action Cable/WebSocket part (i.e. <strong>Task F, Iteration F5</strong>) of the Depot project to work on Heroku, in addition to the regular steps for project deployment, you need to do some extra configurations as listed below:</p>
+
+<ul>
+<li><p>Uncomment the following line in your <code>Gemfile</code>, then run <code>bundle install</code>.</p>
+
+<div><pre><code class="language-none">gem &quot;redis&quot;, &quot;~&gt; 4.0&quot;</code></pre></div></li>
+<li><p>In <code>config/cable.yml</code>, update the <code>production</code> clause:</p>
+
+<div><pre><code class="language-none">production:
+    adapter: redis
+    url: &lt;%=ENV[&#39;REDISTOGO_URL&#39;]%&gt; 
+    channel_prefix: depot_production</code></pre></div>
+
+<p>The environment variable <code>REDISTOGO_URL</code> on Heroku will be setup later. It is going to be the URL address of the Redis server running Heroku.</p></li>
+<li><p>In <code>config/environments/production.rb</code>, mount Action Cable by uncommenting the following two lines (<strong>make sure you replace the project name with yours though</strong>)</p>
+
+<div><pre><code class="language-none">config.action_cable.url = &#39;wss://project5-yourfirstname-yourlastname.herokuapp.com/cable&#39;
+config.action_cable.allowed_request_origins = [ &#39;http://project5-yourfirstname-yourlastname.herokuapp.com/&#39;]</code></pre></div></li>
+<li><p>In <code>config/routes.rb</code>, add the following line:</p>
+
+<div><pre><code class="language-none">mount ActionCable.server =&gt; &#39;/cable&#39;</code></pre></div></li>
+<li><p>Git stage and commit all the configurations above. </p></li>
+<li><p>Make necessary AWS S3 configurations (as you did for Project 2)</p></li>
+<li><p>Since the cover page images of the books are now stored on AWS S3, more characters are added to the end the <code>image_url</code> names. So go to the <code>Product</code> model and comment out the validation of image format.</p></li>
+<li><p>Push your project to Heroku.</p></li>
+<li><p>Run the following command to install <code>redistogo</code> as a Heroku addon. It also sets up the environment variable <code>REDISTOGO_URL</code> for you. You may run <code>heroku configure</code> to verify it.</p>
+
+<div><pre><code class="language-none">heroku addons:add redistogo</code></pre></div></li>
+<li><p>Reset, create, and populate the database tables on Heroku.</p></li>
+</ul>
+
+<h3 id="toc_10">5.   What to Turn in?</h3>
+
+<ul>
+<li><p>Final version of the project source code pushed onto Github</p>
+
+<p><span style="color:red">Alert: <strong>Don&#39;t push your P5 to the master branch onto your Github repository  until I explicitly tell you so on BlazeVIEW</strong>. I need to pull your Project 4 down for grading purposes first before you overwrite it with the code for this Project 5.</span></p></li>
+<li><p>Final version of the project deployed on Heroku. You must name your application on Heroku:</p>
+
+<div><pre><code class="language-none">http://project5-yourfirstname-yourlastname.herokuapp.com</code></pre></div></li>
+<li><p>The Git log file reflecting the full history of your project submitted on BlazeVIEW</p></li>
+</ul>
+
+<h3 id="toc_11">Appendix A</h3>
+
+<blockquote>
+<p>Please be reminded that in order for the &quot;-&quot; link and the &quot;Empty Cart&quot; button to work on the SPA page, in addition to creating the following React components, server must also be updated:</p>
+
+<ul>
+<li>Update the <code>decrement</code> method in <code>LineItemsController</code>.</li>
+<li>Add <code>decrement.json.jbuilder</code> in <code>app/views/line_items</code>.</li>
+<li>Update the <code>destroy</code> method in <code>CartController</code>.</li>
+<li>Add <code>destroy.json.jbuilder</code> in <code>app/views/carts</code>.</li>
+</ul>
+</blockquote>
+
+<p><code><strong>Cart.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+import LineItems from &#39;./LineItems&#39;;
+import axios from &#39;axios&#39;;
+
+export default class Cart extends React.Component {
+  state = {
+    id: 0,
+    line_items: [], 
+    total_price: 0
+  };
+
+ componentDidMount = () =&gt; {
+    var self = this;
+
+    axios.defaults.headers.common[&#39;X-Requested-With&#39;] = &quot;XMLHttpRequest&quot;;
+    axios.get(&#39;/carts/&#39;+this.props.id)
+      .then(function (response) {
+        console.log(response.data);
+        self.setState({ id: response.data.id });
+        self.setState({ total_price: response.data.total_price });
+        self.setState({ line_items: response.data.line_items });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+ handleRemoveFromCart = (id) =&gt; {
+    var self = this;
+
+    axios.defaults.headers.common[&#39;X-Requested-With&#39;] = &quot;XMLHttpRequest&quot;;
+    axios.patch(&#39;/line_items/&#39;+id+&#39;/decrement&#39;)
+      .then(function (response) {
+        console.log(response.data);
+        self.setState({ id: response.data.id });
+        self.setState({ total_price: response.data.total_price });
+        self.setState({ line_items: response.data.line_items });
+
+        // window.location = response.headers.location;
+      })
+      .catch(function (error) {
+        // console.log(error);
+        alert(&#39;Cannot remove line item: &#39;, error);
+    });
+
+  };
+
+ handleEmptyCart = () =&gt; {
+    var self = this;
+
+    axios.defaults.headers.common[&#39;X-Requested-With&#39;] = &quot;XMLHttpRequest&quot;;
+    axios.delete(&#39;/carts/&#39;+this.state.id)
+      .then(function (response) {
+        console.log(response.data);
+        self.setState({ id: response.data.id });
+        self.setState({ total_price: response.data.total_price });
+        self.setState({ line_items: response.data.line_items });
+
+        // window.location = response.headers.location;
+      })
+      .catch(function (error) {
+        // console.log(error);
+        alert(&#39;Cannot empty cart: &#39;, error);
+    });
+
+  };
+
+ handleAddToCart = (cart) =&gt; {
+    // console.log(cart);
+    this.setState({ id: cart.id});
+    this.setState({ total_price: cart.total_price});
+    this.setState({ line_items: cart.line_items});
+  };
+
+ render = () =&gt; {
+    if (this.state.total_price != 0) {
+      return(
+        &lt;div className=&quot;spa_cart&quot;&gt;
+          &lt;h2&gt;Your Cart&lt;/h2&gt;
+          &lt;LineItems total_price={this.state.total_price}
+                     line_items={this.state.line_items} 
+                     handleRemoveFromCart={this.handleRemoveFromCart} /&gt;
+          &lt;a className=&quot;btn btn-success&quot;
+             onClick={this.handleEmptyCart} &gt;
+            Empty Cart
+          &lt;/a&gt;
+
+        &lt;/div&gt;
+      )
+    }
+    else {
+      return (
+        &lt;div className=&quot;spa_cart&quot;&gt;
+          &lt;h2&gt;Your Cart&lt;/h2&gt;
+        &lt;/div&gt;
+      );
+    }
+  }
+}</code></pre></div>
+
+<p><code><strong>LineItems.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+import LineItem from &#39;./LineItem&#39;;
+
+export default class LineItems extends React.Component {
+ handleRemoveFromCart = (id) =&gt; {
+    this.props.handleRemoveFromCart(id); 
+  };
+
+ render = (id) =&gt; {
+    var line_items = [];
+
+    var self = this;
+
+    this.props.line_items.forEach(function(line_item) {
+      line_items.push(&lt;LineItem line_item={line_item}
+                       handleRemoveFromCart={self.handleRemoveFromCart}
+                       key={&#39;line_item_&#39; + line_item.id}/&gt;);
+      }
+    );
+
+    return(
+      &lt;table&gt;
+        &lt;tbody&gt;
+          {line_items}
+          &lt;tr className=&quot;total_line&quot;&gt;
+                &lt;td colSpan=&quot;2&quot;&gt;Total:&lt;/td&gt;
+                &lt;td className=&quot;total_cell&quot;&gt;${this.props.total_price}&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    )
+  }
+}</code></pre></div>
+
+<p><code><strong>LineItem.jsx</strong>:</code></p>
+
+<div><pre><code class="language-none">import React from &#39;react&#39;;
+import PropTypes from &#39;prop-types&#39;;
+
+export default class LineItem extends React.Component {
+  static propTypes = {
+    quantity: PropTypes.number,
+    title: PropTypes.string,
+    total_price: PropTypes.number,
+  };
+
+ handleRemoveFromCart = (e) =&gt; {
+    this.props.handleRemoveFromCart(this.props.line_item.id); 
+  };
+
+  render = () =&gt; {
+    return(
+      &lt;tr className=&quot;entry&quot;&gt;
+        &lt;td&gt;{this.props.line_item.quantity}&amp;times;&lt;/td&gt;
+        &lt;td&gt;{this.props.line_item.title}&lt;/td&gt;
+        &lt;td className=&quot;item_price&quot;&gt;${this.props.line_item.total_price}&lt;/td&gt;
+        &lt;td&gt;
+          &lt;a className=&quot;btn btn-success&quot;
+             onClick={this.handleRemoveFromCart} &gt;
+            -
+          &lt;/a&gt;
+        &lt;/td&gt; 
+      &lt;/tr&gt;
+    )
+  };
+}</code></pre></div>
+
+
+
+
+</body>
+
+</html>
